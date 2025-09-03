@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: be_terminal
+    ports:
+      - '5432:5432'
+    volumes:
+      - be_terminal_pg:/var/lib/postgresql/data
+volumes:
+  be_terminal_pg: {}

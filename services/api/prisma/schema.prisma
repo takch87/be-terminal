@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id          String        @id @default(cuid())
+  name        String
+  status      EventStatus   @default(ACTIVE)
+  startsAt    DateTime?
+  endsAt      DateTime?
+  currency    String        @default("usd")
+  transactions Transaction[]
+  devices     Device[]
+  createdAt   DateTime      @default(now())
+}
+
+model Device {
+  id        String   @id @default(cuid())
+  label     String
+  platform  String   @default("android")
+  lastSeen  DateTime?
+  event     Event?   @relation(fields: [eventId], references: [id])
+  eventId   String?
+}
+
+model Transaction {
+  id            String   @id @default(cuid())
+  eventId       String
+  amount        Int
+  currency      String
+  stripePiId    String   @unique
+  status        String
+  paymentMethod String?
+  deviceId      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  event         Event    @relation(fields: [eventId], references: [id])
+}
+
+enum EventStatus {
+  ACTIVE
+  INACTIVE
+}

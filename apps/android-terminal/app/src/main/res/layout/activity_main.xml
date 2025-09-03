@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Datafono Terminal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Amount display -->
+        <TextView
+            android:id="@+id/txtAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:textSize="36sp"
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            android:textStyle="bold" />
+
+        <!-- Describe sale link -->
+        <TextView
+            android:id="@+id/txtDescribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Describe tu venta"
+            android:textColor="#5E6AD2"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="8dp" />
+
+        <!-- Tax toggle -->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleTax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:singleSelection="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTaxInc"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Con impuesto"
+                app:cornerRadius="24dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTaxExc"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sin impuesto"
+                app:cornerRadius="24dp"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Numeric keypad -->
+        <GridLayout
+            android:id="@+id/keypad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="4"
+            android:useDefaultMargins="true"
+            android:paddingTop="8dp">
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK1" android:text="1" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK2" android:text="2" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK3" android:text="3" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK4" android:text="4" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK5" android:text="5" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK6" android:text="6" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK7" android:text="7" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK8" android:text="8" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK9" android:text="9" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK00" android:text="00" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnK0" android:text="0" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnKBack" android:text="✕" style="?attr/materialButtonOutlinedStyle" app:cornerRadius="16dp" android:layout_width="0dp" android:layout_height="56dp" android:layout_columnWeight="1" />
+        </GridLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONTINUAR"
+            android:textAllCaps="false"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="28dp"
+            app:backgroundTint="#FF5252" />
+
+        <!-- Event label only; actions in menu -->
+        <TextView
+            android:id="@+id/txtEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:text="Evento: -" />
+
+        <TextView
+            android:id="@+id/txtReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: $0.00 | Tickets: 0"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/txtLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textIsSelectable="true"
+            android:text="Listo" />
+
+        <!-- Small connection legend at the bottom -->
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lector: Desconectado"
+            android:textSize="12sp"
+            android:paddingTop="8dp" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

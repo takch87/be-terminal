@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App theme inheriting from MaterialComponents (AppCompat-based) -->
+    <style name="Theme.Datafono" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here if needed -->
+    </style>
+</resources>

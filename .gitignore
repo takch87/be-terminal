@@ -1,0 +1,32 @@
+# Node
+node_modules
+npm-debug.log
+pnpm-lock.yaml
+yarn.lock
+
+# Build outputs
+**/dist
+**/build
+**/.next
+
+# OS
+.DS_Store
+
+# Env
+.env
+**/.env
+**/.env.*
+!services/api/.env.example
+
+# Android
+**/local.properties
+**/.gradle
+**/app/build
+**/build
+**/captures
+**/*.keystore
+**/*.jks
+
+# IDE
+.idea/
+.vscode/

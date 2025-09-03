@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_connect"
+        android:title="Conectar lector" />
+    <item
+        android:id="@+id/menu_choose_event"
+        android:title="Seleccionar evento" />
+    <item
+        android:id="@+id/menu_report"
+        android:title="Reporte" />
+    <item
+        android:id="@+id/menu_refund"
+        android:title="Anulación" />
+    <item
+        android:id="@+id/menu_close_day"
+        android:title="Cierre de día" />
+</menu>
