@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>Test de API</h1>
+    <button onclick="testLogin()">Test Login</button>
+    <button onclick="testEvents()">Test Events</button>
+    <button onclick="testUsers()">Test Users</button>
+    <div id="results"></div>
+
+    <script>
+        let token = null;
+
+        async function testLogin() {
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'admin123'
+                    })
+                });
+                
+                const data = await response.json();
+                token = data.token;
+                document.getElementById('results').innerHTML = '<h3>Login Result:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('results').innerHTML = '<h3>Login Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+
+        async function testEvents() {
+            if (!token) {
+                alert('Login first!');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/events', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                const data = await response.json();
+                document.getElementById('results').innerHTML = '<h3>Events Result:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('results').innerHTML = '<h3>Events Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+
+        async function testUsers() {
+            if (!token) {
+                alert('Login first!');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/users', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                const data = await response.json();
+                document.getElementById('results').innerHTML = '<h3>Users Result:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('results').innerHTML = '<h3>Users Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -14,4 +14,7 @@ docker compose -f docker-compose.prod.yml up -d
 
 echo "Services running. Checking health:"
 sleep 2
+echo "Testing API health:"
 curl -s -o /dev/null -w "HTTP %{http_code}\n" -X POST http://localhost/terminal/connection_token || true
+echo "Testing Backend Minimal health:"
+curl -s -o /dev/null -w "HTTP %{http_code}\n" http://localhost/healthz || true

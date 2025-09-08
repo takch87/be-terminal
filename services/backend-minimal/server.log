@@ -1,0 +1,4 @@
+nohup: ignoring input
+[WARN] Variable de entorno PORT='3001' ignorada. Usando puerto fijo 3002.
+[ERROR] Falló al iniciar el servidor: listen EADDRINUSE: address already in use 0.0.0.0:3002
+[ERROR] El puerto 3002 está en uso. Ejecuta: lsof -i:3002 -Pn

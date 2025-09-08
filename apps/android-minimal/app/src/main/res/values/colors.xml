@@ -4,5 +4,11 @@
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_background">#FFFFFF</color>
     <color name="md_theme_onBackground">#111418</color>
+    
+    <!-- BeTerminal Colors -->
+    <color name="button_background">#EA3C53</color>
+    <color name="success_green">#28a745</color>
+    <color name="error_red">#dc3545</color>
+    <color name="text_secondary">#6c757d</color>
 </resources>
 

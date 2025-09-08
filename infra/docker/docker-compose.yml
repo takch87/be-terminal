@@ -5,11 +5,18 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-securepassword123}
       POSTGRES_DB: be_terminal
     ports:
-      - '5432:5432'
+      - '127.0.0.1:5432:5432'  # Solo acceso local
     volumes:
       - be_terminal_pg:/var/lib/postgresql/data
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,size=100M
+      - /var/run/postgresql:rw,size=100M
+    user: "70:70"  # Usuario postgres no-root
 volumes:
   be_terminal_pg: {}

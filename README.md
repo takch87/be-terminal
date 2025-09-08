@@ -3,13 +3,13 @@
 > Quickstart (Minimal): si buscas un flujo mínimo para probar de inmediato la app Android + backend, ve a `README_MINIMAL.md`. Allí están los pasos para compilar el APK (apps/android-minimal) y levantar el backend simple (services/backend-minimal).
 
 Monorepo con:
-- apps/web-dashboard (Next.js)
-- services/api (Fastify + Stripe + Prisma)
+- apps/web-dashboard (Next.js) - https://be-terminal.beticket.net
+- services/api (Fastify + Stripe + Prisma) - https://api.be-terminal.beticket.net
 - packages/shared (tipos/contratos)
 - packages/sdk-client (cliente JS/TS para consumir la API)
 - apps/android-terminal (skeleton; completar en Android Studio)
- - apps/android-minimal (app mínima para cobros; Login + Monto)
- - services/backend-minimal (backend mínimo Node + Express con endpoints de Terminal)
+- apps/android-minimal (app mínima para cobros; Login + Monto)
+- services/backend-minimal (backend mínimo Node + Express con endpoints de Terminal)
 
 ## Requisitos
 - Node.js 18+
@@ -26,13 +26,13 @@ Monorepo con:
 npm install --workspaces
 ```
 
-3) Arranca la API (puerto 4000 por defecto):
+3) Arranca la API (puerto 4000 por defecto, accesible en https://api.be-terminal.beticket.net):
 
 ```
 npm run dev:api -w be-terminal
 ```
 
-4) Arranca el dashboard (puerto 3001):
+4) Arranca el dashboard (puerto 3001, accesible en https://be-terminal.beticket.net):
 
 ```
 npm run dev:web -w be-terminal

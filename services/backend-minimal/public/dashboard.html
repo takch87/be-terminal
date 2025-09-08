@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeTerminal - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ff9500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            background: #ff9500;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: #e6860d;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-danger {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .alert {
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-danger {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .modal.hidden {
+            display: none !important;
+            visibility: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            background: white;
+            border-bottom-color: #ff9500;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 1.5rem;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .event-assignment {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-small {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .config-section {
+            border: 1px solid #e9ecef;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .config-section h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-label {
+            font-weight: 500;
+        }
+
+        .badge-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        input[type="password"] {
+            font-family: monospace;
+        }
+
+        small {
+            color: #6c757d;
+            font-size: 0.875em;
+        }
+
+        .download-item {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background: white;
+        }
+
+        .download-info h5 {
+            margin-top: 0;
+            color: #495057;
+        }
+
+        .download-info ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .download-info li {
+            margin: 0.5rem 0;
+        }
+
+        .download-actions {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .download-actions .btn {
+            font-size: 1.1rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-actions .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,123,255,0.4);
+        }
+
+        .download-actions p {
+            margin: 0.5rem 0 0 0;
+        }
+
+        .installation-instructions {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .installation-instructions h5 {
+            margin-top: 0;
+            color: #495057;
+        }
+
+        .installation-instructions ol {
+            margin: 1rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+
+        .installation-instructions li {
+            margin: 0.75rem 0;
+            line-height: 1.5;
+        }
+
+        /* Modal form layout */
+        .form-group-inline {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group-inline label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .form-group-inline select {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-group-inline .btn {
+            margin: 0;
+            height: 38px;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+            .user-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+                background: #f8f9fa;
+            }
+
+            .tab {
+                text-align: center;
+                border-bottom: 1px solid #dee2e6;
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+            }
+
+            .tab.active {
+                border-bottom: 3px solid #ff9500;
+                background: white;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table {
+                min-width: 600px;
+            }
+
+            .table th,
+            .table td {
+                padding: 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .config-section {
+                padding: 1rem;
+            }
+
+            .download-item {
+                padding: 1rem;
+            }
+
+            .download-actions .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                font-weight: 600;
+                box-shadow: 0 3px 6px rgba(0,123,255,0.4);
+            }
+
+            .download-actions .btn:active {
+                transform: translateY(1px);
+                box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+            }
+
+            .installation-instructions {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .event-assignment {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .btn-small {
+                width: 100%;
+                margin: 0.25rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .header {
+                padding: 0.75rem;
+            }
+
+            .header h1 {
+                font-size: 1.25rem;
+            }
+
+            .card-body {
+                padding: 0.75rem;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 0.25rem 0;
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+
+            .table th,
+            .table td {
+                padding: 0.375rem;
+                font-size: 0.8rem;
+            }
+
+            .tabs {
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            .tab {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            input, textarea, select {
+                font-size: 1rem; /* Prevent zoom on iOS */
+                padding: 0.75rem;
+            }
+
+            .status-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .installation-instructions ol {
+                padding-left: 1rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn {
+                min-height: 44px; /* Minimum touch target size */
+            }
+
+            .tab {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .table th,
+            .table td {
+                min-height: 44px;
+            }
+        }
+
+        /* Landscape phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0.5rem 1rem;
+            }
+
+            .tabs {
+                flex-direction: row;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab {
+                flex-shrink: 0;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon">Bt.</div>
+            <span>BeTerminal Dashboard <small id="app-version" style="font-weight:400;color:#666;font-size:0.8rem;">v?</small></span>
+        </div>
+        <div class="user-info">
+            <span id="username"></span>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('events')">Eventos</div>
+                <div class="tab" onclick="showTab('users')">Usuarios</div>
+                <div class="tab" onclick="showTab('terminal')">Terminal</div>
+                <div class="tab" onclick="showTab('config')">Configuración</div>
+            </div>
+
+            <!-- Events Tab -->
+            <div id="events-content" class="tab-content active">
+                <div class="card-header">Gestión de Eventos</div>
+                <div class="card-body">
+                    <div id="event-alert"></div>
+                    
+                    <form id="event-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-code">Código del Evento</label>
+                                <input type="text" id="event-code" required placeholder="ej: EVT001">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-name">Nombre del Evento</label>
+                                <input type="text" id="event-name" required placeholder="ej: Concierto 2025">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-description">Descripción</label>
+                            <textarea id="event-description" rows="3" placeholder="Descripción del evento"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Crear Evento</button>
+                    </form>
+
+                    <h4 style="margin: 2rem 0 1rem 0;">Eventos Existentes</h4>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Creador</th>
+                                    <th>Estado</th>
+                                    <th>Usuarios</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="events-table">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="users-content" class="tab-content">
+                <div class="card-header">Gestión de Usuarios</div>
+                <div class="card-body">
+                    <div id="user-alert"></div>
+                    
+                    <form id="user-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="new-username">Usuario</label>
+                                <input type="text" id="new-username" required placeholder="Nombre de usuario">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">Contraseña</label>
+                                <input type="password" id="new-password" required placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Crear Usuario</button>
+                    </form>
+
+                    <h4 style="margin: 2rem 0 1rem 0;">Usuarios Existentes</h4>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Fecha Creación</th>
+                                    <th>Eventos Asignados</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Modal para gestionar eventos de usuario -->
+                    <div id="user-events-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <h4 style="margin: 0;">Gestionar Eventos - <span id="modal-username"></span></h4>
+                                <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;" onclick="closeUserEventsModal()">×</button>
+                            </div>
+                            <div id="modal-user-events"></div>
+                            <div class="form-group-inline">
+                                <div style="flex: 1;">
+                                    <label for="modal-event-select">Asignar nuevo evento:</label>
+                                    <select id="modal-event-select">
+                                        <option value="">Seleccionar evento...</option>
+                                    </select>
+                                </div>
+                                <button class="btn" onclick="assignEventToUser()">Asignar</button>
+                            </div>
+                            <div style="text-align: right; margin-top: 1rem;">
+                                <button class="btn btn-secondary" onclick="closeUserEventsModal()">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Tab -->
+            <div id="terminal-content" class="tab-content">
+                <div class="card-header">Pruebas de Terminal</div>
+                <div class="card-body">
+                    <div id="terminal-alert"></div>
+                    
+                    <div class="form-group">
+                        <label for="test-amount">Monto (centavos)</label>
+                        <input type="number" id="test-amount" value="1000" placeholder="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="test-event-code">Código de Evento</label>
+                        <input type="text" id="test-event-code" placeholder="EVT001">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" onclick="testConnectionToken()">Test Connection Token</button>
+                        <button class="btn btn-secondary" onclick="testPaymentIntent()">Test Payment Intent</button>
+                    </div>
+
+                    <div id="terminal-results" style="margin-top: 1rem;"></div>
+                </div>
+            </div>
+
+            <!-- Configuration Tab -->
+            <div id="config-content" class="tab-content">
+                <div class="card-header">Configuración del Sistema</div>
+                <div class="card-body">
+                    <div id="config-alert"></div>
+                    
+                    <!-- Stripe Configuration -->
+                    <div class="config-section">
+                        <h4>Configuración de Stripe</h4>
+                        <form id="stripe-config-form">
+                            <div class="form-group">
+                                <label for="stripe-secret-key">Stripe Secret Key</label>
+                                <input type="password" id="stripe-secret-key" placeholder="sk_test_..." required>
+                                <small>Clave secreta de Stripe (se almacena de forma segura)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="stripe-publishable-key">Stripe Publishable Key</label>
+                                <input type="text" id="stripe-publishable-key" placeholder="pk_test_..." required>
+                                <small>Clave pública de Stripe</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="stripe-webhook-secret">Webhook Secret</label>
+                                <input type="password" id="stripe-webhook-secret" placeholder="whsec_...">
+                                <small>Secreto del webhook de Stripe (opcional)</small>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" id="stripe-test-mode" checked>
+                                        Modo de prueba (Test Mode)
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn">Guardar Configuración de Stripe</button>
+                        </form>
+                    </div>
+
+                    <div class="config-section" style="margin-top: 2rem;">
+                        <h4>Estado Actual</h4>
+                        <div id="stripe-status">
+                            <div class="status-item">
+                                <span class="status-label">Estado de Stripe:</span>
+                                <span id="stripe-connection-status" class="badge badge-danger">No configurado</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Modo:</span>
+                                <span id="stripe-mode-status" class="badge badge-secondary">-</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Última verificación:</span>
+                                <span id="stripe-last-check">-</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="checkStripeStatus()">Verificar Conexión</button>
+                    </div>
+
+                    <!-- Location Configuration -->
+                    <div class="config-section" style="margin-top: 2rem;">
+                        <h4>Configuración de Terminal</h4>
+                        <form id="terminal-config-form">
+                            <div class="form-group">
+                                <label for="location-display-name">Nombre de la Ubicación</label>
+                                <input type="text" id="location-display-name" placeholder="ej: Tienda Principal" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location-address">Dirección</label>
+                                <textarea id="location-address" rows="3" placeholder="Dirección completa de la ubicación"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Guardar Configuración de Terminal</button>
+                        </form>
+                    </div>
+
+                    <!-- Downloads Section -->
+                    <div class="config-section" style="margin-top: 2rem;">
+                        <h4>Descargas</h4>
+                        <p>Descarga la aplicación móvil de BeTerminal para empezar a procesar pagos.</p>
+                        
+                        <div class="download-item">
+                            <div class="download-info">
+                                <h5>📱 BeTerminal Android App</h5>
+                                <p>Aplicación móvil para procesar pagos con Stripe Terminal (Tap to Pay)</p>
+                                <ul>
+                                    <li>✅ Login con username, password y código de evento</li>
+                                    <li>✅ Interfaz de venta optimizada (30% área monto)</li>
+                                    <li>✅ Botones responsivos y teclado numérico</li>
+                                    <li>✅ Pantallas de resultado con íconos grandes</li>
+                                    <li>✅ Integración completa con Stripe Terminal API</li>
+                                    <li>✅ Networking layer con Retrofit y Coroutines</li>
+                                    <li>✅ Autenticación JWT y validación de eventos</li>
+                                    <li>✅ Material Design 3 y arquitectura moderna</li>
+                                    <li>✅ Configuración de red HTTP (CLEARTEXT) solucionada</li>
+                                </ul>
+                            </div>
+                            <div class="download-actions">
+                                <a id="apk-download-link" href="#" class="btn btn-primary" style="opacity:.6; pointer-events:none;">
+                                    ⏳ Cargando versión...
+                                </a>
+                                <p id="apk-extra-info"><small>🔄 Versión <span id="apk-version-label">-</span> (actualizando)</small></p>
+                            </div>
+                        </div>
+
+                        <div class="installation-instructions">
+                            <h5>📋 Instrucciones de Instalación</h5>
+                            <ol>
+                                <li>Descarga el archivo APK haciendo click en el botón de arriba</li>
+                                <li>En tu dispositivo Android, ve a <strong>Configuración > Seguridad</strong></li>
+                                <li>Habilita <strong>"Instalar apps de fuentes desconocidas"</strong></li>
+                                <li>Abre el archivo APK descargado y sigue las instrucciones</li>
+                                <li>Una vez instalado, abre la app e ingresa tu código de evento</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('token');
+            const user = localStorage.getItem('user');
+            
+            if (!token || !user) {
+                window.location.href = '/login';
+                return;
+            }
+
+            currentUser = JSON.parse(user);
+            const usernameEl = document.getElementById('username') || document.getElementById('current-username');
+            if (usernameEl) usernameEl.textContent = currentUser.username;
+            
+            // Asegurar que el modal esté cerrado al cargar
+            document.getElementById('user-events-modal').classList.add('hidden');
+            
+            // Load initial data
+            loadEvents();
+            loadUsers();
+            loadAppVersion();
+        });
+
+        async function loadAppVersion() {
+            try {
+                const res = await fetch('/api/app/version', { cache: 'no-store' });
+                if (!res.ok) throw new Error('HTTP '+res.status);
+                const data = await res.json();
+                const version = data.versionName || data.version || 'unknown';
+                const apkPath = data.apkDebug || `/downloads/be-terminal-nfc-v${version}-debug.apk`;
+                const link = document.getElementById('apk-download-link');
+                const label = document.getElementById('apk-version-label');
+                if (label) label.textContent = version;
+                if (link) {
+                    link.href = apkPath;
+                    link.download = apkPath.split('/').pop();
+                    link.style.opacity = '1';
+                    link.style.pointerEvents = 'auto';
+                    link.textContent = '📥 Descargar App Android';
+                }
+                const extra = document.getElementById('apk-extra-info');
+                if (extra && data.uploadedAt) {
+                    extra.innerHTML = `<small>🔄 Versión <span>${version}</span> (${data.uploadedAt})</small>`;
+                }
+            } catch (e) {
+                console.warn('No se pudo cargar la versión de la app', e);
+            }
+        }
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Show selected tab
+            event.target.classList.add('active');
+            document.getElementById(tabName + '-content').classList.add('active');
+
+            // Load data when switching tabs
+            if (tabName === 'users') {
+                loadUsers();
+            } else if (tabName === 'events') {
+                loadEvents();
+            } else if (tabName === 'config') {
+                loadConfiguration();
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/login';
+        }
+
+        // Events functionality
+        document.getElementById('event-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const code = document.getElementById('event-code').value;
+            const name = document.getElementById('event-name').value;
+            const description = document.getElementById('event-description').value;
+
+            try {
+                const response = await fetch('/api/events', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({ code, name, description })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showAlert('event-alert', 'Evento creado exitosamente', 'success');
+                    document.getElementById('event-form').reset();
+                    loadEvents();
+                } else {
+                    showAlert('event-alert', data.error || 'Error al crear evento', 'danger');
+                }
+            } catch (error) {
+                showAlert('event-alert', 'Error de conexión', 'danger');
+            }
+        });
+
+        async function loadUsers() {
+            console.log('loadUsers() called');
+            try {
+                const response = await fetch('/api/users', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                if (!response.ok) {
+                    console.error('Error response from /api/users:', response.status, response.statusText);
+                    return;
+                }
+
+                const users = await response.json();
+                const tbody = document.getElementById('users-table');
+                tbody.innerHTML = '';
+
+                for (const user of users) {
+                    // Get user events
+                    const eventsResponse = await fetch(`/api/users/${user.id}/events`, {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    
+                    let userEvents = [];
+                    if (eventsResponse.ok) {
+                        userEvents = await eventsResponse.json();
+                    } else {
+                        console.warn(`Could not load events for user ${user.id}`);
+                    }
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.username}</td>
+                        <td>${new Date(user.created_at).toLocaleDateString()}</td>
+                        <td>${userEvents.length} eventos</td>
+                        <td>
+                            <button class="btn btn-small" onclick="manageUserEvents(${user.id}, '${user.username}')">Gestionar</button>
+                            ${user.username !== 'admin' ? `<button class="btn btn-danger btn-small" onclick="deleteUser(${user.id})">Eliminar</button>` : ''}
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                }
+                console.log('Users loaded successfully:', users.length, 'users');
+            } catch (error) {
+                console.error('Error loading users:', error);
+            }
+        }
+
+        async function deleteUser(userId) {
+            if (!confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/users/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showAlert('user-alert', 'Usuario eliminado exitosamente', 'success');
+                    loadUsers();
+                } else {
+                    showAlert('user-alert', data.error || 'Error al eliminar usuario', 'danger');
+                }
+            } catch (error) {
+                showAlert('user-alert', 'Error de conexión', 'danger');
+            }
+        }
+
+        let currentManagingUserId = null;
+
+        async function manageUserEvents(userId, username) {
+            currentManagingUserId = userId;
+            document.getElementById('modal-username').textContent = username;
+            
+            // Load user events
+            const eventsResponse = await fetch(`/api/users/${userId}/events`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            const userEvents = await eventsResponse.json();
+
+            // Load all events for selection
+            const allEventsResponse = await fetch('/api/events', {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            const allEvents = await allEventsResponse.json();
+
+            // Populate user events
+            const userEventsDiv = document.getElementById('modal-user-events');
+            userEventsDiv.innerHTML = '<h5>Eventos asignados:</h5>';
+            
+            if (userEvents.length === 0) {
+                userEventsDiv.innerHTML += '<p>No hay eventos asignados</p>';
+            } else {
+                userEvents.forEach(event => {
+                    userEventsDiv.innerHTML += `
+                        <div class="event-assignment">
+                            <span>${event.code} - ${event.event_name} (${event.role})</span>
+                            <button class="btn btn-danger btn-small" onclick="unassignEvent(${userId}, ${event.event_id})">Quitar</button>
+                        </div>
+                    `;
+                });
+            }
+
+            // Populate event selector
+            const eventSelect = document.getElementById('modal-event-select');
+            eventSelect.innerHTML = '<option value="">Seleccionar evento...</option>';
+            
+            const assignedEventIds = userEvents.map(e => e.event_id);
+            allEvents.forEach(event => {
+                if (!assignedEventIds.includes(event.id)) {
+                    eventSelect.innerHTML += `<option value="${event.id}">${event.code} - ${event.name}</option>`;
+                }
+            });
+
+            document.getElementById('user-events-modal').classList.remove('hidden');
+        }
+
+        async function assignEventToUser() {
+            const eventId = document.getElementById('modal-event-select').value;
+            if (!eventId || !currentManagingUserId) return;
+
+            try {
+                const response = await fetch('/api/user-events/link', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({
+                        userId: currentManagingUserId,
+                        eventId: parseInt(eventId),
+                        role: 'operator'
+                    })
+                });
+
+                if (response.ok) {
+                    // Refresh the modal
+                    const username = document.getElementById('modal-username').textContent;
+                    manageUserEvents(currentManagingUserId, username);
+                    loadUsers(); // Refresh users table
+                }
+            } catch (error) {
+                console.error('Error assigning event:', error);
+            }
+        }
+
+        async function unassignEvent(userId, eventId) {
+            try {
+                const response = await fetch('/api/user-events/unlink', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({ userId, eventId })
+                });
+
+                if (response.ok) {
+                    // Refresh the modal
+                    const username = document.getElementById('modal-username').textContent;
+                    manageUserEvents(userId, username);
+                    loadUsers(); // Refresh users table
+                }
+            } catch (error) {
+                console.error('Error unassigning event:', error);
+            }
+        }
+
+        function closeUserEventsModal() {
+            document.getElementById('user-events-modal').classList.add('hidden');
+            currentManagingUserId = null;
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('user-events-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            if (e.target === modal && !modalContent.contains(e.target)) {
+                closeUserEventsModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('user-events-modal');
+                if (!modal.classList.contains('hidden')) {
+                    closeUserEventsModal();
+                }
+            }
+        });
+
+        // Users functionality
+        document.getElementById('user-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('new-username').value;
+            const password = document.getElementById('new-password').value;
+
+            try {
+                const response = await fetch('/api/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showAlert('user-alert', 'Usuario creado exitosamente', 'success');
+                    document.getElementById('user-form').reset();
+                    loadUsers();
+                } else {
+                    showAlert('user-alert', data.error || 'Error al crear usuario', 'danger');
+                }
+            } catch (error) {
+                showAlert('user-alert', 'Error de conexión', 'danger');
+            }
+        });
+
+        async function loadEvents() {
+            console.log('loadEvents() called');
+            try {
+                const response = await fetch('/api/events', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                if (!response.ok) {
+                    console.error('Error response from /api/events:', response.status, response.statusText);
+                    return;
+                }
+
+                const events = await response.json();
+                const tbody = document.getElementById('events-table');
+                tbody.innerHTML = '';
+
+                for (const event of events) {
+                    // Get event users
+                    const usersResponse = await fetch(`/api/events/${event.id}/users`, {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    
+                    let eventUsers = [];
+                    if (usersResponse.ok) {
+                        eventUsers = await usersResponse.json();
+                    } else {
+                        console.warn(`Could not load users for event ${event.id}`);
+                    }
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${event.code}</td>
+                        <td>${event.name}</td>
+                        <td>${event.description || '-'}</td>
+                        <td>${event.username || 'N/A'}</td>
+                        <td><span class="badge ${event.active ? 'badge-success' : 'badge-danger'}">${event.active ? 'Activo' : 'Inactivo'}</span></td>
+                        <td>${eventUsers.length} usuarios</td>
+                        <td>
+                            <button class="btn btn-small" onclick="toggleEventStatus(${event.id}, ${!event.active})">${event.active ? 'Desactivar' : 'Activar'}</button>
+                            <button class="btn btn-danger btn-small" onclick="deleteEvent(${event.id})">Eliminar</button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                }
+                console.log('Events loaded successfully:', events.length, 'events');
+            } catch (error) {
+                console.error('Error loading events:', error);
+            }
+        }
+
+        async function toggleEventStatus(eventId, newStatus) {
+            try {
+                // Get current event data first
+                const eventsResponse = await fetch('/api/events', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+                const events = await eventsResponse.json();
+                const event = events.find(e => e.id === eventId);
+
+                const response = await fetch(`/api/events/${eventId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({
+                        name: event.name,
+                        description: event.description,
+                        active: newStatus
+                    })
+                });
+
+                if (response.ok) {
+                    loadEvents();
+                    showAlert('event-alert', `Evento ${newStatus ? 'activado' : 'desactivado'} exitosamente`, 'success');
+                }
+            } catch (error) {
+                console.error('Error toggling event status:', error);
+            }
+        }
+
+        async function deleteEvent(eventId) {
+            if (!confirm('¿Estás seguro de que quieres eliminar este evento? Esto también eliminará todas las asignaciones de usuarios.')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/events/${eventId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showAlert('event-alert', 'Evento eliminado exitosamente', 'success');
+                    loadEvents();
+                } else {
+                    showAlert('event-alert', data.error || 'Error al eliminar evento', 'danger');
+                }
+            } catch (error) {
+                showAlert('event-alert', 'Error de conexión', 'danger');
+            }
+        }
+
+        async function testConnectionToken() {
+            try {
+                const response = await fetch('/connection_token', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                const data = await response.json();
+                document.getElementById('terminal-results').innerHTML = `
+                    <h5>Connection Token Result:</h5>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                showAlert('terminal-alert', 'Error testing connection token', 'danger');
+            }
+        }
+
+        async function testPaymentIntent() {
+            const amount = document.getElementById('test-amount').value;
+            const eventCode = document.getElementById('test-event-code').value;
+
+            try {
+                const response = await fetch('/create_payment_intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({
+                        amount_cents: parseInt(amount),
+                        event_code: eventCode,
+                        description: 'Test payment'
+                    })
+                });
+
+                const data = await response.json();
+                document.getElementById('terminal-results').innerHTML = `
+                    <h5>Payment Intent Result:</h5>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                showAlert('terminal-alert', 'Error testing payment intent', 'danger');
+            }
+        }
+
+        function showAlert(containerId, message, type) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 5000);
+        }
+
+        // Configuration functions
+        async function loadConfiguration() {
+            try {
+                const response = await fetch('/api/config/stripe', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                if (response.ok) {
+                    const config = await response.json();
+                    document.getElementById('stripe-publishable-key').value = config.publishableKey || '';
+                    document.getElementById('stripe-test-mode').checked = config.testMode !== false;
+                    
+                    // Update status
+                    document.getElementById('stripe-connection-status').textContent = config.configured ? 'Configurado' : 'No configurado';
+                    document.getElementById('stripe-connection-status').className = config.configured ? 'badge badge-success' : 'badge badge-danger';
+                    document.getElementById('stripe-mode-status').textContent = config.testMode ? 'Prueba' : 'Producción';
+                    document.getElementById('stripe-last-check').textContent = new Date().toLocaleString();
+                }
+            } catch (error) {
+                console.error('Error loading configuration:', error);
+            }
+        }
+
+        // Stripe configuration form
+        document.addEventListener('DOMContentLoaded', () => {
+            const stripeForm = document.getElementById('stripe-config-form');
+            if (stripeForm) {
+                stripeForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const secretKey = document.getElementById('stripe-secret-key').value;
+                    const publishableKey = document.getElementById('stripe-publishable-key').value;
+                    const webhookSecret = document.getElementById('stripe-webhook-secret').value;
+                    const testMode = document.getElementById('stripe-test-mode').checked;
+
+                    try {
+                        const response = await fetch('/api/config/stripe', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                            },
+                            body: JSON.stringify({
+                                secretKey,
+                                publishableKey,
+                                webhookSecret,
+                                testMode
+                            })
+                        });
+
+                        const data = await response.json();
+                        
+                        if (response.ok) {
+                            showAlert('config-alert', 'Configuración de Stripe guardada exitosamente', 'success');
+                            document.getElementById('stripe-secret-key').value = '';
+                            loadConfiguration(); // Reload to update status
+                        } else {
+                            showAlert('config-alert', data.error || 'Error al guardar configuración', 'danger');
+                        }
+                    } catch (error) {
+                        showAlert('config-alert', 'Error de conexión', 'danger');
+                    }
+                });
+            }
+
+            const terminalForm = document.getElementById('terminal-config-form');
+            if (terminalForm) {
+                terminalForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const displayName = document.getElementById('location-display-name').value;
+                    const address = document.getElementById('location-address').value;
+
+                    try {
+                        const response = await fetch('/api/config/location', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                            },
+                            body: JSON.stringify({
+                                displayName,
+                                address
+                            })
+                        });
+
+                        const data = await response.json();
+                        
+                        if (response.ok) {
+                            showAlert('config-alert', 'Configuración de terminal guardada exitosamente', 'success');
+                        } else {
+                            showAlert('config-alert', data.error || 'Error al guardar configuración', 'danger');
+                        }
+                    } catch (error) {
+                        showAlert('config-alert', 'Error de conexión', 'danger');
+                    }
+                });
+            }
+        });
+
+        async function checkStripeStatus() {
+            try {
+                const response = await fetch('/api/stripe/status', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    document.getElementById('stripe-connection-status').textContent = data.connected ? 'Conectado' : 'Error de conexión';
+                    document.getElementById('stripe-connection-status').className = data.connected ? 'badge badge-success' : 'badge badge-danger';
+                    document.getElementById('stripe-mode-status').textContent = data.mode || '-';
+                    document.getElementById('stripe-last-check').textContent = new Date().toLocaleString();
+                    
+                    if (data.connected) {
+                        showAlert('config-alert', 'Conexión con Stripe verificada exitosamente', 'success');
+                    } else {
+                        showAlert('config-alert', data.error || 'Error en la conexión con Stripe', 'danger');
+                    }
+                } else {
+                    showAlert('config-alert', data.error || 'Error al verificar estado de Stripe', 'danger');
+                }
+            } catch (error) {
+                showAlert('config-alert', 'Error de conexión', 'danger');
+            }
+        }
+    </script>
+</body>
+</html>

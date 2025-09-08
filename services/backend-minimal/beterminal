@@ -1,0 +1,33 @@
+#!/bin/bash
+# Script simplificado para manejar el servidor BeTerminal
+
+case "$1" in
+    start)
+        echo "Iniciando BeTerminal servidor..."
+        cd /root/Be-terminal/services/backend-minimal
+        node server.js
+        ;;
+    stop)
+        echo "Deteniendo BeTerminal servidor..."
+        pkill -f "node.*server.js"
+        ;;
+    restart)
+        echo "Reiniciando BeTerminal servidor..."
+        pkill -f "node.*server.js"
+        sleep 2
+        cd /root/Be-terminal/services/backend-minimal
+        node server.js
+        ;;
+    status)
+        echo "Estado del servidor:"
+        lsof -i:3001 2>/dev/null || echo "Servidor no está corriendo"
+        ;;
+    *)
+        echo "Uso: $0 {start|stop|restart|status}"
+        echo "  start   - Inicia el servidor"
+        echo "  stop    - Detiene el servidor"
+        echo "  restart - Reinicia el servidor"
+        echo "  status  - Muestra el estado del servidor"
+        exit 1
+        ;;
+esac
