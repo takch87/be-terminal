@@ -1,0 +1,176 @@
+{"timestamp":"2025-09-09T07:46:28.363Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":99140}
+{"timestamp":"2025-09-09T07:49:01.934Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":99561}
+{"timestamp":"2025-09-09T07:49:01.942Z","level":"ERROR","message":"Server startup error","data":{"error":"SQLITE_ERROR: no such table: stripe_config"},"pid":99561}
+{"timestamp":"2025-09-09T07:49:42.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":99699}
+{"timestamp":"2025-09-09T07:50:05.463Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":99812}
+{"timestamp":"2025-09-09T07:50:16.428Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:50:16.440Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:50:27.648Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:50:35.328Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:50:42.194Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:50:55.760Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:06.645Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:06.741Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:25.307Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:25.445Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:25.538Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:27.360Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:27.493Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:27.547Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:27.586Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:59:20.327Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:59:23.469Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:59:26.610Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1"},"pid":99812}
+{"timestamp":"2025-09-09T07:59:29.753Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:59:32.895Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:59:47.989Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:41.274Z","level":"INFO","message":"GET /","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:47.423Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:47.551Z","level":"INFO","message":"GET /robots.txt","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:47.680Z","level":"INFO","message":"GET /sitemap.xml","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:47.819Z","level":"INFO","message":"GET /sse","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:47.948Z","level":"INFO","message":"GET /mcp","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"},"pid":99812}
+{"timestamp":"2025-09-09T08:42:48.077Z","level":"INFO","message":"GET /mcp-sse","data":{"ip":"150.107.38.5","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"},"pid":99812}
+{"timestamp":"2025-09-09T08:44:45.192Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.97 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T08:45:09.297Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux i686; rv:109.0) Gecko/20100101 Firefox/120.0"},"pid":99812}
+{"timestamp":"2025-09-09T08:45:43.998Z","level":"INFO","message":"GET /login","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T08:45:43.999Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T08:55:09.463Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T08:58:39.373Z","level":"INFO","message":"GET /login","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T09:02:50.815Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.92 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T09:10:25.145Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity"},"pid":99812}
+{"timestamp":"2025-09-09T09:25:24.572Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15"},"pid":99812}
+{"timestamp":"2025-09-09T09:30:40.584Z","level":"INFO","message":"GET /webui/","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0"},"pid":99812}
+{"timestamp":"2025-09-09T09:33:47.500Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"},"pid":99812}
+{"timestamp":"2025-09-09T09:35:08.438Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15"},"pid":99812}
+{"timestamp":"2025-09-09T09:37:22.106Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T09:37:53.527Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T09:38:32.143Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)"},"pid":99812}
+{"timestamp":"2025-09-09T09:38:41.246Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T09:39:13.301Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T09:44:53.920Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux i686; rv:109.0) Gecko/20100101 Firefox/120.0"},"pid":99812}
+{"timestamp":"2025-09-09T09:46:11.776Z","level":"INFO","message":"GET /geoserver/web/","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0"},"pid":99812}
+{"timestamp":"2025-09-09T09:50:58.356Z","level":"INFO","message":"GET /.git/config","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T10:30:58.933Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; rv:9.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.2; BOIE9;ENUS)"},"pid":99812}
+{"timestamp":"2025-09-09T10:55:55.160Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 zgrab/0.x"},"pid":99812}
+{"timestamp":"2025-09-09T10:58:08.489Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T11:00:54.442Z","level":"INFO","message":"POST /Autodiscover/Autodiscover.xml","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T11:21:36.381Z","level":"INFO","message":"POST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T11:41:30.229Z","level":"INFO","message":"GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T11:55:43.921Z","level":"INFO","message":"GET /assets/js/views/login.js","data":{"ip":"127.0.0.1","userAgent":"python-requests/2.25.1"},"pid":99812}
+{"timestamp":"2025-09-09T12:02:59.518Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"libwww-perl/6.79"},"pid":99812}
+{"timestamp":"2025-09-09T12:05:22.882Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.510Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.548Z","level":"INFO","message":"GET /webui","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.549Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.550Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.762Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.813Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:06.916Z","level":"INFO","message":"GET /owa/","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:07.066Z","level":"INFO","message":"GET /owa/","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:26.573Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1"},"pid":99812}
+{"timestamp":"2025-09-09T12:20:26.589Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1"},"pid":99812}
+{"timestamp":"2025-09-09T12:27:07.913Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 zgrab/0.x"},"pid":99812}
+{"timestamp":"2025-09-09T12:27:09.963Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0"},"pid":99812}
+{"timestamp":"2025-09-09T12:27:11.266Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T12:27:22.124Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_0_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0.1 Mobile/15E148 Safari/604.1"},"pid":99812}
+{"timestamp":"2025-09-09T12:27:25.295Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"},"pid":99812}
+{"timestamp":"2025-09-09T12:27:30.284Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T12:34:45.504Z","level":"INFO","message":"GET /owa/auth/logon.aspx","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 zgrab/0.x"},"pid":99812}
+{"timestamp":"2025-09-09T12:35:32.994Z","level":"INFO","message":"GET /console/","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T12:42:18.042Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (compatible; CMS-Checker/1.0; +https://example.com)"},"pid":99812}
+{"timestamp":"2025-09-09T12:55:15.675Z","level":"INFO","message":"GET /_ignition/execute-solution","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:02:26.258Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 12; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:04:50.483Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:16:45.453Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:17:28.648Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:25:36.782Z","level":"INFO","message":"GET /+CSCOE+/logon.html","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:44:41.597Z","level":"INFO","message":"GET /actuator/gateway/routes","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T13:59:02.917Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux i686; rv:109.0) Gecko/20100101 Firefox/120.0"},"pid":99812}
+{"timestamp":"2025-09-09T14:01:36.493Z","level":"INFO","message":"GET /","data":{"ip":"192.159.99.162"},"pid":99812}
+{"timestamp":"2025-09-09T14:04:49.551Z","level":"INFO","message":"GET /robots.txt","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"},"pid":99812}
+{"timestamp":"2025-09-09T14:08:53.012Z","level":"INFO","message":"GET /geoserver","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T14:21:45.111Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T14:45:22.807Z","level":"INFO","message":"GET /remote/login","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T14:45:23.108Z","level":"INFO","message":"GET /login","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T14:47:40.125Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T15:08:39.291Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux i686; rv:109.0) Gecko/20100101 Firefox/120.0"},"pid":99812}
+{"timestamp":"2025-09-09T15:08:57.642Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"127.0.0.1","userAgent":"okhttp/4.12.0"},"pid":99812}
+{"timestamp":"2025-09-09T15:09:56.137Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"okhttp/4.12.0"},"pid":99812}
+{"timestamp":"2025-09-09T15:10:04.048Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"okhttp/4.12.0"},"pid":99812}
+{"timestamp":"2025-09-09T15:10:09.901Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"okhttp/4.12.0"},"pid":99812}
+{"timestamp":"2025-09-09T15:27:03.291Z","level":"INFO","message":"GET /global-protect/login.esp","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T15:34:42.012Z","level":"INFO","message":"POST /remote/logincheck","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T16:06:42.160Z","level":"INFO","message":"GET /dana-na","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T16:34:48.267Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/125.0.6422.60 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T16:52:49.024Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T16:52:49.068Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.631Z","level":"INFO","message":"GET /web.config","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.632Z","level":"INFO","message":"GET /backup.sql","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.633Z","level":"INFO","message":"GET /etc/ssl/private/server.key","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.640Z","level":"INFO","message":"GET /api/.env","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.641Z","level":"INFO","message":"GET /.ssh/id_ed25519","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.641Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.642Z","level":"INFO","message":"GET /dump.sql","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.643Z","level":"INFO","message":"GET /config.xml","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.643Z","level":"INFO","message":"GET /docker-compose.yml","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.644Z","level":"INFO","message":"GET /.env.production","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.645Z","level":"INFO","message":"GET /.ssh/id_rsa","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.645Z","level":"INFO","message":"GET /database_backup.sql","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.648Z","level":"INFO","message":"GET /config/production.json","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.648Z","level":"INFO","message":"GET /server.key","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.659Z","level":"INFO","message":"GET /server-status","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.659Z","level":"INFO","message":"GET /config.yml","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.661Z","level":"INFO","message":"GET /database.sql","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.661Z","level":"INFO","message":"GET /config.yaml","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.662Z","level":"INFO","message":"GET /.env","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.662Z","level":"INFO","message":"GET /_vti_pvt/service.pwd","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.663Z","level":"INFO","message":"GET /config.php","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.664Z","level":"INFO","message":"GET /wp-config.php","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.664Z","level":"INFO","message":"GET /phpinfo.php","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.665Z","level":"INFO","message":"GET /.git/HEAD","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.665Z","level":"INFO","message":"GET /.aws/credentials","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.666Z","level":"INFO","message":"GET /.vscode/sftp.json","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.666Z","level":"INFO","message":"GET /settings.py","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.667Z","level":"INFO","message":"GET /config.json","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.668Z","level":"INFO","message":"GET /db/schema.rb","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.668Z","level":"INFO","message":"GET /feed","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.669Z","level":"INFO","message":"GET /cloud-config.yml","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.669Z","level":"INFO","message":"GET /wp-admin/setup-config.php","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.670Z","level":"INFO","message":"GET /user_secrets.yml","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.671Z","level":"INFO","message":"GET /.ssh/id_ecdsa","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.671Z","level":"INFO","message":"GET /.svn/wc.db","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.672Z","level":"INFO","message":"GET /backup.tar.gz","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.672Z","level":"INFO","message":"GET /secrets.json","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:53:14.674Z","level":"INFO","message":"GET /backup.zip","data":{"ip":"127.0.0.1","userAgent":"Go-http-client/1.1"},"pid":99812}
+{"timestamp":"2025-09-09T16:54:25.709Z","level":"INFO","message":"GET /autodiscover/autodiscover.json","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 zgrab/0.x"},"pid":99812}
+{"timestamp":"2025-09-09T17:26:00.873Z","level":"INFO","message":"GET /a/pl","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.18 Safari/535.1"},"pid":99812}
+{"timestamp":"2025-09-09T17:53:05.436Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T23:53:28.199Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":3880}
+{"timestamp":"2025-09-09T23:53:37.800Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":3880}
+{"timestamp":"2025-09-09T23:54:31.639Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4318}
+{"timestamp":"2025-09-09T23:54:52.885Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4425}
+{"timestamp":"2025-09-09T23:55:04.888Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":4425}
+{"timestamp":"2025-09-09T23:55:06.435Z","level":"INFO","message":"GET /","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":4425}
+{"timestamp":"2025-09-09T23:55:19.450Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":4425}
+{"timestamp":"2025-09-09T23:55:23.674Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":4425}
+{"timestamp":"2025-09-09T23:55:55.165Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4815}
+{"timestamp":"2025-09-09T23:56:05.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4937}
+{"timestamp":"2025-09-09T23:56:15.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4955}
+{"timestamp":"2025-09-09T23:56:25.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4973}
+{"timestamp":"2025-09-09T23:56:36.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":4992}
+{"timestamp":"2025-09-09T23:56:46.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5010}
+{"timestamp":"2025-09-09T23:56:56.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5029}
+{"timestamp":"2025-09-09T23:56:57.404Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":4425}
+{"timestamp":"2025-09-09T23:56:57.704Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":4425}
+{"timestamp":"2025-09-09T23:56:57.883Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":4425}
+{"timestamp":"2025-09-09T23:56:58.029Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":4425}
+{"timestamp":"2025-09-09T23:57:06.814Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5047}
+{"timestamp":"2025-09-09T23:57:17.087Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5060}
+{"timestamp":"2025-09-09T23:57:27.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5078}
+{"timestamp":"2025-09-09T23:57:37.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5096}
+{"timestamp":"2025-09-09T23:57:47.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5116}
+{"timestamp":"2025-09-09T23:59:42.978Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":5116}
+{"timestamp":"2025-09-09T23:59:48.818Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":5116}
+{"timestamp":"2025-09-09T23:59:52.971Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-09T23:59:54.700Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}

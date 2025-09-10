@@ -5,8 +5,8 @@ echo "🔧 Configurando SSL para BeTerminal..."
 # Por ahora, el sitio funciona en HTTP
 
 echo "✅ BeTerminal está funcionando en:"
-echo "🌐 Frontend: http://be-terminal.beticket.net"
-echo "🔌 API: http://api.be-terminal.beticket.net"
+echo "🌐 Frontend: http://be.terminal.beticket.net"
+echo "🔌 API: http://api.be.terminal.beticket.net"
 echo ""
 echo "🔑 Credenciales por defecto:"
 echo "Usuario: admin"
@@ -18,7 +18,7 @@ echo "2. O configurar Let's Encrypt con certbot más nuevo"
 echo "3. O usar un reverse proxy como Traefik"
 
 # Verificar que el sitio responda
-if curl -s http://be-terminal.beticket.net/healthz > /dev/null; then
+if curl -s http://be.terminal.beticket.net/healthz > /dev/null; then
     echo "✅ Backend funcionando correctamente"
 else
     echo "❌ Backend no responde"

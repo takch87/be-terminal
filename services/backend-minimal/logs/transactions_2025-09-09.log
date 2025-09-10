@@ -1,0 +1,5 @@
+{"timestamp":"2025-09-09T07:50:16.440Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:06.741Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:25.538Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T07:51:27.586Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":99812}
+{"timestamp":"2025-09-09T15:08:57.642Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"127.0.0.1","userAgent":"okhttp/4.12.0"},"pid":99812}

@@ -1,5 +1,6 @@
 version: '3.9'
 services:
+  # PostgreSQL Database
   db:
     image: postgres:15-alpine
     restart: unless-stopped
@@ -18,5 +19,38 @@ services:
       - /tmp:rw,size=100M
       - /var/run/postgresql:rw,size=100M
     user: "70:70"  # Usuario postgres no-root
+    networks:
+      - be_terminal_network
+
+  # Modern TypeScript API Service (puerto 4000)
+  api:
+    build: 
+      context: ../../services/api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-securepassword123}@db:5432/be_terminal
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+      NODE_ENV: production
+      PORT: 4000
+    ports:
+      - '127.0.0.1:4000:4000'
+    depends_on:
+      - db
+    volumes:
+      - ../../services/api:/app
+      - /app/node_modules
+    networks:
+      - be_terminal_network
+    security_opt:
+      - no-new-privileges:true
+    user: "1000:1000"
+
+networks:
+  be_terminal_network:
+    driver: bridge
+
 volumes:
   be_terminal_pg: {}

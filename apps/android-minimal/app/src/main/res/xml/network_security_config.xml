@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">10.0.2.2</domain>
         <domain includeSubdomains="true">localhost</domain>
         <domain includeSubdomains="true">127.0.0.1</domain>
         <domain includeSubdomains="true">192.168.1.1</domain>
-        <domain includeSubdomains="true">be-terminal.beticket.net</domain>
-        <domain includeSubdomains="true">api.be-terminal.beticket.net</domain>
+        <domain includeSubdomains="true">be.terminal.beticket.net</domain>
+        <domain includeSubdomains="true">api.be.terminal.beticket.net</domain>
+        <domain includeSubdomains="true">be.terminal.betiket.net</domain>
         <domain includeSubdomains="true">168.197.96.27</domain>
+        <domain includeSubdomains="true">184.105.7.184</domain>
     </domain-config>
 </network-security-config>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeTerminal - Descargar Cliente SSH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #312e81 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            color: #bfdbfe;
+        }
+        
+        .main-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .download-section {
+            background: rgba(34, 197, 94, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .download-btn {
+            background: #16a34a;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .download-btn:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .card-blue {
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .card-purple {
+            background: rgba(139, 92, 246, 0.2);
+        }
+        
+        .card-yellow {
+            background: rgba(245, 158, 11, 0.2);
+        }
+        
+        .card-red {
+            background: rgba(239, 68, 68, 0.2);
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number {
+            background: #2563eb;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .server-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #bfdbfe;
+        }
+        
+        .footer a {
+            color: #bfdbfe;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🔐 BeTerminal SSH Client</h1>
+            <p>Descarga el cliente para conectarte de forma segura</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-card">
+            <!-- Download Section -->
+            <div class="download-section">
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">📥 Descarga el Cliente SSH</h2>
+                <p style="color: #bbf7d0; margin-bottom: 1.5rem;">
+                    Este script te permitirá conectarte a tu servidor BeTerminal de forma segura,
+                    incluso si cambias de IP. Solo necesitas configurarlo una vez.
+                </p>
+                
+                <a href="/downloads/betTerminal-client.sh" download="betTerminal-client.sh" class="download-btn">
+                    📁 Descargar betTerminal-client.sh
+                </a>
+            </div>
+
+            <!-- Instructions -->
+            <div class="grid">
+                <div class="card card-blue">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">🚀 Configuración Rápida</h3>
+                    <div>
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <span>Descarga el archivo</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <span>Ejecuta: <code>chmod +x betTerminal-client.sh</code></span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span>Ejecuta: <code>./betTerminal-client.sh setup</code></span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <span>Sigue las instrucciones para copiar la clave SSH</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-purple">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">⚡ Comandos Disponibles</h3>
+                    <div style="font-family: monospace; font-size: 0.875rem;">
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #4ade80;">setup</span> - Configurar por primera vez</div>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #4ade80;">connect</span> - Conectarse al servidor</div>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #4ade80;">test</span> - Probar conexión</div>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #4ade80;">status</span> - Ver estado actual</div>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #4ade80;">update-ip</span> - Cambiar IP del servidor</div>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #4ade80;">help</span> - Ver ayuda completa</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔑</div>
+                    <h4 style="margin-bottom: 0.5rem;">SSH Seguro</h4>
+                    <p style="color: #d1d5db; font-size: 0.875rem;">
+                        Genera claves SSH únicas para tu PC
+                    </p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h4 style="margin-bottom: 0.5rem;">IP Dinámica</h4>
+                    <p style="color: #d1d5db; font-size: 0.875rem;">
+                        Funciona aunque cambies de IP
+                    </p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h4 style="margin-bottom: 0.5rem;">Fácil Gestión</h4>
+                    <p style="color: #d1d5db; font-size: 0.875rem;">
+                        Comandos simples para todo
+                    </p>
+                </div>
+            </div>
+
+            <!-- Server Info -->
+            <div class="card card-yellow" style="margin-top: 2rem;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">🖥️ Información del Servidor</h3>
+                <div class="server-info">
+                    <div><strong>IP del Servidor:</strong> 184.105.7.184</div>
+                    <div><strong>Usuario SSH:</strong> root</div>
+                    <div><strong>Puerto SSH:</strong> 22</div>
+                    <div><strong>Método de Auth:</strong> Solo SSH Keys</div>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="card card-red" style="margin-top: 2rem;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">🆘 ¿Problemas?</h3>
+                <div style="line-height: 1.6;">
+                    <p style="margin-bottom: 0.5rem;">• Si no puedes conectarte, verifica que copiaste la clave SSH al servidor</p>
+                    <p style="margin-bottom: 0.5rem;">• Si cambió la IP del servidor, ejecuta: <code>./betTerminal-client.sh update-ip</code></p>
+                    <p style="margin-bottom: 0.5rem;">• Para probar la conexión: <code>./betTerminal-client.sh test</code></p>
+                    <p style="margin-bottom: 0.5rem;">• Para ver el estado: <code>./betTerminal-client.sh status</code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 BeTerminal - Conexión SSH Segura</p>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">
+                <a href="/">← Volver al Dashboard</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -16,7 +16,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/logo_bt"
+            android:src="@drawable/ic_bt_logo"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp" />
 
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Código de evento"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEventCode"
@@ -75,6 +75,14 @@
                 android:inputType="text"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/cbRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recordar credenciales"
+            android:layout_marginBottom="16dp"
+            android:textColor="#666666" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -102,4 +110,3 @@
 
     </LinearLayout>
 </ScrollView>
-

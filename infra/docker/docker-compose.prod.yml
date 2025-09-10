@@ -11,8 +11,8 @@ services:
       - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
       - JWT_SECRET=${JWT_SECRET}
       - DATABASE_URL=${DATABASE_URL}
-      - CORS_ORIGIN=https://be-terminal.beticket.net
-      - APP_BASE_URL=https://api.be-terminal.beticket.net
+      - CORS_ORIGIN=https://be.terminal.beticket.net
+      - APP_BASE_URL=https://api.be.terminal.beticket.net
     expose:
       - '4000'
     restart: unless-stopped
@@ -27,7 +27,7 @@ services:
       - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
       - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
       - JWT_SECRET=${JWT_SECRET}
-      - ALLOW_ORIGINS=https://be-terminal.beticket.net,https://api.be-terminal.beticket.net
+      - ALLOW_ORIGINS=https://be.terminal.beticket.net,https://api.be.terminal.beticket.net
       - DB_PATH=/app/data/database.sqlite
     volumes:
       - backend_data:/app/data

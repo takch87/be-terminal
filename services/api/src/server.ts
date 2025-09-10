@@ -3,8 +3,8 @@ import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
 import rawBody from 'fastify-raw-body';
 
-import { env } from './config/env';
-import { registerRoutes } from './routes';
+import { env } from './config/env.js';
+import { registerRoutes } from './routes/index.js';
 
 export async function buildServer() {
   const app = Fastify({ logger: true });

@@ -12,14 +12,15 @@
     "force-stop": "lsof -ti:3001 | xargs kill -9"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.6.1",
     "express": "^4.19.2",
-    "helmet": "^7.1.0",
-    "morgan": "^1.10.0",
-    "stripe": "^16.6.0",
-    "bcrypt": "^5.1.1",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
-    "sqlite3": "^5.1.6"
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.1.6",
+    "stripe": "^16.6.0"
   }
 }

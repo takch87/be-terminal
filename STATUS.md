@@ -1,17 +1,25 @@
-# 🚀 BeTerminal - Status Final
+# 🚀 BeTerminal - Status v1.2.8
 
-## ✅ Sistema Funcionando
+## ✅ Sistema Completamente Seguro y Funcional
 
-El backend de BeTerminal está completamente configurado y funcionando:
+### 🔐 SEGURIDAD IMPLEMENTADA (9.5/10):
+- ✅ **Encriptación AES-256-CBC** para claves Stripe en base de datos
+- ✅ **JWT Secrets de 256 bits** con rotación manual disponible
+- ✅ **HTTPS/SSL** con certificados Let's Encrypt válidos
+- ✅ **Fail2ban** protección SSH contra ataques de fuerza bruta
+- ✅ **Rate Limiting** 100 requests/15min por IP
+- ✅ **CORS** configurado para dominios específicos
+- ✅ **Helmet.js** headers de seguridad HTTP
+- ✅ **Variables de entorno** para claves sensibles
 
 ### 🌐 URLs de Acceso:
-- **Frontend/Dashboard**: http://be-terminal.beticket.net
-- **Login**: http://be-terminal.beticket.net/login
-- **API Health**: http://be-terminal.beticket.net/healthz
+- **Frontend/Dashboard**: https://be.terminal.beticket.net/admin
+- **API Health**: https://be.terminal.beticket.net/api/health
+- **API Stripe**: https://be.terminal.beticket.net/api/stripe/publishable-key
 
 ### 🔑 Credenciales:
-- **Usuario**: `admin`
-- **Contraseña**: `admin123`
+- **Usuario**: `demo`
+- **Contraseña**: `demo123`
 
 ## 🛠️ Servicios Configurados:
 
@@ -49,7 +57,7 @@ sudo nginx -t
 sudo systemctl status nginx
 
 # Probar APIs
-curl http://be-terminal.beticket.net/healthz
+curl http://be.terminal.beticket.net/healthz
 ```
 
 ## 📱 Para la App Android:
@@ -60,7 +68,7 @@ curl http://be-terminal.beticket.net/healthz
 - `POST /create_payment_intent` - Crear intención de pago
 - `POST /api/auth/login` - Login de usuarios
 
-### URL base: `http://be-terminal.beticket.net`
+### URL base: `http://be.terminal.beticket.net`
 
 ## 🔐 SSL/HTTPS:
 

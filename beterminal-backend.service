@@ -1,0 +1,31 @@
+[Unit]
+Description=BeTerminal Backend Service
+After=network.target
+
+[Service]
+Type=simple
+User=client_4752_1
+WorkingDirectory=/home/client_4752_1/be-terminal/services/backend-minimal
+ExecStart=/snap/node/10539/bin/node server.js
+Restart=always
+RestartSec=10
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3002
+EnvironmentFile=/home/client_4752_1/be-terminal/services/backend-minimal/.env
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/home/client_4752_1/be-terminal/services/backend-minimal
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beterminal-backend
+
+[Install]
+WantedBy=multi-user.target

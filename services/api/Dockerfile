@@ -1,31 +1,49 @@
-# Build and run Fastify API (Node 20 Alpine)
-FROM node:20-alpine AS base
+# Multi-stage build para optimizar tamaño de imagen
+FROM node:20-alpine AS builder
+
 WORKDIR /app
 
-# Install dependencies (include dev deps to build TS and Prisma client)
+# Copiar package files
 COPY package*.json ./
+COPY tsconfig.json ./
+
+# Instalar dependencias
 RUN npm ci
 
-# Copy Prisma schema and generate client
-COPY prisma ./prisma
-RUN npx prisma generate
+# Copiar código fuente
+COPY src/ ./src/
+COPY prisma/ ./prisma/
 
-# Build TS
-COPY tsconfig.json ./
-COPY src ./src
+# Generar Prisma client y compilar TypeScript
+RUN npx prisma generate
 RUN npm run build
 
-# Runtime image
+# Imagen final optimizada
 FROM node:20-alpine AS runner
+
+# Crear usuario no-root para seguridad
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S beapi -u 1001
+
 WORKDIR /app
 ENV NODE_ENV=production
 
-# Copy node_modules built artifacts and dist
-COPY --from=base /app/node_modules ./node_modules
-COPY --from=base /app/prisma ./prisma
-COPY --from=base /app/package.json ./package.json
-COPY --from=base /app/dist ./dist
+# Copiar archivos necesarios desde builder
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/prisma ./prisma
+
+# Cambiar ownership a usuario no-root
+RUN chown -R beapi:nodejs /app
+USER beapi
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:4000/health',(r)=>{process.exit(r.statusCode===200?0:1)})"
 
 EXPOSE 4000
-# Note: run migrations outside or add `npx prisma migrate deploy` in an entrypoint if desired
+
+# Ejecutar migraciones y iniciar servidor
+CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
 CMD ["node", "dist/index.js"]

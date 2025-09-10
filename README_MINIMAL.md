@@ -19,7 +19,7 @@ Backend (Node + Express + SQLite + Dashboard)
 - Levantar: `npm start`
 - Dashboard: http://localhost:8001/dashboard
 - Login: http://localhost:8001/login (admin/admin123)
-- Salud: `GET /healthz` (disponible en https://be-terminal.beticket.net/healthz)
+- Salud: `GET /healthz` (disponible en https://be.terminal.beticket.net/healthz)
 
 Funcionalidades del Backend:
 - 🔐 Autenticación con JWT
@@ -42,7 +42,7 @@ Endpoints API:
 Despliegue backend
 - PM2: `pm2 start server.js --name beterminal-backend`
 - Docker: `docker build -t beterminal-backend services/backend-minimal && docker run -d -p 8001:8001 --env-file services/backend-minimal/.env beterminal-backend`
-- Producción: disponible en https://be-terminal.beticket.net
+- Producción: disponible en https://be.terminal.beticket.net
 
 Integración Stripe Terminal (próximo paso)
 - El cliente Android deberá inicializar el SDK de Stripe Terminal usando `/connection_token` y crear PaymentIntents via `/create_payment_intent`.

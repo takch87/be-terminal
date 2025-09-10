@@ -1,4 +1,182 @@
 nohup: ignoring input
-[WARN] Variable de entorno PORT='3001' ignorada. Usando puerto fijo 3002.
-[ERROR] Falló al iniciar el servidor: listen EADDRINUSE: address already in use 0.0.0.0:3002
-[ERROR] El puerto 3002 está en uso. Ejecuta: lsof -i:3002 -Pn
+[2025-09-10T03:58:47.828Z] INFO: Log rotation scheduled {}
+✅ Backup creado: /home/client_4752_1/be-terminal/services/backend-minimal/backups/database_backup_2025-09-10T03-58-47-829Z.sqlite.gz
+📅 Backups programados cada 6 horas
+[INFO] Configuración de Stripe cargada desde la base de datos
+- Secret Key: sk_test_...
+- Publishable Key: pk_test_...
+- Test Mode: true
+Connected to SQLite database
+[INIT] BeTerminal backend escuchando en http://0.0.0.0:3002
+Dashboard:   http://localhost:3002/dashboard
+Login:       http://localhost:3002/login
+Android API: http://10.0.2.2:3002
+[2025-09-10T03:58:58.104Z] INFO: GET /api/health { ip: '127.0.0.1', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:00:18.391Z] INFO: GET / {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:00:18.736Z] INFO: GET /admin {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:00:18.878Z] INFO: GET /api/dashboard/stats {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:00:19.056Z] INFO: GET /api/dashboard/transactions {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:00:30.310Z] INFO: GET /.git/config {
+  ip: '64.62.156.122',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/94.0.0.0'
+}
+[2025-09-10T04:00:48.390Z] INFO: GET /admin { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:00:59.283Z] INFO: GET /health { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:01:07.190Z] INFO: GET /api/health { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:01:15.469Z] INFO: POST /webhooks/stripe { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:01:15.469Z] ERROR: Webhook payload parsing error { error: '"[object Object]" is not valid JSON' }
+[2025-09-10T04:02:39.156Z] INFO: GET /api/stripe/config {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:02:46.759Z] INFO: GET /admin { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:04:24.239Z] INFO: GET /admin {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:04:24.441Z] INFO: GET /api/dashboard/stats {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:04:24.594Z] INFO: GET /api/dashboard/transactions {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:04:24.612Z] INFO: GET /favicon.ico {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:04:26.348Z] INFO: GET /api/stripe/config {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:05:05.519Z] INFO: POST /api/stripe/webhook {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:05:05.520Z] INFO: Webhook secret configured { hasSecret: true, secretPrefix: 'whsec_R4...' }
+[2025-09-10T04:05:07.061Z] INFO: POST /api/stripe/webhook/test {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:07:12.088Z] INFO: GET / {
+  ip: '91.134.91.17',
+  userAgent: 'Mozilla/5.0 (Debian; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0'
+}
+[2025-09-10T04:10:38.873Z] INFO: POST /api/stripe/config {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[INFO] Claves de Stripe encriptadas exitosamente
+[INFO] Configuración de Stripe cargada desde la base de datos
+- Secret Key: sk_live_...
+- Publishable Key: pk_live_...
+- Test Mode: false
+[2025-09-10T04:10:38.881Z] INFO: Stripe configuration updated { publishableKey: 'pk_live_...', testMode: false }
+[2025-09-10T04:10:40.489Z] INFO: GET /api/stripe/config {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:11:46.555Z] INFO: GET /admin { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:11:54.324Z] INFO: GET /api/health { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:12:02.245Z] INFO: POST /webhooks/stripe { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:12:02.245Z] ERROR: Webhook payload parsing error { error: '"[object Object]" is not valid JSON' }
+[2025-09-10T04:12:29.634Z] INFO: GET /api/stripe/config { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:13:50.638Z] INFO: GET /login {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:16:12.904Z] INFO: GET /api/stripe/publishable-key { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:16:19.005Z] INFO: GET /api/events { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:16:19.006Z] INFO: Public events API called { ip: '184.105.7.184', userAgent: 'curl/7.81.0', eventsCount: 2 }
+[2025-09-10T04:17:20.394Z] INFO: POST /api/auth/login { ip: '177.93.0.187', userAgent: 'okhttp/4.12.0' }
+[2025-09-10T04:17:20.394Z] INFO: Mobile login attempt debug {
+  username: 'admin',
+  passwordLength: 8,
+  userAgent: 'okhttp/4.12.0',
+  ip: '177.93.0.187'
+}
+[2025-09-10T04:17:20.471Z] INFO: Password comparison debug {
+  username: 'admin',
+  passwordMatch: true,
+  hashedPasswordFromDB: '$2b$10$qb118g82ggQcx...'
+}
+[2025-09-10T04:17:20.472Z] INFO: Successful mobile login { username: 'admin', userId: 6 }
+[2025-09-10T04:17:20.725Z] INFO: GET /api/stripe/connection_token { ip: '177.93.0.187', userAgent: 'okhttp/4.12.0' }
+[2025-09-10T04:17:20.726Z] INFO: Connection token requested for mobile NFC { userId: 6, username: 'admin' }
+[2025-09-10T04:18:23.932Z] INFO: GET /api/stripe/publishable-key { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:18:31.951Z] INFO: GET /api/stripe/publishable-key { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:18:40.152Z] INFO: GET /api/events { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:18:40.152Z] INFO: Public events API called { ip: '184.105.7.184', userAgent: 'curl/7.81.0', eventsCount: 2 }
+[2025-09-10T04:18:47.952Z] INFO: GET /api/events { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:18:47.953Z] INFO: Public events API called { ip: '184.105.7.184', userAgent: 'curl/7.81.0', eventsCount: 2 }
+[2025-09-10T04:18:48.003Z] INFO: GET /api/events { ip: '184.105.7.184', userAgent: 'curl/7.81.0' }
+[2025-09-10T04:18:48.004Z] INFO: Public events API called { ip: '184.105.7.184', userAgent: 'curl/7.81.0', eventsCount: 2 }
+[2025-09-10T04:19:01.024Z] INFO: POST /api/stripe/payment_intent { ip: '177.93.0.187', userAgent: 'okhttp/4.12.0' }
+[2025-09-10T04:19:01.367Z] TRANSACTION: Transaction created {
+  action: 'created',
+  payment_intent_id: 'pi_3S5fUnAts6Gh9pRN0KHqHC3O',
+  amount: 100,
+  user_id: 6
+}
+[2025-09-10T04:23:24.156Z] INFO: GET / {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:24.958Z] INFO: GET /favicon.ico {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:27.231Z] INFO: POST /login {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:27.302Z] INFO: Successful login { username: 'admin', userId: 6 }
+[2025-09-10T04:23:28.417Z] INFO: GET /admin {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:28.561Z] INFO: GET /api/dashboard/stats {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:28.657Z] INFO: GET /api/dashboard/transactions {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:33.635Z] INFO: GET /api/dashboard/transactions {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:35.167Z] INFO: GET /api/dashboard/events {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:47.916Z] INFO: GET /api/dashboard/users {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:55.426Z] INFO: GET /api/dashboard/stats {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:55.530Z] INFO: GET /api/dashboard/transactions {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}
+[2025-09-10T04:23:55.949Z] INFO: GET /api/dashboard/events {
+  ip: '177.93.0.187',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
+}

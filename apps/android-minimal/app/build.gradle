@@ -12,7 +12,7 @@ android {
         minSdk 26
         targetSdk 35
     // Synchronized to latest published debug APK (v1.1.6, code 8) before next bump
-    versionCode 15
+    versionCode 21
     versionName '1.2.8'
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'

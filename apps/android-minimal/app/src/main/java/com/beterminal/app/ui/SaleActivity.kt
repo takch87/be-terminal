@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.beterminal.app.databinding.ActivitySaleBinding
 import com.beterminal.app.network.ApiClient
+import com.beterminal.app.utils.PreferencesManager
+import com.beterminal.app.utils.ValidationUtils
 import kotlinx.coroutines.launch
 
 class SaleActivity : AppCompatActivity() {
@@ -16,7 +18,12 @@ class SaleActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySaleBinding
     private var authToken: String = ""
     private var currentAmount: String = ""
-    private val eventCode = "EVT001" // Fixed for now
+    private var eventCode: String = "EVT001" // Default value
+
+    companion object {
+        const val EXTRA_AUTH_TOKEN = "auth_token"
+        const val EXTRA_EVENT_CODE = "event_code"
+    }
 
     private val tapCardLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
@@ -49,39 +56,19 @@ class SaleActivity : AppCompatActivity() {
             processPayment()
         }
 
-        // Setup number buttons (assuming standard IDs)
-        setupNumberButton("btn0", "0")
-        setupNumberButton("btn1", "1")
-        setupNumberButton("btn2", "2")
-        setupNumberButton("btn3", "3")
-        setupNumberButton("btn4", "4")
-        setupNumberButton("btn5", "5")
-        setupNumberButton("btn6", "6")
-        setupNumberButton("btn7", "7")
-        setupNumberButton("btn8", "8")
-        setupNumberButton("btn9", "9")
-        setupNumberButton("btnDot", ".")
-        
-        // Try to find clear/delete button
-        try {
-            val clearButton = findViewById<android.widget.Button>(android.R.id.button1)
-            clearButton?.setOnClickListener { clearAmount() }
-        } catch (e: Exception) {
-            // Button doesn't exist
-        }
-    }
-
-    private fun setupNumberButton(id: String, value: String) {
-        try {
-            val resId = resources.getIdentifier(id, "id", packageName)
-            if (resId != 0) {
-                findViewById<android.widget.Button>(resId)?.setOnClickListener {
-                    addToAmount(value)
-                }
-            }
-        } catch (e: Exception) {
-            // Button doesn't exist
-        }
+        // Setup number buttons using actual IDs from layout
+        binding.key0.setOnClickListener { addToAmount("0") }
+        binding.key1.setOnClickListener { addToAmount("1") }
+        binding.key2.setOnClickListener { addToAmount("2") }
+        binding.key3.setOnClickListener { addToAmount("3") }
+        binding.key4.setOnClickListener { addToAmount("4") }
+        binding.key5.setOnClickListener { addToAmount("5") }
+        binding.key6.setOnClickListener { addToAmount("6") }
+        binding.key7.setOnClickListener { addToAmount("7") }
+        binding.key8.setOnClickListener { addToAmount("8") }
+        binding.key9.setOnClickListener { addToAmount("9") }
+        binding.key00.setOnClickListener { addToAmount("00") }
+        binding.keyBackspace.setOnClickListener { backspaceAmount() }
     }
 
     private fun addToAmount(digit: String) {
@@ -90,6 +77,13 @@ class SaleActivity : AppCompatActivity() {
         
         currentAmount += digit
         updateDisplay()
+    }
+
+    private fun backspaceAmount() {
+        if (currentAmount.isNotEmpty()) {
+            currentAmount = currentAmount.dropLast(1)
+            updateDisplay()
+        }
     }
 
     private fun clearAmount() {

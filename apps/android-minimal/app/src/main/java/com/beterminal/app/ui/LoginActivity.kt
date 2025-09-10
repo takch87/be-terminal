@@ -9,83 +9,107 @@ import com.beterminal.app.databinding.ActivityLoginBinding
 import com.beterminal.app.network.ApiClient
 import com.beterminal.app.network.LoginRequest
 import kotlinx.coroutines.launch
+import android.content.Context
+import android.content.SharedPreferences
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var sharedPreferences: SharedPreferences
+    private val PREFS_NAME = "BeTerminalPrefs"
+    private val KEY_REMEMBER = "remember_me"
+    private val KEY_USERNAME = "saved_username"
+    private val KEY_PASSWORD = "saved_password"
+    private val KEY_EVENT_CODE = "saved_event_code"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupVersion()
-        setupButtons()
-    }
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        loadSavedCredentials()
 
-    private fun setupVersion() {
-        try {
-            val packageInfo = packageManager.getPackageInfo(packageName, 0)
-            val versionName = packageInfo.versionName
-            binding.tvVersion.text = "Versión $versionName - NFC Ready"
-        } catch (e: Exception) {
-            binding.tvVersion.text = "Versión 1.2.7 - NFC Ready"
-        }
-    }
-
-    private fun setupButtons() {
         binding.btnIngresar.setOnClickListener {
             performLogin()
         }
+
+        // Agregar información de versión
+        binding.tvVersion.text = "v1.2.14 - HTTPS + Remember Me"
     }
 
     private fun performLogin() {
-        val username = binding.etUsername.text?.toString()?.trim().orEmpty()
-        val password = binding.etPassword.text?.toString()?.trim().orEmpty()
+        val username = binding.etUsername.text.toString().trim()
+        val password = binding.etPassword.text.toString().trim()
+        val eventCode = binding.etEventCode.text.toString().trim()
 
-        if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
+        if (username.isEmpty() || password.isEmpty() || eventCode.isEmpty()) {
+            Toast.makeText(this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show()
             return
         }
 
+        binding.progressBar.visibility = android.view.View.VISIBLE
         binding.btnIngresar.isEnabled = false
-        binding.btnIngresar.text = "Iniciando sesión..."
 
         lifecycleScope.launch {
             try {
-                val response = ApiClient.login(LoginRequest(username, password))
-                
-                if (response.isSuccessful && response.body() != null) {
-                    val loginResponse = response.body()!!
-                    if (loginResponse.success && loginResponse.token != null) {
-                        // Get user info to verify token
-                        val userResponse = ApiClient.getUserInfo(loginResponse.token)
-                        if (userResponse.isSuccessful) {
-                            // Login successful, go to main activity
-                            val intent = Intent(this@LoginActivity, SaleActivity::class.java)
-                            intent.putExtra("authToken", loginResponse.token)
-                            startActivity(intent)
-                            finish()
-                        } else {
-                            showError("Error verificando usuario")
-                        }
+                val loginRequest = LoginRequest(username, password, eventCode)
+                val response = ApiClient.login(loginRequest)
+
+                binding.progressBar.visibility = android.view.View.GONE
+                binding.btnIngresar.isEnabled = true
+
+                if (response.isSuccessful) {
+                    val loginResponse = response.body()
+                    if (loginResponse?.success == true) {
+                        Toast.makeText(this@LoginActivity, "Login exitoso", Toast.LENGTH_SHORT).show()
+                        saveCredentials()
+
+                        val intent = Intent(this@LoginActivity, SaleActivity::class.java)
+                        intent.putExtra("authToken", loginResponse.token)
+                        startActivity(intent)
+                        finish()
                     } else {
-                        showError(loginResponse.message ?: "Error de autenticación")
+                        Toast.makeText(this@LoginActivity, "Credenciales inválidas", Toast.LENGTH_LONG).show()
                     }
                 } else {
-                    showError("Error de conexión")
+                    Toast.makeText(this@LoginActivity, "Error de conexión", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
-                showError("Error: ${e.message}")
-            } finally {
+                binding.progressBar.visibility = android.view.View.GONE
                 binding.btnIngresar.isEnabled = true
-                binding.btnIngresar.text = "Ingresar"
+                Toast.makeText(this@LoginActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }
 
-    private fun showError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    private fun loadSavedCredentials() {
+        val rememberMe = sharedPreferences.getBoolean(KEY_REMEMBER, false)
+        binding.cbRememberMe.isChecked = rememberMe
+        
+        if (rememberMe) {
+            binding.etUsername.setText(sharedPreferences.getString(KEY_USERNAME, ""))
+            binding.etPassword.setText(sharedPreferences.getString(KEY_PASSWORD, ""))
+            binding.etEventCode.setText(sharedPreferences.getString(KEY_EVENT_CODE, ""))
+        }
+    }
+    
+    private fun saveCredentials() {
+        val editor = sharedPreferences.edit()
+        val rememberMe = binding.cbRememberMe.isChecked
+        
+        editor.putBoolean(KEY_REMEMBER, rememberMe)
+        
+        if (rememberMe) {
+            editor.putString(KEY_USERNAME, binding.etUsername.text.toString())
+            editor.putString(KEY_PASSWORD, binding.etPassword.text.toString())
+            editor.putString(KEY_EVENT_CODE, binding.etEventCode.text.toString())
+        } else {
+            editor.remove(KEY_USERNAME)
+            editor.remove(KEY_PASSWORD)
+            editor.remove(KEY_EVENT_CODE)
+        }
+        
+        editor.apply()
     }
 }
-

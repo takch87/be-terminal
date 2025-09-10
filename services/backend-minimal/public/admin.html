@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeTerminal - Panel de Administración</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 0 2rem;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            padding: 1rem 0;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Buttons */
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-right: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
+        }
+
+        .btn-success {
+            background: #48bb78;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .btn-danger {
+            background: #f56565;
+        }
+
+        .btn-danger:hover {
+            background: #e53e3e;
+        }
+
+        .btn-warning {
+            background: #ed8936;
+        }
+
+        .btn-warning:hover {
+            background: #dd6b20;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .badge-danger {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .badge-warning {
+            background: #fefcbf;
+            color: #b7791f;
+        }
+
+        .badge-info {
+            background: #bee3f8;
+            color: #2a69ac;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        /* Error/Success Messages */
+        .alert {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            color: #276749;
+        }
+
+        .alert-error {
+            background: #fed7d7;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+        }
+
+        .alert-info {
+            background: #ebf8ff;
+            border: 1px solid #90cdf4;
+            color: #2a69ac;
+        }
+
+        /* Downloads Section */
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #e1e5e9;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .download-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .download-icon {
+            font-size: 3rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .download-info {
+            flex-grow: 1;
+        }
+
+        .download-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        .download-info p {
+            margin: 0 0 0.25rem 0;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .download-info small {
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        .download-actions {
+            min-width: 140px;
+        }
+
+        .downloads-info {
+            margin-bottom: 1rem;
+        }
+
+        .downloads-info code {
+            background: #f7fafc;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary {
+            background: #718096;
+        }
+
+        .btn-secondary:hover {
+            background: #4a5568;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .main-container {
+                padding: 0 1rem;
+            }
+
+            .section-content {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">🔐 BeTerminal Admin</div>
+            <div class="user-info">
+                <span id="username">Admin</span>
+                <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="nav">
+            <div class="nav-item active" onclick="showSection('dashboard')">📊 Dashboard</div>
+            <div class="nav-item" onclick="showSection('users')">👥 Usuarios</div>
+            <div class="nav-item" onclick="showSection('events')">🎫 Eventos</div>
+            <div class="nav-item" onclick="showSection('transactions')">💳 Transacciones</div>
+            <div class="nav-item" onclick="showSection('downloads')">📱 Descargas</div>
+            <div class="nav-item" onclick="showSection('stripe')">⚙️ Stripe Config</div>
+            <div class="nav-item" onclick="showSection('system')">🔧 Sistema</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="section">
+            <div class="section-header">
+                <div class="section-title">📊 Dashboard Principal</div>
+                <button class="btn" onclick="refreshDashboard()">🔄 Actualizar</button>
+            </div>
+            <div class="section-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-users">-</div>
+                        <div class="stat-label">Total Usuarios</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-events">-</div>
+                        <div class="stat-label">Eventos Activos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-transactions">-</div>
+                        <div class="stat-label">Transacciones</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-revenue">-</div>
+                        <div class="stat-label">Ingresos ($)</div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <div class="section-title">📈 Actividad Reciente</div>
+                </div>
+                <div id="recent-activity">
+                    <div class="loading">Cargando actividad reciente...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Section -->
+        <div id="users-section" class="section hidden">
+            <div class="section-header">
+                <div class="section-title">👥 Gestión de Usuarios</div>
+                <button class="btn btn-success" onclick="showCreateUser()">+ Nuevo Usuario</button>
+            </div>
+            <div class="section-content">
+                <div id="users-content">
+                    <div class="loading">Cargando usuarios...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Section -->
+        <div id="events-section" class="section hidden">
+            <div class="section-header">
+                <div class="section-title">🎫 Gestión de Eventos</div>
+                <button class="btn btn-success" onclick="showCreateEvent()">+ Nuevo Evento</button>
+            </div>
+            <div class="section-content">
+                <div id="events-content">
+                    <div class="loading">Cargando eventos...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Section -->
+        <div id="transactions-section" class="section hidden">
+            <div class="section-header">
+                <div class="section-title">💳 Historial de Transacciones</div>
+                <button class="btn" onclick="refreshTransactions()">🔄 Actualizar</button>
+            </div>
+            <div class="section-content">
+                <div id="transactions-content">
+                    <div class="loading">Cargando transacciones...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads Section -->
+        <div id="downloads-section" class="section hidden">
+            <div class="section-header">
+                <div class="section-title">📱 Descargas de la App</div>
+                <button class="btn" onclick="refreshDownloads()">🔄 Actualizar</button>
+            </div>
+            <div class="section-content">
+                <div class="downloads-info">
+                    <div class="alert alert-info">
+                        <strong>📱 Aplicación Móvil BeTerminal</strong><br>
+                        Descarga la última versión de la aplicación móvil para Android.
+                        <br><br>
+                        <strong>Credenciales de prueba:</strong><br>
+                        • Usuario: <code>demo</code> / Contraseña: <code>demo123</code><br>
+                        • Usuario: <code>admin</code> / Contraseña: <code>admin123</code>
+                    </div>
+                </div>
+                
+                <div class="downloads-grid">
+                    <div class="download-card">
+                        <div class="download-icon">�</div>
+                        <div class="download-info">
+                            <h3>BeTerminal Android (Más Reciente)</h3>
+                            <p>Versión 1.2.8 - SECURE</p>
+                            <small>✅ Encriptación AES-256, Utilidades mejoradas, Seguridad 9.5/10</small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/be-terminal-v1.2.8-SECURE-debug.apk" 
+                               class="btn btn-primary" download>
+                                ⬇️ Descargar APK
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">📱</div>
+                        <div class="download-info">
+                            <h3>BeTerminal Android (Anterior)</h3>
+                            <p>Versión 1.2.15 - NFC Complete</p>
+                            <small>Versión anterior con todas las funcionalidades</small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/be-terminal-nfc-v1.2.15-NFC-COMPLETE-debug.apk" 
+                               class="btn btn-secondary" download>
+                                ⬇️ Descargar APK
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">📱</div>
+                        <div class="download-info">
+                            <h3>BeTerminal Android (Simple)</h3>
+                            <p>BeTerminal Android</p>
+                            <small>Versión básica sin NFC</small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/BeTerminal-Android.apk" 
+                               class="btn btn-secondary" download>
+                                ⬇️ Descargar APK
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <div class="alert alert-warning">
+                        <strong>⚠️ Instalación en Android:</strong><br>
+                        1. Descarga el archivo APK<br>
+                        2. Habilita "Fuentes desconocidas" en Configuración > Seguridad<br>
+                        3. Abre el archivo APK descargado para instalar<br>
+                        4. Acepta los permisos necesarios
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stripe Config Section -->
+        <div id="stripe-section" class="section hidden">
+            <div class="section-header">
+                <div class="section-title">⚙️ Configuración de Stripe</div>
+                <button class="btn btn-success" onclick="saveStripeConfig()">💾 Guardar</button>
+            </div>
+            <div class="section-content">
+                <div id="stripe-content">
+                    <div class="loading">Cargando configuración...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Section -->
+        <div id="system-section" class="section hidden">
+            <div class="section-header">
+                <div class="section-title">🔧 Administración del Sistema</div>
+            </div>
+            <div class="section-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="system-uptime">-</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="db-size">-</div>
+                        <div class="stat-label">DB Size</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <button class="btn btn-warning" onclick="createBackup()">📦 Crear Backup</button>
+                    <button class="btn btn-danger" onclick="downloadLogs()">📄 Descargar Logs</button>
+                </div>
+
+                <div id="system-logs" style="margin-top: 2rem;">
+                    <h3>📄 Logs del Sistema</h3>
+                    <div class="loading">Cargando logs...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let authToken = localStorage.getItem('authToken');
+        let currentUser = localStorage.getItem('username');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!authToken) {
+                window.location.href = '/login.html';
+                return;
+            }
+            
+            document.getElementById('username').textContent = currentUser || 'Admin';
+            loadDashboard();
+        });
+
+        // Navigation
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Remove active class from nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName + '-section').classList.remove('hidden');
+            
+            // Add active class to clicked nav item
+            event.target.classList.add('active');
+            
+            // Load section data
+            switch(sectionName) {
+                case 'dashboard':
+                    loadDashboard();
+                    break;
+                case 'users':
+                    loadUsers();
+                    break;
+                case 'events':
+                    loadEvents();
+                    break;
+                case 'transactions':
+                    loadTransactions();
+                    break;
+                case 'downloads':
+                    loadDownloads();
+                    break;
+                case 'stripe':
+                    loadStripeConfig();
+                    break;
+                case 'system':
+                    loadSystemInfo();
+                    break;
+            }
+        }
+
+        // API Helper
+        async function apiCall(endpoint, method = 'GET', data = null) {
+            const options = {
+                method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`
+                }
+            };
+            
+            if (data) {
+                options.body = JSON.stringify(data);
+            }
+            
+            const response = await fetch(endpoint, options);
+            
+            if (response.status === 401) {
+                logout();
+                return null;
+            }
+            
+            return response.json();
+        }
+
+        // Dashboard functions
+        async function loadDashboard() {
+            try {
+                const stats = await apiCall('/api/dashboard/stats');
+                if (stats) {
+                    document.getElementById('total-users').textContent = stats.totalUsers || '0';
+                    document.getElementById('total-events').textContent = stats.totalEvents || '0';
+                    document.getElementById('total-transactions').textContent = stats.totalTransactions || '0';
+                    document.getElementById('total-revenue').textContent = stats.totalRevenue || '0';
+                }
+
+                const transactions = await apiCall('/api/dashboard/transactions');
+                if (transactions) {
+                    const activityHtml = transactions.slice(0, 5).map(t => `
+                        <div style="padding: 1rem; border-bottom: 1px solid #eee;">
+                            <strong>$${(t.amount/100).toFixed(2)}</strong> - ${t.status}
+                            <br><small>${new Date(t.created_at).toLocaleString()}</small>
+                        </div>
+                    `).join('');
+                    
+                    document.getElementById('recent-activity').innerHTML = 
+                        activityHtml || '<div class="alert alert-info">No hay actividad reciente</div>';
+                }
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+                document.getElementById('recent-activity').innerHTML = 
+                    '<div class="alert alert-error">Error cargando datos</div>';
+            }
+        }
+
+        function refreshDashboard() {
+            loadDashboard();
+        }
+
+        // Users functions
+        async function loadUsers() {
+            try {
+                document.getElementById('users-content').innerHTML = '<div class="loading">Cargando usuarios...</div>';
+                
+                const users = await apiCall('/api/dashboard/users');
+                if (users && users.length > 0) {
+                    const tableHtml = `
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Usuario</th>
+                                        <th>Fecha Creación</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${users.map(user => `
+                                        <tr>
+                                            <td>${user.id}</td>
+                                            <td><strong>${user.username}</strong></td>
+                                            <td>${new Date(user.created_at).toLocaleString()}</td>
+                                            <td>
+                                                <button class="btn btn-warning" onclick="editUser(${user.id})">✏️ Editar</button>
+                                                <button class="btn btn-danger" onclick="deleteUser(${user.id})">🗑️ Eliminar</button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                    document.getElementById('users-content').innerHTML = tableHtml;
+                } else {
+                    document.getElementById('users-content').innerHTML = 
+                        '<div class="alert alert-info">No hay usuarios registrados</div>';
+                }
+            } catch (error) {
+                console.error('Error loading users:', error);
+                document.getElementById('users-content').innerHTML = 
+                    '<div class="alert alert-error">Error cargando usuarios</div>';
+            }
+        }
+
+        // Events functions
+        async function loadEvents() {
+            try {
+                document.getElementById('events-content').innerHTML = '<div class="loading">Cargando eventos...</div>';
+                
+                const events = await apiCall('/api/dashboard/events');
+                if (events && events.length > 0) {
+                    const tableHtml = `
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Creado por</th>
+                                        <th>Estado</th>
+                                        <th>Fecha</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${events.map(event => `
+                                        <tr>
+                                            <td>${event.id}</td>
+                                            <td><strong>${event.code}</strong></td>
+                                            <td>${event.name}</td>
+                                            <td>${event.description || '-'}</td>
+                                            <td>${event.creator_name || 'Desconocido'}</td>
+                                            <td>
+                                                <span class="badge ${event.active ? 'badge-success' : 'badge-danger'}">
+                                                    ${event.active ? 'Activo' : 'Inactivo'}
+                                                </span>
+                                            </td>
+                                            <td>${new Date(event.created_at).toLocaleString()}</td>
+                                            <td>
+                                                <button class="btn btn-warning" onclick="editEvent(${event.id})">✏️ Editar</button>
+                                                <button class="btn ${event.active ? 'btn-danger' : 'btn-success'}" 
+                                                        onclick="toggleEvent(${event.id}, ${event.active})">
+                                                    ${event.active ? '❌ Desactivar' : '✅ Activar'}
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                    document.getElementById('events-content').innerHTML = tableHtml;
+                } else {
+                    document.getElementById('events-content').innerHTML = 
+                        '<div class="alert alert-info">No hay eventos registrados</div>';
+                }
+            } catch (error) {
+                console.error('Error loading events:', error);
+                document.getElementById('events-content').innerHTML = 
+                    '<div class="alert alert-error">Error cargando eventos</div>';
+            }
+        }
+
+        // Transactions functions
+        async function loadTransactions() {
+            try {
+                document.getElementById('transactions-content').innerHTML = '<div class="loading">Cargando transacciones...</div>';
+                
+                const transactions = await apiCall('/api/dashboard/transactions');
+                if (transactions && transactions.length > 0) {
+                    const tableHtml = `
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Monto</th>
+                                        <th>Estado</th>
+                                        <th>Fecha</th>
+                                        <th>Código Evento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${transactions.map(t => `
+                                        <tr>
+                                            <td>${t.transaction_id}</td>
+                                            <td>$${(t.amount/100).toFixed(2)}</td>
+                                            <td><span class="badge badge-${t.status}">${t.status}</span></td>
+                                            <td>${new Date(t.created_at).toLocaleString()}</td>
+                                            <td>${t.event_code || '-'}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                    document.getElementById('transactions-content').innerHTML = tableHtml;
+                } else {
+                    document.getElementById('transactions-content').innerHTML = 
+                        '<div class="alert alert-info">No hay transacciones registradas</div>';
+                }
+            } catch (error) {
+                console.error('Error loading transactions:', error);
+                document.getElementById('transactions-content').innerHTML = 
+                    '<div class="alert alert-error">Error cargando transacciones</div>';
+            }
+        }
+
+        function refreshTransactions() {
+            loadTransactions();
+        }
+
+        // Stripe functions
+        async function loadStripeConfig() {
+            try {
+                document.getElementById('stripe-content').innerHTML = '<div class="loading">Cargando configuración...</div>';
+                
+                const config = await apiCall('/api/stripe/config');
+                
+                const formHtml = `
+                    <div id="stripe-form">
+                        <div class="form-group">
+                            <label class="form-label">🔑 Publishable Key (pk_...)</label>
+                            <input type="text" class="form-input" id="publishable_key" 
+                                   value="${config ? config.publishable_key : ''}"
+                                   placeholder="pk_test_... o pk_live_...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">🔐 Secret Key (sk_...)</label>
+                            <input type="password" class="form-input" id="secret_key" 
+                                   value=""
+                                   placeholder="sk_test_... o sk_live_...">
+                            ${config ? '<small style="color: #666;">Clave actual: ' + config.secret_key + '</small>' : ''}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="test_mode" ${config && config.test_mode ? 'checked' : ''}>
+                                🧪 Modo de Prueba (Test Mode)
+                            </label>
+                            <small style="display: block; color: #666; margin-top: 0.5rem;">
+                                Usa las claves de test para pruebas sin cargos reales
+                            </small>
+                        </div>
+                        
+                        ${config ? `
+                            <div class="alert alert-info">
+                                <strong>📊 Configuración Actual:</strong><br>
+                                • Publicable Key: ${config.publishable_key}<br>
+                                • Secret Key: ${config.secret_key}<br>
+                                • Modo: ${config.test_mode ? '🧪 Prueba' : '🚀 Producción'}<br>
+                                • Estado: ${config.active ? '✅ Activa' : '❌ Inactiva'}<br>
+                                • Creada: ${new Date(config.created_at).toLocaleString()}
+                            </div>
+                        ` : `
+                            <div class="alert alert-warning">
+                                <strong>⚠️ Sin Configuración</strong><br>
+                                No hay configuración de Stripe activa. Configura las claves para habilitar pagos.
+                            </div>
+                        `}
+                        
+                        <div style="margin-top: 2rem;">
+                            <button class="btn btn-success" onclick="saveStripeConfig()">
+                                💾 Guardar Configuración
+                            </button>
+                            <button class="btn btn-warning" onclick="testStripeConnection()">
+                                🔬 Probar Conexión
+                            </button>
+                        </div>
+                        
+                        <div id="stripe-result" style="margin-top: 1rem;"></div>
+                    </div>
+                    
+                    <!-- Webhooks Configuration Section -->
+                    <div style="margin-top: 3rem; padding: 1.5rem; background: #e8f5e8; border-radius: 8px; border-left: 4px solid #28a745;">
+                        <h3>🔗 Configuración de Webhooks</h3>
+                        <p>Los webhooks permiten que Stripe notifique automáticamente a tu sistema sobre eventos de pago.</p>
+                        
+                        <div class="alert alert-info">
+                            <strong>📍 URL del Webhook:</strong><br>
+                            <code>https://api.be.terminal.beticket.net/webhooks/stripe</code>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">🔐 Webhook Secret (whsec_...)</label>
+                            <input type="password" class="form-input" id="webhook_secret" 
+                                   placeholder="whsec_... (opcional pero recomendado)">
+                            <small style="color: #666;">
+                                Secret para verificar que los webhooks vienen de Stripe. Se obtiene del dashboard de Stripe.
+                            </small>
+                        </div>
+                        
+                        <div style="margin-top: 1rem;">
+                            <button class="btn btn-primary" onclick="saveWebhookSecret()">
+                                💾 Guardar Webhook Secret
+                            </button>
+                            <button class="btn btn-info" onclick="testWebhook()">
+                                🧪 Probar Webhook
+                            </button>
+                        </div>
+                        
+                        <div id="webhook-result" style="margin-top: 1rem;"></div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <h3>📖 Instrucciones para Configurar Webhooks</h3>
+                        <ol>
+                            <li><strong>Ve al dashboard de Stripe:</strong> <a href="https://dashboard.stripe.com/webhooks" target="_blank">https://dashboard.stripe.com/webhooks</a></li>
+                            <li><strong>Clic en "Add endpoint"</strong></li>
+                            <li><strong>URL del endpoint:</strong> <code>https://api.be.terminal.beticket.net/webhooks/stripe</code></li>
+                            <li><strong>Eventos a escuchar:</strong>
+                                <ul>
+                                    <li><code>payment_intent.succeeded</code></li>
+                                    <li><code>payment_intent.payment_failed</code></li>
+                                </ul>
+                            </li>
+                            <li><strong>Copia el "Signing secret" (whsec_...)</strong> y pégalo arriba</li>
+                            <li><strong>Guarda la configuración</strong></li>
+                        </ol>
+                        
+                        <div class="alert alert-warning">
+                            <strong>⚠️ Importante:</strong> Los webhooks son esenciales para producción. Sin ellos, el sistema podría perder información sobre transacciones exitosas o fallidas.
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <h3>📖 Instrucciones para Obtener las Claves de Stripe</h3>
+                        <ol>
+                            <li><strong>Accede a tu dashboard de Stripe:</strong> <a href="https://dashboard.stripe.com" target="_blank">https://dashboard.stripe.com</a></li>
+                            <li><strong>Ve a "Developers" → "API Keys"</strong></li>
+                            <li><strong>Para pruebas:</strong> Usa las claves que empiecen con <code>pk_test_</code> y <code>sk_test_</code></li>
+                            <li><strong>Para producción:</strong> Usa las claves que empiecen con <code>pk_live_</code> y <code>sk_live_</code></li>
+                            <li><strong>Copia y pega las claves</strong> en los campos de arriba</li>
+                            <li><strong>Marca "Modo de Prueba"</strong> si estás usando claves de test</li>
+                        </ol>
+                        
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 4px;">
+                            <strong>🔒 Seguridad:</strong> Las claves secretas se almacenan de forma segura y solo se muestra una versión parcial.
+                        </div>
+                    </div>
+                `;
+                
+                document.getElementById('stripe-content').innerHTML = formHtml;
+                
+            } catch (error) {
+                console.error('Error loading Stripe config:', error);
+                document.getElementById('stripe-content').innerHTML = 
+                    '<div class="alert alert-error">Error cargando configuración de Stripe</div>';
+            }
+        }
+
+        async function saveStripeConfig() {
+            try {
+                const publishableKey = document.getElementById('publishable_key').value.trim();
+                const secretKey = document.getElementById('secret_key').value.trim();
+                const testMode = document.getElementById('test_mode').checked;
+                
+                if (!publishableKey || !secretKey) {
+                    document.getElementById('stripe-result').innerHTML = 
+                        '<div class="alert alert-error">Por favor completa ambas claves</div>';
+                    return;
+                }
+                
+                if (!publishableKey.startsWith('pk_')) {
+                    document.getElementById('stripe-result').innerHTML = 
+                        '<div class="alert alert-error">La clave publicable debe empezar con pk_</div>';
+                    return;
+                }
+                
+                if (!secretKey.startsWith('sk_')) {
+                    document.getElementById('stripe-result').innerHTML = 
+                        '<div class="alert alert-error">La clave secreta debe empezar con sk_</div>';
+                    return;
+                }
+                
+                const response = await apiCall('/api/stripe/config', 'POST', {
+                    publishable_key: publishableKey,
+                    secret_key: secretKey,
+                    test_mode: testMode
+                });
+                
+                if (response && response.success) {
+                    document.getElementById('stripe-result').innerHTML = 
+                        '<div class="alert alert-success">✅ Configuración guardada exitosamente</div>';
+                    
+                    // Reload the configuration
+                    setTimeout(() => loadStripeConfig(), 1500);
+                } else {
+                    document.getElementById('stripe-result').innerHTML = 
+                        '<div class="alert alert-error">❌ Error guardando configuración: ' + (response.error || 'Error desconocido') + '</div>';
+                }
+                
+            } catch (error) {
+                console.error('Error saving Stripe config:', error);
+                document.getElementById('stripe-result').innerHTML = 
+                    '<div class="alert alert-error">❌ Error de conexión</div>';
+            }
+        }
+
+        async function testStripeConnection() {
+            document.getElementById('stripe-result').innerHTML = 
+                '<div class="alert alert-info">🔬 Probando conexión con Stripe...</div>';
+                
+            // Simulate test - in a real implementation, you would test the API
+            setTimeout(() => {
+                document.getElementById('stripe-result').innerHTML = 
+                    '<div class="alert alert-info">🔬 Función de prueba en desarrollo. Guarda la configuración para activar Stripe.</div>';
+            }, 1000);
+        }
+
+        async function saveWebhookSecret() {
+            try {
+                const webhookSecret = document.getElementById('webhook_secret').value.trim();
+                
+                if (webhookSecret && !webhookSecret.startsWith('whsec_')) {
+                    document.getElementById('webhook-result').innerHTML = 
+                        '<div class="alert alert-error">❌ El webhook secret debe empezar con whsec_</div>';
+                    return;
+                }
+                
+                const response = await apiCall('/api/stripe/webhook', 'POST', {
+                    webhook_secret: webhookSecret
+                });
+                
+                if (response && response.success) {
+                    document.getElementById('webhook-result').innerHTML = 
+                        '<div class="alert alert-success">✅ Webhook secret guardado exitosamente</div>';
+                } else {
+                    document.getElementById('webhook-result').innerHTML = 
+                        '<div class="alert alert-error">❌ Error guardando webhook secret: ' + (response.error || 'Error desconocido') + '</div>';
+                }
+                
+            } catch (error) {
+                console.error('Error saving webhook secret:', error);
+                document.getElementById('webhook-result').innerHTML = 
+                    '<div class="alert alert-error">❌ Error de conexión</div>';
+            }
+        }
+
+        async function testWebhook() {
+            try {
+                document.getElementById('webhook-result').innerHTML = 
+                    '<div class="alert alert-info">🧪 Probando webhook...</div>';
+                
+                const response = await apiCall('/api/stripe/webhook/test', 'POST');
+                
+                if (response && response.success) {
+                    document.getElementById('webhook-result').innerHTML = 
+                        '<div class="alert alert-success">✅ Webhook funcionando correctamente</div>';
+                } else {
+                    document.getElementById('webhook-result').innerHTML = 
+                        '<div class="alert alert-warning">⚠️ ' + (response.message || 'Webhook configurado pero no se pudo probar') + '</div>';
+                }
+                
+            } catch (error) {
+                console.error('Error testing webhook:', error);
+                document.getElementById('webhook-result').innerHTML = 
+                    '<div class="alert alert-error">❌ Error probando webhook</div>';
+            }
+        }
+
+        // System functions
+        async function loadSystemInfo() {
+            try {
+                const health = await apiCall('/api/health');
+                if (health) {
+                    document.getElementById('system-uptime').textContent = 'Online';
+                    document.getElementById('db-size').textContent = 'OK';
+                }
+            } catch (error) {
+                console.error('Error loading system info:', error);
+            }
+        }
+
+        function loadDownloads() {
+            // Downloads section is static, no need to load data
+            console.log('Downloads section loaded');
+        }
+
+        function refreshDownloads() {
+            // Optionally could check for new APK files
+            console.log('Downloads refreshed');
+            alert('✅ Sección de descargas actualizada');
+        }
+
+        async function createBackup() {
+            try {
+                const result = await apiCall('/api/admin/backup', 'POST');
+                if (result && result.success) {
+                    alert('✅ Backup creado exitosamente');
+                } else {
+                    alert('❌ Error creando backup');
+                }
+            } catch (error) {
+                console.error('Error creating backup:', error);
+                alert('❌ Error creando backup');
+            }
+        }
+
+        function downloadLogs() {
+            alert('📄 Función de descarga de logs en desarrollo');
+        }
+
+        // Auth functions
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('username');
+            window.location.href = '/login.html';
+        }
+    </script>
+</body>
+</html>

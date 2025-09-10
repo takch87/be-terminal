@@ -1,1 +1,18 @@
-{ "android": { "versionName": "1.2.7", "versionCode": 14, "apkDebug": "/downloads/be-terminal-nfc-v1.2.7-FIXED-debug.apk", "uploadedAt": "2025-09-08T17:05:30+02:00" } }
+{
+  "android": {
+    "versionName": "1.2.15",
+    "versionCode": 22,
+    "apkDebug": "/downloads/be-terminal-nfc-v1.2.15-NFC-COMPLETE-debug.apk",
+    "uploadedAt": "2025-09-09T06:15:00Z",
+    "changelog": [
+      "✅ NFC completo y funcional para pagos",
+      "✅ Permisos NFC correctamente configurados",
+      "✅ Detección automática de tarjetas NFC",
+      "✅ Fallback a modo simulación si no hay NFC",
+      "✅ Vibración de confirmación en lecturas",
+      "✅ Number keyboard funcionando",
+      "✅ Remember Me en login",
+      "✅ Botón continuar más accesible"
+    ]
+  }
+}

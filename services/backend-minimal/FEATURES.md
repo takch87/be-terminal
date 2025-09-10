@@ -43,9 +43,9 @@
 
 ## URLs de Acceso
 
-- **Dashboard**: https://be-terminal.beticket.net/dashboard
-- **Login**: https://be-terminal.beticket.net/login
-- **API Health**: https://be-terminal.beticket.net/healthz
+- **Dashboard**: https://be.terminal.beticket.net/dashboard
+- **Login**: https://be.terminal.beticket.net/login
+- **API Health**: https://be.terminal.beticket.net/healthz
 
 ## Credenciales por Defecto
 
@@ -157,7 +157,7 @@ STRIPE_SECRET_KEY=sk_test_...
 JWT_SECRET=your-secret-key
 PORT=8001
 DB_PATH=./database.sqlite
-ALLOW_ORIGINS=https://be-terminal.beticket.net,...
+ALLOW_ORIGINS=https://be.terminal.beticket.net,...
 ```
 
 ## Desarrollo Local

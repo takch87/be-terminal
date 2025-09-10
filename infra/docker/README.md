@@ -1,7 +1,7 @@
 # Deploy (Option A: api subdomain)
 
 1) DNS
-- Create A/CNAME for `api.be-terminal.beticket.net` to your server.
+- Create A/CNAME for `api.be.terminal.beticket.net` to your server.
 
 2) Env
 - On the server, export env vars (or create a .env next to docker-compose):
@@ -26,10 +26,10 @@ docker compose -f docker-compose.prod.yml up -d
 
 5) Verify
 ```
-curl -X POST https://api.be-terminal.beticket.net/terminal/connection_token
+curl -X POST https://api.be.terminal.beticket.net/terminal/connection_token
 ```
 Should return `{ "secret": "..." }`.
 
 Notes
 - API listens on 0.0.0.0:4000 inside container; Nginx proxies / → api:4000.
-- Webhook endpoint: `https://api.be-terminal.beticket.net/webhooks/stripe`.
+- Webhook endpoint: `https://api.be.terminal.beticket.net/webhooks/stripe`.

@@ -8,7 +8,7 @@ export default async function reportsRoutes(app: FastifyInstance) {
     if (eventId) where.eventId = eventId;
     if (from || to) where.createdAt = { gte: from ? new Date(from) : undefined, lte: to ? new Date(to) : undefined };
     const rows = await db.transaction.findMany({ where });
-    const total = rows.reduce((s, r) => s + r.amount, 0);
+    const total = rows.reduce((s: number, r: any) => s + r.amount, 0);
     const count = rows.length;
     const avg = count ? total / count : 0;
     const fees = Math.round(total * 0.03);
@@ -26,7 +26,7 @@ export default async function reportsRoutes(app: FastifyInstance) {
     const where: any = { createdAt: { gte: start, lte: end } };
     if (eventId) where.eventId = eventId;
     const rows = await db.transaction.findMany({ where });
-    const total = rows.reduce((s, r) => s + r.amount, 0);
+    const total = rows.reduce((s: number, r: any) => s + r.amount, 0);
     const count = rows.length;
     const fees = Math.round(total * 0.03);
     const net = total - fees;

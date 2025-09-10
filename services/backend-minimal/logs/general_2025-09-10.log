@@ -1,0 +1,1174 @@
+{"timestamp":"2025-09-10T00:00:53.254Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:00:54.003Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:00:54.205Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:01:30.041Z","level":"INFO","message":"GET /dashboard","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":5116}
+{"timestamp":"2025-09-10T00:01:31.916Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:01:33.093Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:01:56.392Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:02.185Z","level":"INFO","message":"GET /","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:11.362Z","level":"INFO","message":"GET /dashboard","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:18.626Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:25.147Z","level":"INFO","message":"GET /dashboard","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:25.366Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:25.560Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:25.570Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:31.646Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:31.746Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:31.902Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:32.022Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:32.074Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:32.208Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:32.240Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:02:32.341Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:04:27.420Z","level":"INFO","message":"GET /","data":{"ip":"23.27.145.129","userAgent":"Mozilla/5.0 (X11; Linux i686; rv:109.0) Gecko/20100101 Firefox/120.0"},"pid":5116}
+{"timestamp":"2025-09-10T00:04:34.043Z","level":"INFO","message":"GET /dashboard","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:04:34.199Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:04:34.251Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:04:34.292Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:05:32.064Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":5116}
+{"timestamp":"2025-09-10T00:05:34.043Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":5116}
+{"timestamp":"2025-09-10T00:07:57.764Z","level":"INFO","message":"GET /dashboard","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:07:57.902Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:07:57.956Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:07:58.019Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5116}
+{"timestamp":"2025-09-10T00:08:10.672Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":5966}
+{"timestamp":"2025-09-10T00:08:20.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6059}
+{"timestamp":"2025-09-10T00:08:31.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6081}
+{"timestamp":"2025-09-10T00:08:31.989Z","level":"INFO","message":"HEAD /admin","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":5966}
+{"timestamp":"2025-09-10T00:08:41.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6205}
+{"timestamp":"2025-09-10T00:08:48.300Z","level":"INFO","message":"GET /dashboard","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:08:48.444Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:08:48.506Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:08:48.541Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:08:51.050Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:08:51.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6249}
+{"timestamp":"2025-09-10T00:09:01.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6343}
+{"timestamp":"2025-09-10T00:09:12.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6427}
+{"timestamp":"2025-09-10T00:09:12.925Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:22.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6440}
+{"timestamp":"2025-09-10T00:09:32.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6463}
+{"timestamp":"2025-09-10T00:09:42.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6482}
+{"timestamp":"2025-09-10T00:09:45.057Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:46.262Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:46.341Z","level":"WARN","message":"Failed login attempt","data":{"username":"admin"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:49.161Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:49.231Z","level":"WARN","message":"Failed login attempt","data":{"username":"admin"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:53.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6496}
+{"timestamp":"2025-09-10T00:09:53.738Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:53.808Z","level":"WARN","message":"Failed login attempt","data":{"username":"admin"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:57.289Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:57.361Z","level":"INFO","message":"Successful login","data":{"username":"admin","userId":6},"pid":5966}
+{"timestamp":"2025-09-10T00:09:58.477Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:58.616Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:09:58.709Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:10:03.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6509}
+{"timestamp":"2025-09-10T00:10:06.580Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:10:08.406Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:10:13.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6523}
+{"timestamp":"2025-09-10T00:10:16.850Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:10:16.951Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":5966}
+{"timestamp":"2025-09-10T00:10:23.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6536}
+{"timestamp":"2025-09-10T00:10:34.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6578}
+{"timestamp":"2025-09-10T00:10:44.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6612}
+{"timestamp":"2025-09-10T00:10:54.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6643}
+{"timestamp":"2025-09-10T00:10:55.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6676}
+{"timestamp":"2025-09-10T00:11:04.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6769}
+{"timestamp":"2025-09-10T00:11:13.568Z","level":"INFO","message":"HEAD /","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":6676}
+{"timestamp":"2025-09-10T00:11:15.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6812}
+{"timestamp":"2025-09-10T00:11:25.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6855}
+{"timestamp":"2025-09-10T00:11:35.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6877}
+{"timestamp":"2025-09-10T00:11:39.509Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:11:45.814Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6937}
+{"timestamp":"2025-09-10T00:11:55.491Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:11:55.735Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:11:55.872Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:11:55.971Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:11:56.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6956}
+{"timestamp":"2025-09-10T00:12:00.704Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:02.881Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:02.959Z","level":"WARN","message":"Failed login attempt","data":{"username":"admin"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:05.588Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:05.658Z","level":"WARN","message":"Failed login attempt","data":{"username":"admin"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:06.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6969}
+{"timestamp":"2025-09-10T00:12:08.472Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:08.541Z","level":"WARN","message":"Failed login attempt","data":{"username":"admin"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:10.061Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:10.132Z","level":"INFO","message":"Successful login","data":{"username":"admin","userId":6},"pid":6676}
+{"timestamp":"2025-09-10T00:12:11.251Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:11.412Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:11.506Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:12:16.564Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":6983}
+{"timestamp":"2025-09-10T00:12:26.814Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7006}
+{"timestamp":"2025-09-10T00:12:37.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7025}
+{"timestamp":"2025-09-10T00:12:47.314Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7043}
+{"timestamp":"2025-09-10T00:12:57.564Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7061}
+{"timestamp":"2025-09-10T00:13:07.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7080}
+{"timestamp":"2025-09-10T00:13:18.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7113}
+{"timestamp":"2025-09-10T00:13:28.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7188}
+{"timestamp":"2025-09-10T00:13:38.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7213}
+{"timestamp":"2025-09-10T00:13:48.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7297}
+{"timestamp":"2025-09-10T00:13:59.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7358}
+{"timestamp":"2025-09-10T00:14:09.313Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7401}
+{"timestamp":"2025-09-10T00:14:19.452Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:14:19.563Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7419}
+{"timestamp":"2025-09-10T00:14:19.768Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:14:19.911Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:14:20.068Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:14:29.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7433}
+{"timestamp":"2025-09-10T00:14:40.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7446}
+{"timestamp":"2025-09-10T00:14:42.203Z","level":"INFO","message":"GET /robots.txt","data":{"ip":"138.246.253.24","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:14:50.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7465}
+{"timestamp":"2025-09-10T00:15:00.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7483}
+{"timestamp":"2025-09-10T00:15:10.814Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7510}
+{"timestamp":"2025-09-10T00:15:21.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7533}
+{"timestamp":"2025-09-10T00:15:31.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7552}
+{"timestamp":"2025-09-10T00:15:41.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7578}
+{"timestamp":"2025-09-10T00:15:51.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7632}
+{"timestamp":"2025-09-10T00:16:02.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7665}
+{"timestamp":"2025-09-10T00:16:12.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7715}
+{"timestamp":"2025-09-10T00:16:22.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7774}
+{"timestamp":"2025-09-10T00:16:32.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7812}
+{"timestamp":"2025-09-10T00:16:43.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7830}
+{"timestamp":"2025-09-10T00:16:53.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7890}
+{"timestamp":"2025-09-10T00:17:03.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7906}
+{"timestamp":"2025-09-10T00:17:13.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7920}
+{"timestamp":"2025-09-10T00:17:24.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":7933}
+{"timestamp":"2025-09-10T00:17:34.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8007}
+{"timestamp":"2025-09-10T00:17:44.564Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8020}
+{"timestamp":"2025-09-10T00:17:54.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8043}
+{"timestamp":"2025-09-10T00:18:05.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8140}
+{"timestamp":"2025-09-10T00:18:15.314Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8204}
+{"timestamp":"2025-09-10T00:18:25.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8248}
+{"timestamp":"2025-09-10T00:18:35.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8261}
+{"timestamp":"2025-09-10T00:18:46.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8308}
+{"timestamp":"2025-09-10T00:18:56.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8372}
+{"timestamp":"2025-09-10T00:19:06.574Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8413}
+{"timestamp":"2025-09-10T00:19:16.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8478}
+{"timestamp":"2025-09-10T00:19:27.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8555}
+{"timestamp":"2025-09-10T00:19:37.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8646}
+{"timestamp":"2025-09-10T00:19:47.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8708}
+{"timestamp":"2025-09-10T00:19:57.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8745}
+{"timestamp":"2025-09-10T00:20:03.795Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:20:08.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8763}
+{"timestamp":"2025-09-10T00:20:18.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8776}
+{"timestamp":"2025-09-10T00:20:28.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8789}
+{"timestamp":"2025-09-10T00:20:38.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8802}
+{"timestamp":"2025-09-10T00:20:49.072Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8816}
+{"timestamp":"2025-09-10T00:20:59.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8829}
+{"timestamp":"2025-09-10T00:21:09.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8842}
+{"timestamp":"2025-09-10T00:21:19.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8855}
+{"timestamp":"2025-09-10T00:21:30.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8868}
+{"timestamp":"2025-09-10T00:21:40.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8883}
+{"timestamp":"2025-09-10T00:21:50.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8896}
+{"timestamp":"2025-09-10T00:22:00.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8909}
+{"timestamp":"2025-09-10T00:22:11.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8923}
+{"timestamp":"2025-09-10T00:22:21.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8936}
+{"timestamp":"2025-09-10T00:22:31.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8949}
+{"timestamp":"2025-09-10T00:22:41.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8962}
+{"timestamp":"2025-09-10T00:22:52.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8976}
+{"timestamp":"2025-09-10T00:23:02.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":8990}
+{"timestamp":"2025-09-10T00:23:12.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9003}
+{"timestamp":"2025-09-10T00:23:22.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9016}
+{"timestamp":"2025-09-10T00:23:33.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9029}
+{"timestamp":"2025-09-10T00:23:43.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9042}
+{"timestamp":"2025-09-10T00:23:53.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9060}
+{"timestamp":"2025-09-10T00:24:03.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9073}
+{"timestamp":"2025-09-10T00:24:14.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9086}
+{"timestamp":"2025-09-10T00:24:24.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9099}
+{"timestamp":"2025-09-10T00:24:34.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9128}
+{"timestamp":"2025-09-10T00:24:44.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9185}
+{"timestamp":"2025-09-10T00:24:55.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9243}
+{"timestamp":"2025-09-10T00:25:05.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9263}
+{"timestamp":"2025-09-10T00:25:15.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9277}
+{"timestamp":"2025-09-10T00:25:25.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9290}
+{"timestamp":"2025-09-10T00:25:36.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9314}
+{"timestamp":"2025-09-10T00:25:46.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9354}
+{"timestamp":"2025-09-10T00:25:56.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9434}
+{"timestamp":"2025-09-10T00:26:06.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9513}
+{"timestamp":"2025-09-10T00:26:17.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9531}
+{"timestamp":"2025-09-10T00:26:27.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9544}
+{"timestamp":"2025-09-10T00:26:37.577Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9559}
+{"timestamp":"2025-09-10T00:26:47.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9595}
+{"timestamp":"2025-09-10T00:26:58.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9633}
+{"timestamp":"2025-09-10T00:27:08.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9679}
+{"timestamp":"2025-09-10T00:27:18.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9774}
+{"timestamp":"2025-09-10T00:27:28.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9811}
+{"timestamp":"2025-09-10T00:27:39.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9829}
+{"timestamp":"2025-09-10T00:27:49.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9842}
+{"timestamp":"2025-09-10T00:27:59.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9855}
+{"timestamp":"2025-09-10T00:28:09.824Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9870}
+{"timestamp":"2025-09-10T00:28:20.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9883}
+{"timestamp":"2025-09-10T00:28:30.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9897}
+{"timestamp":"2025-09-10T00:28:40.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9910}
+{"timestamp":"2025-09-10T00:28:50.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9924}
+{"timestamp":"2025-09-10T00:29:01.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":9937}
+{"timestamp":"2025-09-10T00:29:11.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10005}
+{"timestamp":"2025-09-10T00:29:21.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10028}
+{"timestamp":"2025-09-10T00:29:26.985Z","level":"INFO","message":"GET /","data":{"ip":"35.203.210.133","userAgent":"Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity"},"pid":6676}
+{"timestamp":"2025-09-10T00:29:31.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10048}
+{"timestamp":"2025-09-10T00:29:42.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10132}
+{"timestamp":"2025-09-10T00:29:52.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10181}
+{"timestamp":"2025-09-10T00:30:02.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10243}
+{"timestamp":"2025-09-10T00:30:12.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10268}
+{"timestamp":"2025-09-10T00:30:23.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10286}
+{"timestamp":"2025-09-10T00:30:33.326Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10304}
+{"timestamp":"2025-09-10T00:30:43.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10320}
+{"timestamp":"2025-09-10T00:30:53.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10338}
+{"timestamp":"2025-09-10T00:31:04.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10361}
+{"timestamp":"2025-09-10T00:31:14.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10375}
+{"timestamp":"2025-09-10T00:31:24.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10393}
+{"timestamp":"2025-09-10T00:31:34.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10411}
+{"timestamp":"2025-09-10T00:31:45.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10427}
+{"timestamp":"2025-09-10T00:31:55.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10441}
+{"timestamp":"2025-09-10T00:32:05.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10454}
+{"timestamp":"2025-09-10T00:32:15.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10469}
+{"timestamp":"2025-09-10T00:32:26.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10482}
+{"timestamp":"2025-09-10T00:32:36.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10495}
+{"timestamp":"2025-09-10T00:32:46.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10508}
+{"timestamp":"2025-09-10T00:32:56.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10521}
+{"timestamp":"2025-09-10T00:33:07.074Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10550}
+{"timestamp":"2025-09-10T00:33:17.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10571}
+{"timestamp":"2025-09-10T00:33:27.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10590}
+{"timestamp":"2025-09-10T00:33:37.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10603}
+{"timestamp":"2025-09-10T00:33:48.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10664}
+{"timestamp":"2025-09-10T00:33:58.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10689}
+{"timestamp":"2025-09-10T00:34:08.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10707}
+{"timestamp":"2025-09-10T00:34:18.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10726}
+{"timestamp":"2025-09-10T00:34:29.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10744}
+{"timestamp":"2025-09-10T00:34:39.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10762}
+{"timestamp":"2025-09-10T00:34:49.574Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10877}
+{"timestamp":"2025-09-10T00:34:59.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10896}
+{"timestamp":"2025-09-10T00:35:10.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10914}
+{"timestamp":"2025-09-10T00:35:20.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":10953}
+{"timestamp":"2025-09-10T00:35:30.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11013}
+{"timestamp":"2025-09-10T00:35:40.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11049}
+{"timestamp":"2025-09-10T00:35:51.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11102}
+{"timestamp":"2025-09-10T00:36:01.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11150}
+{"timestamp":"2025-09-10T00:36:11.564Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11179}
+{"timestamp":"2025-09-10T00:36:21.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11217}
+{"timestamp":"2025-09-10T00:36:32.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11294}
+{"timestamp":"2025-09-10T00:36:42.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11376}
+{"timestamp":"2025-09-10T00:36:52.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11455}
+{"timestamp":"2025-09-10T00:37:02.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11515}
+{"timestamp":"2025-09-10T00:37:13.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11534}
+{"timestamp":"2025-09-10T00:37:22.076Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":6676}
+{"timestamp":"2025-09-10T00:37:23.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11552}
+{"timestamp":"2025-09-10T00:37:33.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11618}
+{"timestamp":"2025-09-10T00:37:43.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11652}
+{"timestamp":"2025-09-10T00:37:44.159Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:37:50.742Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:37:52.445Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:37:53.462Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:37:54.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11737}
+{"timestamp":"2025-09-10T00:38:02.810Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:04.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11834}
+{"timestamp":"2025-09-10T00:38:08.818Z","level":"INFO","message":"GET /download.html","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:13.713Z","level":"INFO","message":"GET /download.html","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:14.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11886}
+{"timestamp":"2025-09-10T00:38:15.811Z","level":"INFO","message":"HEAD /download.html","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:20.206Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:20.815Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:20.912Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:21.960Z","level":"INFO","message":"HEAD /downloads/betTerminal-client.sh","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:24.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":11979}
+{"timestamp":"2025-09-10T00:38:27.983Z","level":"INFO","message":"HEAD /","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:29.223Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:29.438Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:29.585Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:29.601Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:35.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12040}
+{"timestamp":"2025-09-10T00:38:38.295Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":6676}
+{"timestamp":"2025-09-10T00:38:45.285Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12097}
+{"timestamp":"2025-09-10T00:38:55.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12118}
+{"timestamp":"2025-09-10T00:39:05.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12152}
+{"timestamp":"2025-09-10T00:39:11.997Z","level":"INFO","message":"GET /","data":{"ip":"135.148.100.196"},"pid":6676}
+{"timestamp":"2025-09-10T00:39:16.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12175}
+{"timestamp":"2025-09-10T00:39:26.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12194}
+{"timestamp":"2025-09-10T00:39:36.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12233}
+{"timestamp":"2025-09-10T00:39:46.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12290}
+{"timestamp":"2025-09-10T00:39:57.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12347}
+{"timestamp":"2025-09-10T00:40:07.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12365}
+{"timestamp":"2025-09-10T00:40:17.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12389}
+{"timestamp":"2025-09-10T00:40:27.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12407}
+{"timestamp":"2025-09-10T00:40:38.063Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12425}
+{"timestamp":"2025-09-10T00:40:48.314Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12438}
+{"timestamp":"2025-09-10T00:40:58.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12452}
+{"timestamp":"2025-09-10T00:41:08.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12470}
+{"timestamp":"2025-09-10T00:41:19.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12483}
+{"timestamp":"2025-09-10T00:41:29.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12496}
+{"timestamp":"2025-09-10T00:41:39.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12510}
+{"timestamp":"2025-09-10T00:41:47.523Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12549}
+{"timestamp":"2025-09-10T00:41:49.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12618}
+{"timestamp":"2025-09-10T00:42:00.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12655}
+{"timestamp":"2025-09-10T00:42:10.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12668}
+{"timestamp":"2025-09-10T00:42:20.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12681}
+{"timestamp":"2025-09-10T00:42:30.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12694}
+{"timestamp":"2025-09-10T00:42:41.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12725}
+{"timestamp":"2025-09-10T00:42:43.250Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:43.455Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:43.596Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:43.655Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:43.697Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:45.702Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:47.623Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:47.624Z","level":"ERROR","message":"Dashboard events error","data":{"error":"SQLITE_ERROR: no such column: e.created_by"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:49.678Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":12549}
+{"timestamp":"2025-09-10T00:42:51.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12804}
+{"timestamp":"2025-09-10T00:42:58.597Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:01.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12861}
+{"timestamp":"2025-09-10T00:43:02.191Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:02.290Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:03.596Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:03.696Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:07.218Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:07.219Z","level":"ERROR","message":"Dashboard events error","data":{"error":"SQLITE_ERROR: no such column: e.created_by"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:11.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12937}
+{"timestamp":"2025-09-10T00:43:22.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":12994}
+{"timestamp":"2025-09-10T00:43:24.786Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:24.937Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:24.997Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:25.032Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:27.180Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:27.180Z","level":"ERROR","message":"Dashboard events error","data":{"error":"SQLITE_ERROR: no such column: e.created_by"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:32.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13033}
+{"timestamp":"2025-09-10T00:43:35.124Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:36.162Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:36.162Z","level":"ERROR","message":"Dashboard events error","data":{"error":"SQLITE_ERROR: no such column: e.created_by"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:36.596Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:37.626Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:37.627Z","level":"ERROR","message":"Dashboard events error","data":{"error":"SQLITE_ERROR: no such column: e.created_by"},"pid":12549}
+{"timestamp":"2025-09-10T00:43:42.575Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13051}
+{"timestamp":"2025-09-10T00:43:43.183Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13084}
+{"timestamp":"2025-09-10T00:43:52.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13177}
+{"timestamp":"2025-09-10T00:44:01.449Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:03.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13226}
+{"timestamp":"2025-09-10T00:44:13.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13269}
+{"timestamp":"2025-09-10T00:44:20.077Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:22.937Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:23.087Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:23.129Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:23.189Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:23.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13293}
+{"timestamp":"2025-09-10T00:44:24.327Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:32.432Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:33.539Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:33.642Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:33.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13307}
+{"timestamp":"2025-09-10T00:44:34.621Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:36.097Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:36.976Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:37.615Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:44:44.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13325}
+{"timestamp":"2025-09-10T00:44:54.324Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13343}
+{"timestamp":"2025-09-10T00:45:01.674Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13084}
+{"timestamp":"2025-09-10T00:45:04.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13375}
+{"timestamp":"2025-09-10T00:45:14.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13402}
+{"timestamp":"2025-09-10T00:45:25.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13415}
+{"timestamp":"2025-09-10T00:45:35.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13428}
+{"timestamp":"2025-09-10T00:45:45.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13442}
+{"timestamp":"2025-09-10T00:45:55.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13458}
+{"timestamp":"2025-09-10T00:46:06.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13471}
+{"timestamp":"2025-09-10T00:46:16.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13487}
+{"timestamp":"2025-09-10T00:46:26.564Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13503}
+{"timestamp":"2025-09-10T00:46:36.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13530}
+{"timestamp":"2025-09-10T00:46:42.624Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13582}
+{"timestamp":"2025-09-10T00:46:47.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13659}
+{"timestamp":"2025-09-10T00:46:57.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13697}
+{"timestamp":"2025-09-10T00:47:07.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13718}
+{"timestamp":"2025-09-10T00:47:12.935Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:17.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13785}
+{"timestamp":"2025-09-10T00:47:28.064Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13824}
+{"timestamp":"2025-09-10T00:47:31.103Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:38.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13855}
+{"timestamp":"2025-09-10T00:47:47.274Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:47.444Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:47.486Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:47.539Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:48.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13868}
+{"timestamp":"2025-09-10T00:47:49.572Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:50.292Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:47:58.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13881}
+{"timestamp":"2025-09-10T00:48:09.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13894}
+{"timestamp":"2025-09-10T00:48:19.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13907}
+{"timestamp":"2025-09-10T00:48:24.838Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:29.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13920}
+{"timestamp":"2025-09-10T00:48:29.833Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:29.932Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:31.142Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:31.574Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:32.019Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:32.370Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:33.747Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:35.180Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":13582}
+{"timestamp":"2025-09-10T00:48:39.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13938}
+{"timestamp":"2025-09-10T00:48:50.081Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13958}
+{"timestamp":"2025-09-10T00:49:00.323Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13980}
+{"timestamp":"2025-09-10T00:49:10.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":13994}
+{"timestamp":"2025-09-10T00:49:20.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14047}
+{"timestamp":"2025-09-10T00:49:31.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14098}
+{"timestamp":"2025-09-10T00:49:41.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14130}
+{"timestamp":"2025-09-10T00:49:51.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14200}
+{"timestamp":"2025-09-10T00:49:55.961Z","level":"INFO","message":"GET /api/health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":13582}
+{"timestamp":"2025-09-10T00:50:01.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14248}
+{"timestamp":"2025-09-10T00:50:12.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14307}
+{"timestamp":"2025-09-10T00:50:19.494Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":13582}
+{"timestamp":"2025-09-10T00:50:22.323Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14350}
+{"timestamp":"2025-09-10T00:50:32.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14386}
+{"timestamp":"2025-09-10T00:50:42.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14409}
+{"timestamp":"2025-09-10T00:50:53.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14427}
+{"timestamp":"2025-09-10T00:50:53.674Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14459}
+{"timestamp":"2025-09-10T00:51:03.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14551}
+{"timestamp":"2025-09-10T00:51:13.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14593}
+{"timestamp":"2025-09-10T00:51:13.802Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:51:13.803Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":14459}
+{"timestamp":"2025-09-10T00:51:23.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14632}
+{"timestamp":"2025-09-10T00:51:25.617Z","level":"INFO","message":"GET /api/events/EVT001","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:51:25.619Z","level":"INFO","message":"Event found by code","data":{"code":"EVT001","eventId":2,"ip":"184.105.7.184"},"pid":14459}
+{"timestamp":"2025-09-10T00:51:34.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14695}
+{"timestamp":"2025-09-10T00:51:38.632Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:51:44.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14740}
+{"timestamp":"2025-09-10T00:51:54.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14813}
+{"timestamp":"2025-09-10T00:52:04.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14858}
+{"timestamp":"2025-09-10T00:52:15.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14872}
+{"timestamp":"2025-09-10T00:52:25.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14885}
+{"timestamp":"2025-09-10T00:52:35.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14899}
+{"timestamp":"2025-09-10T00:52:45.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14912}
+{"timestamp":"2025-09-10T00:52:51.279Z","level":"INFO","message":"GET /api/health","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.319Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.320Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.364Z","level":"INFO","message":"GET /api/events/EVT001","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.365Z","level":"INFO","message":"Event found by code","data":{"code":"EVT001","eventId":2,"ip":"184.105.7.184"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.414Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.476Z","level":"INFO","message":"GET /api/health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.524Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.526Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":14459}
+{"timestamp":"2025-09-10T00:52:51.569Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":14459}
+{"timestamp":"2025-09-10T00:52:56.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":14991}
+{"timestamp":"2025-09-10T00:53:00.113Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15046}
+{"timestamp":"2025-09-10T00:53:06.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15135}
+{"timestamp":"2025-09-10T00:53:16.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15160}
+{"timestamp":"2025-09-10T00:53:25.682Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":15046}
+{"timestamp":"2025-09-10T00:53:25.683Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":15046}
+{"timestamp":"2025-09-10T00:53:26.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15205}
+{"timestamp":"2025-09-10T00:53:37.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15236}
+{"timestamp":"2025-09-10T00:53:47.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15259}
+{"timestamp":"2025-09-10T00:53:49.462Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15046}
+{"timestamp":"2025-09-10T00:53:57.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15277}
+{"timestamp":"2025-09-10T00:54:03.847Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:07.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15300}
+{"timestamp":"2025-09-10T00:54:17.530Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:18.072Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15318}
+{"timestamp":"2025-09-10T00:54:28.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15337}
+{"timestamp":"2025-09-10T00:54:38.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15355}
+{"timestamp":"2025-09-10T00:54:48.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15410}
+{"timestamp":"2025-09-10T00:54:51.340Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:51.509Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:51.572Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:51.611Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:53.553Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:54.561Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:55.739Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":15046}
+{"timestamp":"2025-09-10T00:54:59.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15465}
+{"timestamp":"2025-09-10T00:55:09.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15503}
+{"timestamp":"2025-09-10T00:55:19.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15535}
+{"timestamp":"2025-09-10T00:55:29.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15548}
+{"timestamp":"2025-09-10T00:55:40.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15561}
+{"timestamp":"2025-09-10T00:55:50.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15574}
+{"timestamp":"2025-09-10T00:56:00.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15587}
+{"timestamp":"2025-09-10T00:56:10.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15602}
+{"timestamp":"2025-09-10T00:56:21.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15616}
+{"timestamp":"2025-09-10T00:56:31.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15669}
+{"timestamp":"2025-09-10T00:56:41.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15756}
+{"timestamp":"2025-09-10T00:56:51.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15802}
+{"timestamp":"2025-09-10T00:57:02.072Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15849}
+{"timestamp":"2025-09-10T00:57:02.220Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":15856}
+{"timestamp":"2025-09-10T00:57:07.076Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:07.159Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":15849}
+{"timestamp":"2025-09-10T00:57:16.603Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:16.673Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:18.482Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:18.552Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:19.212Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:19.281Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":15849}
+{"timestamp":"2025-09-10T00:57:37.402Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16078}
+{"timestamp":"2025-09-10T00:57:45.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16173}
+{"timestamp":"2025-09-10T00:57:51.135Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:57:51.213Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":16078}
+{"timestamp":"2025-09-10T00:57:52.968Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:57:53.038Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"admin"},"pid":16078}
+{"timestamp":"2025-09-10T00:57:55.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16299}
+{"timestamp":"2025-09-10T00:57:58.941Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:57:59.010Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"admin"},"pid":16078}
+{"timestamp":"2025-09-10T00:58:06.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16398}
+{"timestamp":"2025-09-10T00:58:16.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16516}
+{"timestamp":"2025-09-10T00:58:26.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16643}
+{"timestamp":"2025-09-10T00:58:34.404Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:58:34.473Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":16078}
+{"timestamp":"2025-09-10T00:58:35.926Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:58:35.995Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":16078}
+{"timestamp":"2025-09-10T00:58:36.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16750}
+{"timestamp":"2025-09-10T00:58:47.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":16916}
+{"timestamp":"2025-09-10T00:58:57.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17049}
+{"timestamp":"2025-09-10T00:59:07.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17119}
+{"timestamp":"2025-09-10T00:59:17.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17137}
+{"timestamp":"2025-09-10T00:59:27.231Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:27.303Z","level":"INFO","message":"Successful mobile login","data":{"username":"admin","userId":6},"pid":16078}
+{"timestamp":"2025-09-10T00:59:28.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17249}
+{"timestamp":"2025-09-10T00:59:34.020Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:34.020Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":16078}
+{"timestamp":"2025-09-10T00:59:38.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17357}
+{"timestamp":"2025-09-10T00:59:42.870Z","level":"INFO","message":"GET /api/events/EVT001","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:42.871Z","level":"INFO","message":"Event found by code","data":{"code":"EVT001","eventId":2,"ip":"184.105.7.184"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:48.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17456}
+{"timestamp":"2025-09-10T00:59:48.930Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:50.305Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:50.374Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":16078}
+{"timestamp":"2025-09-10T00:59:58.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17558}
+{"timestamp":"2025-09-10T01:00:09.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17610}
+{"timestamp":"2025-09-10T01:00:19.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17660}
+{"timestamp":"2025-09-10T01:00:29.565Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17691}
+{"timestamp":"2025-09-10T01:00:39.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17704}
+{"timestamp":"2025-09-10T01:00:50.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17792}
+{"timestamp":"2025-09-10T01:00:50.594Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T01:00:50.665Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":16078}
+{"timestamp":"2025-09-10T01:01:00.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":17906}
+{"timestamp":"2025-09-10T01:01:03.041Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:03.112Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":16078}
+{"timestamp":"2025-09-10T01:01:10.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18008}
+{"timestamp":"2025-09-10T01:01:20.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18026}
+{"timestamp":"2025-09-10T01:01:24.936Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:26.844Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:26.939Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:28.092Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:31.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18106}
+{"timestamp":"2025-09-10T01:01:41.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18135}
+{"timestamp":"2025-09-10T01:01:42.100Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:42.171Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":16078}
+{"timestamp":"2025-09-10T01:01:51.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18226}
+{"timestamp":"2025-09-10T01:01:55.500Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T01:01:55.569Z","level":"WARN","message":"Failed mobile login attempt","data":{"username":"demo"},"pid":16078}
+{"timestamp":"2025-09-10T01:02:01.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18304}
+{"timestamp":"2025-09-10T01:02:12.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18333}
+{"timestamp":"2025-09-10T01:02:21.290Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":16078}
+{"timestamp":"2025-09-10T01:02:21.360Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":16078}
+{"timestamp":"2025-09-10T01:02:22.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18346}
+{"timestamp":"2025-09-10T01:02:32.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18461}
+{"timestamp":"2025-09-10T01:02:42.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18481}
+{"timestamp":"2025-09-10T01:02:53.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18499}
+{"timestamp":"2025-09-10T01:03:03.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18517}
+{"timestamp":"2025-09-10T01:03:05.014Z","level":"INFO","message":"GET /api","data":{"ip":"121.43.141.195","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"},"pid":16078}
+{"timestamp":"2025-09-10T01:03:06.145Z","level":"INFO","message":"GET /","data":{"ip":"121.43.141.195","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"},"pid":16078}
+{"timestamp":"2025-09-10T01:03:06.353Z","level":"INFO","message":"GET /openapi/v2","data":{"ip":"121.43.141.195","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"},"pid":16078}
+{"timestamp":"2025-09-10T01:03:06.559Z","level":"INFO","message":"GET /stats","data":{"ip":"121.43.141.195","userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"},"pid":16078}
+{"timestamp":"2025-09-10T01:03:13.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18618}
+{"timestamp":"2025-09-10T01:03:23.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18636}
+{"timestamp":"2025-09-10T01:03:34.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18655}
+{"timestamp":"2025-09-10T01:03:44.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18673}
+{"timestamp":"2025-09-10T01:03:54.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18696}
+{"timestamp":"2025-09-10T01:04:04.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18714}
+{"timestamp":"2025-09-10T01:04:15.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18762}
+{"timestamp":"2025-09-10T01:04:25.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18775}
+{"timestamp":"2025-09-10T01:04:35.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18810}
+{"timestamp":"2025-09-10T01:04:45.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18835}
+{"timestamp":"2025-09-10T01:04:48.450Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":16078}
+{"timestamp":"2025-09-10T01:04:48.521Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":16078}
+{"timestamp":"2025-09-10T01:04:56.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18934}
+{"timestamp":"2025-09-10T01:05:06.326Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18952}
+{"timestamp":"2025-09-10T01:05:16.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":18971}
+{"timestamp":"2025-09-10T01:05:24.936Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19021}
+{"timestamp":"2025-09-10T01:05:26.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19075}
+{"timestamp":"2025-09-10T01:05:37.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19173}
+{"timestamp":"2025-09-10T01:05:42.383Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:05:42.384Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"184.105.7.184"},"pid":19021}
+{"timestamp":"2025-09-10T01:05:42.464Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:05:42.467Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":19021}
+{"timestamp":"2025-09-10T01:05:47.324Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19249}
+{"timestamp":"2025-09-10T01:05:57.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19306}
+{"timestamp":"2025-09-10T01:05:58.081Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:05:58.082Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:05:58.151Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:05:58.152Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":19021}
+{"timestamp":"2025-09-10T01:05:59.560Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:05:59.560Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:05:59.629Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:05:59.630Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":19021}
+{"timestamp":"2025-09-10T01:06:00.645Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:06:00.645Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":9,"userAgent":"curl/7.81.0","ip":"184.105.7.184"},"pid":19021}
+{"timestamp":"2025-09-10T01:06:00.715Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":false,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:06:00.715Z","level":"WARN","message":"Failed mobile login attempt - password mismatch","data":{"username":"demo"},"pid":19021}
+{"timestamp":"2025-09-10T01:06:07.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19419}
+{"timestamp":"2025-09-10T01:06:18.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19458}
+{"timestamp":"2025-09-10T01:06:28.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19540}
+{"timestamp":"2025-09-10T01:06:38.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19571}
+{"timestamp":"2025-09-10T01:06:48.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19590}
+{"timestamp":"2025-09-10T01:06:57.310Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:06:57.310Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:06:57.379Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:06:57.380Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":19021}
+{"timestamp":"2025-09-10T01:06:59.073Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19634}
+{"timestamp":"2025-09-10T01:07:09.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19700}
+{"timestamp":"2025-09-10T01:07:18.948Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:07:18.949Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"admin","passwordLength":8,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:07:19.018Z","level":"INFO","message":"Password comparison debug","data":{"username":"admin","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$qb118g82ggQcx..."},"pid":19021}
+{"timestamp":"2025-09-10T01:07:19.019Z","level":"INFO","message":"Successful mobile login","data":{"username":"admin","userId":6},"pid":19021}
+{"timestamp":"2025-09-10T01:07:19.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19718}
+{"timestamp":"2025-09-10T01:07:29.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19803}
+{"timestamp":"2025-09-10T01:07:40.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19822}
+{"timestamp":"2025-09-10T01:07:50.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19853}
+{"timestamp":"2025-09-10T01:08:00.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19886}
+{"timestamp":"2025-09-10T01:08:10.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19899}
+{"timestamp":"2025-09-10T01:08:21.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19912}
+{"timestamp":"2025-09-10T01:08:31.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":19977}
+{"timestamp":"2025-09-10T01:08:41.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20017}
+{"timestamp":"2025-09-10T01:08:51.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20036}
+{"timestamp":"2025-09-10T01:09:02.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20049}
+{"timestamp":"2025-09-10T01:09:12.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20062}
+{"timestamp":"2025-09-10T01:09:22.575Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20075}
+{"timestamp":"2025-09-10T01:09:32.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20089}
+{"timestamp":"2025-09-10T01:09:43.072Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20102}
+{"timestamp":"2025-09-10T01:09:53.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20116}
+{"timestamp":"2025-09-10T01:10:00.346Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:10:00.347Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:10:00.416Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:10:00.417Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":19021}
+{"timestamp":"2025-09-10T01:10:03.574Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20165}
+{"timestamp":"2025-09-10T01:10:13.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20226}
+{"timestamp":"2025-09-10T01:10:24.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20244}
+{"timestamp":"2025-09-10T01:10:29.778Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:10:29.778Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:10:29.848Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":19021}
+{"timestamp":"2025-09-10T01:10:29.849Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":19021}
+{"timestamp":"2025-09-10T01:10:34.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20305}
+{"timestamp":"2025-09-10T01:10:44.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20363}
+{"timestamp":"2025-09-10T01:10:49.363Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":19021}
+{"timestamp":"2025-09-10T01:10:49.363Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"admin","passwordLength":8,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":19021}
+{"timestamp":"2025-09-10T01:10:49.433Z","level":"INFO","message":"Password comparison debug","data":{"username":"admin","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$qb118g82ggQcx..."},"pid":19021}
+{"timestamp":"2025-09-10T01:10:49.433Z","level":"INFO","message":"Successful mobile login","data":{"username":"admin","userId":6},"pid":19021}
+{"timestamp":"2025-09-10T01:10:54.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20442}
+{"timestamp":"2025-09-10T01:11:05.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20491}
+{"timestamp":"2025-09-10T01:11:15.325Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20525}
+{"timestamp":"2025-09-10T01:11:25.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20543}
+{"timestamp":"2025-09-10T01:11:35.827Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20561}
+{"timestamp":"2025-09-10T01:11:46.072Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20593}
+{"timestamp":"2025-09-10T01:11:56.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20636}
+{"timestamp":"2025-09-10T01:11:57.313Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20649}
+{"timestamp":"2025-09-10T01:13:29.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20810}
+{"timestamp":"2025-09-10T01:15:22.936Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":20966}
+{"timestamp":"2025-09-10T01:15:30.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21027}
+{"timestamp":"2025-09-10T01:15:40.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21046}
+{"timestamp":"2025-09-10T01:15:50.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21132}
+{"timestamp":"2025-09-10T01:15:55.885Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:15:55.886Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"184.105.7.184"},"pid":20966}
+{"timestamp":"2025-09-10T01:15:55.964Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":20966}
+{"timestamp":"2025-09-10T01:15:55.967Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":20966}
+{"timestamp":"2025-09-10T01:16:00.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21196}
+{"timestamp":"2025-09-10T01:16:05.666Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:16:05.667Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"admin","passwordLength":8,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":20966}
+{"timestamp":"2025-09-10T01:16:05.736Z","level":"INFO","message":"Password comparison debug","data":{"username":"admin","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$qb118g82ggQcx..."},"pid":20966}
+{"timestamp":"2025-09-10T01:16:05.738Z","level":"INFO","message":"Successful mobile login","data":{"username":"admin","userId":6},"pid":20966}
+{"timestamp":"2025-09-10T01:16:05.865Z","level":"INFO","message":"GET /api/auth/user","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:16:11.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21238}
+{"timestamp":"2025-09-10T01:16:21.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21257}
+{"timestamp":"2025-09-10T01:16:31.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21292}
+{"timestamp":"2025-09-10T01:16:41.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21306}
+{"timestamp":"2025-09-10T01:16:52.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21385}
+{"timestamp":"2025-09-10T01:17:02.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21445}
+{"timestamp":"2025-09-10T01:17:12.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21463}
+{"timestamp":"2025-09-10T01:17:22.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21509}
+{"timestamp":"2025-09-10T01:17:33.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21543}
+{"timestamp":"2025-09-10T01:17:43.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21562}
+{"timestamp":"2025-09-10T01:17:53.577Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21599}
+{"timestamp":"2025-09-10T01:18:03.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21645}
+{"timestamp":"2025-09-10T01:18:14.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21678}
+{"timestamp":"2025-09-10T01:18:24.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21715}
+{"timestamp":"2025-09-10T01:18:34.578Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21738}
+{"timestamp":"2025-09-10T01:18:44.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21770}
+{"timestamp":"2025-09-10T01:18:55.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21802}
+{"timestamp":"2025-09-10T01:18:56.132Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:05.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21815}
+{"timestamp":"2025-09-10T01:19:11.957Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:15.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21843}
+{"timestamp":"2025-09-10T01:19:15.704Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:16.152Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:16.707Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:17.190Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:17.742Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:17.840Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:19:25.814Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21861}
+{"timestamp":"2025-09-10T01:19:36.073Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21879}
+{"timestamp":"2025-09-10T01:19:46.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21898}
+{"timestamp":"2025-09-10T01:19:56.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21916}
+{"timestamp":"2025-09-10T01:20:06.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21934}
+{"timestamp":"2025-09-10T01:20:13.221Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:13.433Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:13.583Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:13.594Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:15.402Z","level":"INFO","message":"GET /api/health","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:17.065Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:17.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":21994}
+{"timestamp":"2025-09-10T01:20:22.293Z","level":"INFO","message":"GET /admin","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:27.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22040}
+{"timestamp":"2025-09-10T01:20:34.714Z","level":"INFO","message":"GET /api/events/2/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:34.716Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:34.809Z","level":"INFO","message":"GET /api/users/8/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:34.812Z","level":"INFO","message":"GET /api/events/1/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:34.953Z","level":"INFO","message":"GET /api/users/6/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:37.011Z","level":"INFO","message":"GET /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:37.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22121}
+{"timestamp":"2025-09-10T01:20:38.631Z","level":"INFO","message":"GET /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:42.575Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:44.040Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:44.112Z","level":"INFO","message":"Successful login","data":{"username":"admin","userId":6},"pid":20966}
+{"timestamp":"2025-09-10T01:20:45.246Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:45.386Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:45.487Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:20:47.832Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22139}
+{"timestamp":"2025-09-10T01:20:58.074Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22158}
+{"timestamp":"2025-09-10T01:21:08.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22177}
+{"timestamp":"2025-09-10T01:21:18.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22195}
+{"timestamp":"2025-09-10T01:21:28.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22232}
+{"timestamp":"2025-09-10T01:21:34.224Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:21:34.224Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":20966}
+{"timestamp":"2025-09-10T01:21:34.326Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":20966}
+{"timestamp":"2025-09-10T01:21:34.327Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":20966}
+{"timestamp":"2025-09-10T01:21:34.548Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:21:39.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22255}
+{"timestamp":"2025-09-10T01:21:49.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22273}
+{"timestamp":"2025-09-10T01:21:49.522Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:21:49.588Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Invalid API Key provided: sk_test_***********************************************************************************************aR1Y","amount":1500,"user_id":8},"pid":20966}
+{"timestamp":"2025-09-10T01:21:56.660Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:21:56.670Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Invalid API Key provided: sk_test_***********************************************************************************************aR1Y","amount":100,"user_id":8},"pid":20966}
+{"timestamp":"2025-09-10T01:21:59.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22298}
+{"timestamp":"2025-09-10T01:22:09.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22318}
+{"timestamp":"2025-09-10T01:22:20.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22336}
+{"timestamp":"2025-09-10T01:22:26.592Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:22:26.601Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Invalid API Key provided: sk_test_***********************************************************************************************aR1Y","amount":100,"user_id":8},"pid":20966}
+{"timestamp":"2025-09-10T01:22:30.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22359}
+{"timestamp":"2025-09-10T01:22:40.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22379}
+{"timestamp":"2025-09-10T01:22:50.823Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22397}
+{"timestamp":"2025-09-10T01:23:01.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22415}
+{"timestamp":"2025-09-10T01:23:03.895Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:23:05.147Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:23:11.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22434}
+{"timestamp":"2025-09-10T01:23:21.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22447}
+{"timestamp":"2025-09-10T01:23:31.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22460}
+{"timestamp":"2025-09-10T01:23:42.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22473}
+{"timestamp":"2025-09-10T01:23:52.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22491}
+{"timestamp":"2025-09-10T01:24:02.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22504}
+{"timestamp":"2025-09-10T01:24:12.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22518}
+{"timestamp":"2025-09-10T01:24:23.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22531}
+{"timestamp":"2025-09-10T01:24:33.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22544}
+{"timestamp":"2025-09-10T01:24:43.575Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22558}
+{"timestamp":"2025-09-10T01:24:53.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22571}
+{"timestamp":"2025-09-10T01:25:04.075Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22641}
+{"timestamp":"2025-09-10T01:25:14.328Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22713}
+{"timestamp":"2025-09-10T01:25:24.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22738}
+{"timestamp":"2025-09-10T01:25:29.591Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:25:29.632Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Invalid API Key provided: sk_test_***********************************************************************************************aR1Y","amount":100,"user_id":8},"pid":20966}
+{"timestamp":"2025-09-10T01:25:34.825Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22761}
+{"timestamp":"2025-09-10T01:25:45.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22800}
+{"timestamp":"2025-09-10T01:25:55.324Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22851}
+{"timestamp":"2025-09-10T01:26:05.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22869}
+{"timestamp":"2025-09-10T01:26:15.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22887}
+{"timestamp":"2025-09-10T01:26:26.074Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22905}
+{"timestamp":"2025-09-10T01:26:36.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22920}
+{"timestamp":"2025-09-10T01:26:46.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22934}
+{"timestamp":"2025-09-10T01:26:53.917Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:26:56.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22947}
+{"timestamp":"2025-09-10T01:27:06.774Z","level":"INFO","message":"POST /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:27:06.784Z","level":"INFO","message":"Stripe configuration updated","data":{"publishableKey":"pk_test_...","testMode":true},"pid":20966}
+{"timestamp":"2025-09-10T01:27:07.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22960}
+{"timestamp":"2025-09-10T01:27:08.388Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":20966}
+{"timestamp":"2025-09-10T01:27:17.313Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":22974}
+{"timestamp":"2025-09-10T01:27:27.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23038}
+{"timestamp":"2025-09-10T01:27:28.037Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:27:37.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23096}
+{"timestamp":"2025-09-10T01:27:48.066Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23175}
+{"timestamp":"2025-09-10T01:27:53.146Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:27:53.480Z","level":"TRANSACTION","message":"Transaction created","data":{"action":"created","payment_intent_id":"pi_3S5cpBAts6Gh9pRN0I8vuPYV","amount":100,"user_id":8},"pid":20966}
+{"timestamp":"2025-09-10T01:27:58.324Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23222}
+{"timestamp":"2025-09-10T01:28:06.564Z","level":"INFO","message":"GET /api/health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:28:08.588Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23274}
+{"timestamp":"2025-09-10T01:28:11.738Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:28:11.994Z","level":"TRANSACTION","message":"Transaction created","data":{"action":"created","payment_intent_id":"pi_3S5cpTAts6Gh9pRN1b3wzmOD","amount":100,"user_id":8},"pid":20966}
+{"timestamp":"2025-09-10T01:28:18.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23308}
+{"timestamp":"2025-09-10T01:28:29.083Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23326}
+{"timestamp":"2025-09-10T01:28:39.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23339}
+{"timestamp":"2025-09-10T01:28:49.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23357}
+{"timestamp":"2025-09-10T01:28:59.440Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:28:59.441Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":20966}
+{"timestamp":"2025-09-10T01:28:59.510Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":20966}
+{"timestamp":"2025-09-10T01:28:59.512Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":20966}
+{"timestamp":"2025-09-10T01:28:59.708Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":20966}
+{"timestamp":"2025-09-10T01:28:59.815Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23371}
+{"timestamp":"2025-09-10T01:29:10.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23384}
+{"timestamp":"2025-09-10T01:29:20.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23403}
+{"timestamp":"2025-09-10T01:29:30.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23426}
+{"timestamp":"2025-09-10T01:29:40.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23445}
+{"timestamp":"2025-09-10T01:29:51.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23464}
+{"timestamp":"2025-09-10T01:30:01.323Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23482}
+{"timestamp":"2025-09-10T01:30:11.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23513}
+{"timestamp":"2025-09-10T01:30:21.823Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23531}
+{"timestamp":"2025-09-10T01:30:32.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23549}
+{"timestamp":"2025-09-10T01:30:42.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23567}
+{"timestamp":"2025-09-10T01:30:52.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23586}
+{"timestamp":"2025-09-10T01:31:02.824Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23618}
+{"timestamp":"2025-09-10T01:31:13.080Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23642}
+{"timestamp":"2025-09-10T01:31:23.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23660}
+{"timestamp":"2025-09-10T01:31:25.639Z","level":"INFO","message":"GET /","data":{"ip":"206.168.34.65","userAgent":"Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"},"pid":20966}
+{"timestamp":"2025-09-10T01:31:33.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23683}
+{"timestamp":"2025-09-10T01:31:38.479Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"206.168.34.65","userAgent":"Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"},"pid":20966}
+{"timestamp":"2025-09-10T01:31:43.193Z","level":"INFO","message":"GET /.well-known/security.txt","data":{"ip":"206.168.34.65","userAgent":"Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"},"pid":20966}
+{"timestamp":"2025-09-10T01:31:43.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23696}
+{"timestamp":"2025-09-10T01:31:54.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23709}
+{"timestamp":"2025-09-10T01:32:04.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23736}
+{"timestamp":"2025-09-10T01:32:14.568Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23764}
+{"timestamp":"2025-09-10T01:32:24.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23792}
+{"timestamp":"2025-09-10T01:32:35.067Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23805}
+{"timestamp":"2025-09-10T01:32:45.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23832}
+{"timestamp":"2025-09-10T01:32:55.564Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23847}
+{"timestamp":"2025-09-10T01:33:05.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23865}
+{"timestamp":"2025-09-10T01:33:08.393Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23903}
+{"timestamp":"2025-09-10T01:33:16.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":23970}
+{"timestamp":"2025-09-10T01:33:26.317Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24024}
+{"timestamp":"2025-09-10T01:33:36.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24044}
+{"timestamp":"2025-09-10T01:33:46.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24063}
+{"timestamp":"2025-09-10T01:33:57.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24076}
+{"timestamp":"2025-09-10T01:34:07.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24089}
+{"timestamp":"2025-09-10T01:34:17.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24103}
+{"timestamp":"2025-09-10T01:34:19.261Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":23903}
+{"timestamp":"2025-09-10T01:34:19.264Z","level":"INFO","message":"Connection token requested for mobile NFC","data":{"userId":8,"username":"demo"},"pid":23903}
+{"timestamp":"2025-09-10T01:34:27.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24181}
+{"timestamp":"2025-09-10T01:34:38.073Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24253}
+{"timestamp":"2025-09-10T01:34:48.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24266}
+{"timestamp":"2025-09-10T01:34:58.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24280}
+{"timestamp":"2025-09-10T01:35:08.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24293}
+{"timestamp":"2025-09-10T01:35:19.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24306}
+{"timestamp":"2025-09-10T01:35:29.323Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24319}
+{"timestamp":"2025-09-10T01:35:35.920Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":23903}
+{"timestamp":"2025-09-10T01:35:35.920Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":23903}
+{"timestamp":"2025-09-10T01:35:36.000Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":23903}
+{"timestamp":"2025-09-10T01:35:36.002Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":23903}
+{"timestamp":"2025-09-10T01:35:36.258Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":23903}
+{"timestamp":"2025-09-10T01:35:36.259Z","level":"INFO","message":"Connection token requested for mobile NFC","data":{"userId":8,"username":"demo"},"pid":23903}
+{"timestamp":"2025-09-10T01:35:39.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24348}
+{"timestamp":"2025-09-10T01:35:44.034Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":23903}
+{"timestamp":"2025-09-10T01:35:44.345Z","level":"TRANSACTION","message":"Transaction created","data":{"action":"created","payment_intent_id":"pi_3S5cwmAts6Gh9pRN1DriJ9QT","amount":100,"user_id":8},"pid":23903}
+{"timestamp":"2025-09-10T01:35:49.823Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24394}
+{"timestamp":"2025-09-10T01:36:00.074Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24418}
+{"timestamp":"2025-09-10T01:36:10.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24436}
+{"timestamp":"2025-09-10T01:36:20.499Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24665}
+{"timestamp":"2025-09-10T01:36:30.824Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24678}
+{"timestamp":"2025-09-10T01:36:41.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24717}
+{"timestamp":"2025-09-10T01:36:51.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24763}
+{"timestamp":"2025-09-10T01:37:01.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24793}
+{"timestamp":"2025-09-10T01:37:11.823Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24812}
+{"timestamp":"2025-09-10T01:37:22.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24827}
+{"timestamp":"2025-09-10T01:37:32.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24840}
+{"timestamp":"2025-09-10T01:37:42.571Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24853}
+{"timestamp":"2025-09-10T01:37:52.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24866}
+{"timestamp":"2025-09-10T01:38:03.069Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24881}
+{"timestamp":"2025-09-10T01:38:13.323Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24913}
+{"timestamp":"2025-09-10T01:38:23.567Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24932}
+{"timestamp":"2025-09-10T01:38:33.813Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24951}
+{"timestamp":"2025-09-10T01:38:44.068Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24969}
+{"timestamp":"2025-09-10T01:38:54.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":24991}
+{"timestamp":"2025-09-10T01:39:04.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25010}
+{"timestamp":"2025-09-10T01:39:14.818Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25044}
+{"timestamp":"2025-09-10T01:39:25.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25074}
+{"timestamp":"2025-09-10T01:39:34.874Z","level":"INFO","message":"GET /","data":{"ip":"66.228.53.204","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"},"pid":23903}
+{"timestamp":"2025-09-10T01:39:35.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25118}
+{"timestamp":"2025-09-10T01:39:45.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25136}
+{"timestamp":"2025-09-10T01:39:55.820Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25204}
+{"timestamp":"2025-09-10T01:40:06.072Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25260}
+{"timestamp":"2025-09-10T01:40:16.315Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25279}
+{"timestamp":"2025-09-10T01:40:26.566Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25297}
+{"timestamp":"2025-09-10T01:40:36.819Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25402}
+{"timestamp":"2025-09-10T01:40:47.073Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25428}
+{"timestamp":"2025-09-10T01:40:57.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25441}
+{"timestamp":"2025-09-10T01:41:07.572Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25459}
+{"timestamp":"2025-09-10T01:41:12.979Z","level":"INFO","message":"GET /","data":{"ip":"91.196.152.122","userAgent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0"},"pid":23903}
+{"timestamp":"2025-09-10T01:41:17.821Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25521}
+{"timestamp":"2025-09-10T01:41:28.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25575}
+{"timestamp":"2025-09-10T01:41:38.325Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25649}
+{"timestamp":"2025-09-10T01:41:48.574Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25693}
+{"timestamp":"2025-09-10T01:41:58.784Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25797}
+{"timestamp":"2025-09-10T01:41:58.790Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25767}
+{"timestamp":"2025-09-10T01:42:18.266Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25892}
+{"timestamp":"2025-09-10T01:42:25.319Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":25985}
+{"timestamp":"2025-09-10T01:42:35.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26043}
+{"timestamp":"2025-09-10T01:42:45.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26079}
+{"timestamp":"2025-09-10T01:42:56.065Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26099}
+{"timestamp":"2025-09-10T01:43:06.316Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26119}
+{"timestamp":"2025-09-10T01:43:16.570Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26138}
+{"timestamp":"2025-09-10T01:43:26.816Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26177}
+{"timestamp":"2025-09-10T01:43:37.070Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26221}
+{"timestamp":"2025-09-10T01:43:47.323Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26244}
+{"timestamp":"2025-09-10T01:43:57.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26262}
+{"timestamp":"2025-09-10T01:44:07.824Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26281}
+{"timestamp":"2025-09-10T01:44:18.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26319}
+{"timestamp":"2025-09-10T01:44:28.322Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26337}
+{"timestamp":"2025-09-10T01:44:38.573Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26360}
+{"timestamp":"2025-09-10T01:44:48.861Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26379}
+{"timestamp":"2025-09-10T01:44:51.220Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":25892}
+{"timestamp":"2025-09-10T01:44:51.302Z","level":"INFO","message":"Successful login","data":{"username":"admin","userId":6},"pid":25892}
+{"timestamp":"2025-09-10T01:44:52.412Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":25892}
+{"timestamp":"2025-09-10T01:44:52.551Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":25892}
+{"timestamp":"2025-09-10T01:44:52.647Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":25892}
+{"timestamp":"2025-09-10T01:44:59.110Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26406}
+{"timestamp":"2025-09-10T01:45:09.360Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26432}
+{"timestamp":"2025-09-10T01:45:19.609Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26445}
+{"timestamp":"2025-09-10T01:45:29.859Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26458}
+{"timestamp":"2025-09-10T01:45:40.111Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26471}
+{"timestamp":"2025-09-10T01:45:50.359Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26484}
+{"timestamp":"2025-09-10T01:46:00.613Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26498}
+{"timestamp":"2025-09-10T01:46:10.862Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26514}
+{"timestamp":"2025-09-10T01:46:21.111Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26555}
+{"timestamp":"2025-09-10T01:46:31.363Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26568}
+{"timestamp":"2025-09-10T01:46:41.611Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26581}
+{"timestamp":"2025-09-10T01:46:51.863Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26594}
+{"timestamp":"2025-09-10T01:47:02.108Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26609}
+{"timestamp":"2025-09-10T01:47:12.358Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26623}
+{"timestamp":"2025-09-10T01:47:22.617Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26637}
+{"timestamp":"2025-09-10T01:47:32.863Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26650}
+{"timestamp":"2025-09-10T01:47:43.109Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26663}
+{"timestamp":"2025-09-10T01:47:53.361Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26722}
+{"timestamp":"2025-09-10T01:48:03.585Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26823}
+{"timestamp":"2025-09-10T01:48:13.864Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26894}
+{"timestamp":"2025-09-10T01:48:24.115Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26908}
+{"timestamp":"2025-09-10T01:48:34.361Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26921}
+{"timestamp":"2025-09-10T01:48:44.607Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":26997}
+{"timestamp":"2025-09-10T01:48:54.853Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27041}
+{"timestamp":"2025-09-10T01:49:05.104Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27055}
+{"timestamp":"2025-09-10T01:49:15.365Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27069}
+{"timestamp":"2025-09-10T01:49:25.602Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27082}
+{"timestamp":"2025-09-10T01:49:35.853Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27096}
+{"timestamp":"2025-09-10T01:49:46.104Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27109}
+{"timestamp":"2025-09-10T01:49:56.355Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27122}
+{"timestamp":"2025-09-10T01:50:06.606Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27205}
+{"timestamp":"2025-09-10T01:50:16.862Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27246}
+{"timestamp":"2025-09-10T01:50:27.106Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27264}
+{"timestamp":"2025-09-10T01:50:37.354Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27277}
+{"timestamp":"2025-09-10T01:50:47.605Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27290}
+{"timestamp":"2025-09-10T01:50:51.072Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"91.231.89.108","userAgent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0"},"pid":25892}
+{"timestamp":"2025-09-10T01:50:57.858Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27305}
+{"timestamp":"2025-09-10T01:51:08.105Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27318}
+{"timestamp":"2025-09-10T01:51:18.361Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27331}
+{"timestamp":"2025-09-10T01:51:28.607Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27344}
+{"timestamp":"2025-09-10T01:51:38.858Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27357}
+{"timestamp":"2025-09-10T01:51:49.103Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27370}
+{"timestamp":"2025-09-10T01:51:59.354Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27383}
+{"timestamp":"2025-09-10T01:52:09.604Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27397}
+{"timestamp":"2025-09-10T01:52:19.856Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27410}
+{"timestamp":"2025-09-10T01:52:30.118Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27423}
+{"timestamp":"2025-09-10T01:52:40.376Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27436}
+{"timestamp":"2025-09-10T01:52:50.613Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27449}
+{"timestamp":"2025-09-10T01:53:00.864Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27462}
+{"timestamp":"2025-09-10T01:53:11.113Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27491}
+{"timestamp":"2025-09-10T01:53:21.363Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27588}
+{"timestamp":"2025-09-10T01:53:31.610Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27601}
+{"timestamp":"2025-09-10T01:53:41.864Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27614}
+{"timestamp":"2025-09-10T01:53:52.108Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27642}
+{"timestamp":"2025-09-10T01:54:02.362Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27743}
+{"timestamp":"2025-09-10T01:54:12.605Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27790}
+{"timestamp":"2025-09-10T01:54:22.860Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27830}
+{"timestamp":"2025-09-10T01:54:32.071Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27891}
+{"timestamp":"2025-09-10T01:54:33.111Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27942}
+{"timestamp":"2025-09-10T01:54:43.361Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":27981}
+{"timestamp":"2025-09-10T01:54:53.613Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28003}
+{"timestamp":"2025-09-10T01:55:18.009Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28067}
+{"timestamp":"2025-09-10T01:57:03.865Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28224}
+{"timestamp":"2025-09-10T01:59:01.496Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28337}
+{"timestamp":"2025-09-10T02:05:01.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28514}
+{"timestamp":"2025-09-10T02:05:08.080Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28560}
+{"timestamp":"2025-09-10T02:05:38.853Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28707}
+{"timestamp":"2025-09-10T02:05:42.318Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28768}
+{"timestamp":"2025-09-10T02:05:52.426Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":28707}
+{"timestamp":"2025-09-10T02:05:52.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":28813}
+{"timestamp":"2025-09-10T02:06:02.822Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29087}
+{"timestamp":"2025-09-10T02:06:13.074Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29108}
+{"timestamp":"2025-09-10T02:06:23.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29122}
+{"timestamp":"2025-09-10T02:06:33.569Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29135}
+{"timestamp":"2025-09-10T02:06:43.770Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29183}
+{"timestamp":"2025-09-10T02:07:21.102Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29388}
+{"timestamp":"2025-09-10T02:08:34.320Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29591}
+{"timestamp":"2025-09-10T02:08:41.260Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29637}
+{"timestamp":"2025-09-10T02:09:18.321Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29769}
+{"timestamp":"2025-09-10T02:09:28.040Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29814}
+{"timestamp":"2025-09-10T02:11:03.817Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":29999}
+{"timestamp":"2025-09-10T02:11:10.078Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":30045}
+{"timestamp":"2025-09-10T02:13:32.263Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":30265}
+{"timestamp":"2025-09-10T02:13:47.389Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30265}
+{"timestamp":"2025-09-10T02:13:47.608Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30265}
+{"timestamp":"2025-09-10T02:13:47.774Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30265}
+{"timestamp":"2025-09-10T02:13:47.788Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30265}
+{"timestamp":"2025-09-10T02:13:49.058Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30265}
+{"timestamp":"2025-09-10T02:15:02.153Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":30453}
+{"timestamp":"2025-09-10T02:15:29.935Z","level":"INFO","message":"GET /admin","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:36.591Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:38.508Z","level":"INFO","message":"GET /","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:42.892Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:42.892Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"127.0.0.1"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:42.972Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":30453}
+{"timestamp":"2025-09-10T02:15:42.974Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":30453}
+{"timestamp":"2025-09-10T02:15:48.986Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:48.986Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"127.0.0.1"},"pid":30453}
+{"timestamp":"2025-09-10T02:15:49.056Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":30453}
+{"timestamp":"2025-09-10T02:15:49.057Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":30453}
+{"timestamp":"2025-09-10T02:15:51.074Z","level":"INFO","message":"GET /","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:12.513Z","level":"INFO","message":"POST /api/stripe/config","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:19.277Z","level":"INFO","message":"GET /unzipper.php","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:38.551Z","level":"INFO","message":"GET /up.php","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:38.552Z","level":"INFO","message":"GET /upload.php","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:38.553Z","level":"INFO","message":"GET /panel/settings.php","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:38.554Z","level":"INFO","message":"GET /unzip.php","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:38.555Z","level":"INFO","message":"GET /uploader.php","data":{"ip":"185.82.219.124","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:45.469Z","level":"INFO","message":"POST /api/stripe/config","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:52.747Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:52.748Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"127.0.0.1"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:52.817Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":30453}
+{"timestamp":"2025-09-10T02:16:52.818Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":30453}
+{"timestamp":"2025-09-10T02:16:57.428Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:16:57.558Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:17:02.683Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:17:04.014Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:17:05.376Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":30453}
+{"timestamp":"2025-09-10T02:17:09.955Z","level":"INFO","message":"POST /api/stripe/config","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":30453}
+{"timestamp":"2025-09-10T02:18:10.443Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":31148}
+{"timestamp":"2025-09-10T02:18:44.272Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":31272}
+{"timestamp":"2025-09-10T02:18:53.029Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":31272}
+{"timestamp":"2025-09-10T02:19:31.794Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":31461}
+{"timestamp":"2025-09-10T02:19:40.201Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":31549}
+{"timestamp":"2025-09-10T02:19:50.945Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":31461}
+{"timestamp":"2025-09-10T02:21:01.469Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":31461}
+{"timestamp":"2025-09-10T02:21:01.469Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"127.0.0.1"},"pid":31461}
+{"timestamp":"2025-09-10T02:21:01.548Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":31461}
+{"timestamp":"2025-09-10T02:21:01.550Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":31461}
+{"timestamp":"2025-09-10T02:22:19.957Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":31461}
+{"timestamp":"2025-09-10T02:22:28.026Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":31461}
+{"timestamp":"2025-09-10T02:22:38.703Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":31461}
+{"timestamp":"2025-09-10T02:26:20.773Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":32213}
+{"timestamp":"2025-09-10T02:27:10.950Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.516Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.517Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.569Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.625Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.625Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"curl/7.81.0","ip":"184.105.7.184"},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.705Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.707Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":32213}
+{"timestamp":"2025-09-10T02:28:19.774Z","level":"INFO","message":"GET /admin","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":32213}
+{"timestamp":"2025-09-10T02:43:50.411Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":34236}
+{"timestamp":"2025-09-10T02:44:01.511Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.103.2 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:44:52.924Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:44:53.232Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:44:53.390Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:44:53.394Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:44:55.527Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:45:25.062Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:45:25.074Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:45:35.072Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:45:35.268Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:45:35.367Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"},"pid":34236}
+{"timestamp":"2025-09-10T02:46:15.007Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":34236}
+{"timestamp":"2025-09-10T02:46:15.008Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"demo","passwordLength":7,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":34236}
+{"timestamp":"2025-09-10T02:46:15.085Z","level":"INFO","message":"Password comparison debug","data":{"username":"demo","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$5/PpsofmRASpH..."},"pid":34236}
+{"timestamp":"2025-09-10T02:46:15.087Z","level":"INFO","message":"Successful mobile login","data":{"username":"demo","userId":8},"pid":34236}
+{"timestamp":"2025-09-10T02:46:15.299Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":34236}
+{"timestamp":"2025-09-10T02:46:15.301Z","level":"INFO","message":"Connection token requested for mobile NFC","data":{"userId":8,"username":"demo"},"pid":34236}
+{"timestamp":"2025-09-10T02:46:25.413Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":34236}
+{"timestamp":"2025-09-10T02:46:25.477Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Invalid API Key provided: sk_test_***********************************************************************************************aR1Y","amount":100,"user_id":8},"pid":34236}
+{"timestamp":"2025-09-10T03:00:51.434Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":36608}
+{"timestamp":"2025-09-10T03:01:39.109Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":36715}
+{"timestamp":"2025-09-10T03:05:44.241Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":37054}
+{"timestamp":"2025-09-10T03:12:08.697Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":37830}
+{"timestamp":"2025-09-10T03:17:19.468Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":38189}
+{"timestamp":"2025-09-10T03:19:49.793Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":38428}
+{"timestamp":"2025-09-10T03:20:11.044Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38428}
+{"timestamp":"2025-09-10T03:20:11.250Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38428}
+{"timestamp":"2025-09-10T03:20:11.414Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38428}
+{"timestamp":"2025-09-10T03:20:11.430Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38428}
+{"timestamp":"2025-09-10T03:25:13.979Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38428}
+{"timestamp":"2025-09-10T03:25:44.281Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":38765}
+{"timestamp":"2025-09-10T03:31:01.603Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38765}
+{"timestamp":"2025-09-10T03:31:01.830Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38765}
+{"timestamp":"2025-09-10T03:31:01.993Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38765}
+{"timestamp":"2025-09-10T03:31:01.994Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38765}
+{"timestamp":"2025-09-10T03:31:04.215Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":38765}
+{"timestamp":"2025-09-10T03:36:11.049Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":39244}
+{"timestamp":"2025-09-10T03:38:05.145Z","level":"INFO","message":"GET /","data":{"ip":"64.62.156.122","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15"},"pid":39244}
+{"timestamp":"2025-09-10T03:39:07.707Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:39:08.067Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:39:08.209Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:39:08.399Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:41:11.102Z","level":"INFO","message":"HEAD /webhooks/stripe","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":39244}
+{"timestamp":"2025-09-10T03:41:14.194Z","level":"INFO","message":"GET /webui/","data":{"ip":"64.62.156.122","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:41:23.177Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":39244}
+{"timestamp":"2025-09-10T03:42:59.775Z","level":"INFO","message":"HEAD /health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":39244}
+{"timestamp":"2025-09-10T03:44:16.310Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"64.62.156.123","userAgent":"Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/115.0"},"pid":39244}
+{"timestamp":"2025-09-10T03:44:40.702Z","level":"INFO","message":"GET /dashboard","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:46:15.308Z","level":"INFO","message":"GET /","data":{"ip":"64.62.156.122","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15"},"pid":39244}
+{"timestamp":"2025-09-10T03:47:07.617Z","level":"INFO","message":"GET /","data":{"ip":"64.62.156.125","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"},"pid":39244}
+{"timestamp":"2025-09-10T03:58:47.828Z","level":"INFO","message":"Log rotation scheduled","data":{},"pid":43144}
+{"timestamp":"2025-09-10T03:58:58.104Z","level":"INFO","message":"GET /api/health","data":{"ip":"127.0.0.1","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:18.391Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:18.736Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:18.878Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:19.056Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:30.310Z","level":"INFO","message":"GET /.git/config","data":{"ip":"64.62.156.122","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 OPR/94.0.0.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:48.390Z","level":"INFO","message":"GET /admin","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:00:59.283Z","level":"INFO","message":"GET /health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:01:07.190Z","level":"INFO","message":"GET /api/health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:01:15.469Z","level":"INFO","message":"POST /webhooks/stripe","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:01:15.469Z","level":"ERROR","message":"Webhook payload parsing error","data":{"error":"\"[object Object]\" is not valid JSON"},"pid":43144}
+{"timestamp":"2025-09-10T04:02:39.156Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:02:46.759Z","level":"INFO","message":"GET /admin","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:04:24.239Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:04:24.441Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:04:24.594Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:04:24.612Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:04:26.348Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:05:05.519Z","level":"INFO","message":"POST /api/stripe/webhook","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:05:05.520Z","level":"INFO","message":"Webhook secret configured","data":{"hasSecret":true,"secretPrefix":"whsec_R4..."},"pid":43144}
+{"timestamp":"2025-09-10T04:05:07.061Z","level":"INFO","message":"POST /api/stripe/webhook/test","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:07:12.088Z","level":"INFO","message":"GET /","data":{"ip":"91.134.91.17","userAgent":"Mozilla/5.0 (Debian; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:10:38.873Z","level":"INFO","message":"POST /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:10:38.881Z","level":"INFO","message":"Stripe configuration updated","data":{"publishableKey":"pk_live_...","testMode":false},"pid":43144}
+{"timestamp":"2025-09-10T04:10:40.489Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:11:46.555Z","level":"INFO","message":"GET /admin","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:11:54.324Z","level":"INFO","message":"GET /api/health","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:12:02.245Z","level":"INFO","message":"POST /webhooks/stripe","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:12:02.245Z","level":"ERROR","message":"Webhook payload parsing error","data":{"error":"\"[object Object]\" is not valid JSON"},"pid":43144}
+{"timestamp":"2025-09-10T04:12:29.634Z","level":"INFO","message":"GET /api/stripe/config","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:13:50.638Z","level":"INFO","message":"GET /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:16:12.904Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:16:19.005Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:16:19.006Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":43144}
+{"timestamp":"2025-09-10T04:17:20.394Z","level":"INFO","message":"POST /api/auth/login","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:17:20.394Z","level":"INFO","message":"Mobile login attempt debug","data":{"username":"admin","passwordLength":8,"userAgent":"okhttp/4.12.0","ip":"177.93.0.187"},"pid":43144}
+{"timestamp":"2025-09-10T04:17:20.471Z","level":"INFO","message":"Password comparison debug","data":{"username":"admin","passwordMatch":true,"hashedPasswordFromDB":"$2b$10$qb118g82ggQcx..."},"pid":43144}
+{"timestamp":"2025-09-10T04:17:20.472Z","level":"INFO","message":"Successful mobile login","data":{"username":"admin","userId":6},"pid":43144}
+{"timestamp":"2025-09-10T04:17:20.725Z","level":"INFO","message":"GET /api/stripe/connection_token","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:17:20.726Z","level":"INFO","message":"Connection token requested for mobile NFC","data":{"userId":6,"username":"admin"},"pid":43144}
+{"timestamp":"2025-09-10T04:18:23.932Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:18:31.951Z","level":"INFO","message":"GET /api/stripe/publishable-key","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:18:40.152Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:18:40.152Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":43144}
+{"timestamp":"2025-09-10T04:18:47.952Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:18:47.953Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":43144}
+{"timestamp":"2025-09-10T04:18:48.003Z","level":"INFO","message":"GET /api/events","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:18:48.004Z","level":"INFO","message":"Public events API called","data":{"ip":"184.105.7.184","userAgent":"curl/7.81.0","eventsCount":2},"pid":43144}
+{"timestamp":"2025-09-10T04:19:01.024Z","level":"INFO","message":"POST /api/stripe/payment_intent","data":{"ip":"177.93.0.187","userAgent":"okhttp/4.12.0"},"pid":43144}
+{"timestamp":"2025-09-10T04:19:01.367Z","level":"TRANSACTION","message":"Transaction created","data":{"action":"created","payment_intent_id":"pi_3S5fUnAts6Gh9pRN0KHqHC3O","amount":100,"user_id":6},"pid":43144}
+{"timestamp":"2025-09-10T04:23:24.156Z","level":"INFO","message":"GET /","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:24.958Z","level":"INFO","message":"GET /favicon.ico","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:27.231Z","level":"INFO","message":"POST /login","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:27.302Z","level":"INFO","message":"Successful login","data":{"username":"admin","userId":6},"pid":43144}
+{"timestamp":"2025-09-10T04:23:28.417Z","level":"INFO","message":"GET /admin","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:28.561Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:28.657Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:33.635Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:35.167Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:47.916Z","level":"INFO","message":"GET /api/dashboard/users","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:55.426Z","level":"INFO","message":"GET /api/dashboard/stats","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:55.530Z","level":"INFO","message":"GET /api/dashboard/transactions","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
+{"timestamp":"2025-09-10T04:23:55.949Z","level":"INFO","message":"GET /api/dashboard/events","data":{"ip":"177.93.0.187","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"},"pid":43144}
