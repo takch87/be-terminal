@@ -9,7 +9,7 @@ class App : Application() {
         
         // Inicializar Stripe SDK (no Terminal, usaremos NFC + PaymentIntents)
         // La publishable key se configurará dinámicamente desde el backend
-        android.util.Log.i("App", "BeTerminal App initialized")
+        android.util.Log.i("App", "Be Seamless App initialized")
     }
     
     fun initializeStripe(publishableKey: String) {

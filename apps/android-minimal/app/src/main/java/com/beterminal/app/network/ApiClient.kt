@@ -8,7 +8,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
 object ApiClient {
-    private const val BASE_URL = "https://api.be.terminal.beticket.net/"
+    // Actualizado para usar el backend-minimal con flujo automático
+    private const val BASE_URL = "https://be.terminal.beticket.net/"
     
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
@@ -41,5 +42,13 @@ object ApiClient {
 
     suspend fun createPaymentIntent(token: String, request: PaymentIntentRequest): Response<PaymentIntentResponse> {
         return apiService.createPaymentIntent("Bearer $token", request)
+    }
+
+    suspend fun simulateNfcTap(token: String, request: NfcTapRequest): Response<NfcTapResponse> {
+        return apiService.simulateNfcTap("Bearer $token", request)
+    }
+
+    suspend fun processNfcPayment(token: String, request: ProcessNfcRequest): Response<ProcessNfcResponse> {
+        return apiService.processNfcPayment("Bearer $token", request)
     }
 }

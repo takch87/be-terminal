@@ -12,11 +12,25 @@ yarn.lock
 # OS
 .DS_Store
 
-# Env
+# Env - INFORMACIÓN SENSIBLE
 .env
 **/.env
 **/.env.*
 !services/api/.env.example
+
+# Database - DATOS SENSIBLES
+**/*.sqlite
+**/*.db
+**/database.*
+**/backups/
+**/*.backup
+**/*.backup-*
+
+# Logs - PUEDEN CONTENER INFORMACIÓN SENSIBLE
+**/*.log
+**/logs/
+**/server*.log
+**/debug*.log
 
 # Android
 **/local.properties
@@ -30,3 +44,20 @@ yarn.lock
 # IDE
 .idea/
 .vscode/
+
+# Crypto y Keys - CRÍTICO
+**/crypto-utils.js
+**/*encryption*
+**/*secret*
+**/*key*
+**/server-manager.sh
+
+# Deployment y scripts sensibles
+**/deploy*.log
+**/production*.log
+**/*deploy*.sh
+**/switch_to_production.*
+
+# Test files que pueden contener datos sensibles
+**/test_*.js
+**/verify_*.sh

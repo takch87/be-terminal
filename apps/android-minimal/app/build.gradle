@@ -11,9 +11,9 @@ android {
         applicationId 'com.beterminal.app'
         minSdk 26
         targetSdk 35
-    // Synchronized to latest published debug APK (v1.1.6, code 8) before next bump
-    versionCode 21
-    versionName '1.2.8'
+    // Be Seamless version - Fixed endpoint and payment flow
+    versionCode 24
+    versionName '2.0.2-endpoint-fix'
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true

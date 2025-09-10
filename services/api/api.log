@@ -2,7 +2,7 @@ node:internal/modules/esm/resolve:274
     throw new ERR_MODULE_NOT_FOUND(
           ^
 
-Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/client_4752_1/be-terminal/services/api/dist/config/env' imported from /home/client_4752_1/be-terminal/services/api/dist/server.js
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/client_4752_1/be-terminal/services/api/dist/routes/auth.routes' imported from /home/client_4752_1/be-terminal/services/api/dist/routes/index.js
     at finalizeResolution (node:internal/modules/esm/resolve:274:11)
     at moduleResolve (node:internal/modules/esm/resolve:859:10)
     at defaultResolve (node:internal/modules/esm/resolve:983:11)
@@ -11,7 +11,7 @@ Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/client_4752_1/be-termina
     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:308:38)
     at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {
   code: 'ERR_MODULE_NOT_FOUND',
-  url: 'file:///home/client_4752_1/be-terminal/services/api/dist/config/env'
+  url: 'file:///home/client_4752_1/be-terminal/services/api/dist/routes/auth.routes'
 }
 
 Node.js v22.19.0

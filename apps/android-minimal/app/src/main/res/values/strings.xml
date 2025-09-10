@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BeTerminal</string>
+    <string name="app_name">Be Seamless</string>
+    <string name="app_title">Be Seamless</string>
+    <string name="app_subtitle">Sistema de Pagos</string>
+    
+    <!-- Stripe publishable key -->
+    <string name="stripe_publishable_key">pk_test_51QDXxlBYsJK5iEWvt4A8yJUK8Qjzr3TJPe8XQXM1RkO7gBRk9PHGk0A1XDNJz9VGJzr8FhK5oAX1GBWk8VPTr0002rWQAB</string>
 </resources>
 

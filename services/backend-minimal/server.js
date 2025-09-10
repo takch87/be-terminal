@@ -768,13 +768,14 @@ app.post('/api/stripe/payment_intent', authenticateToken, async (req, res) => {
                 };
                 logger.info('Using automatic flow with immediate confirmation', { paymentMethodId });
             } else {
-                // Opción 2B: Flujo automático sin paymentMethodId (confirmación automática cuando se agregue método)
+                // Opción 2B: Flujo automático NFC - Configuración para Terminal
                 paymentIntentConfig = {
                     ...paymentIntentConfig,
                     confirmation_method: 'automatic',
-                    payment_method_types: ['card']
+                    payment_method_types: ['card_present'], // Para NFC/Terminal
+                    capture_method: 'automatic'
                 };
-                logger.info('Using automatic flow with deferred confirmation');
+                logger.info('Using automatic flow for NFC/Terminal - card_present');
             }
         } else {
             // OPCIÓN 1: FLUJO MANUAL (comportamiento anterior)
@@ -890,16 +891,17 @@ app.post('/api/stripe/payment_intent_auto', authenticateToken, async (req, res) 
     }
 
     try {
-        // CONFIGURACIÓN AUTOMÁTICA OPTIMIZADA
+        // CONFIGURACIÓN PARA NFC REAL CON STRIPE TERMINAL
         const paymentIntentConfig = {
             amount: Math.round(amount),
             currency: 'usd',
-            confirmation_method: 'automatic',
-            payment_method_types: ['card'],
+            confirmation_method: 'manual',
+            payment_method_types: ['card_present'], // Para NFC real
+            capture_method: 'automatic',
             metadata: {
                 event_code: eventCode || 'general',
                 user_id: req.user.userId.toString(),
-                flow_type: 'automatic_optimized'
+                flow_type: 'nfc_terminal'
             }
         };
 
@@ -907,6 +909,7 @@ app.post('/api/stripe/payment_intent_auto', authenticateToken, async (req, res) 
         if (paymentMethodId) {
             paymentIntentConfig.payment_method = paymentMethodId;
             paymentIntentConfig.confirm = true;
+            paymentIntentConfig.payment_method_types = ['card']; // Para pagos online
         }
 
         const paymentIntent = await stripe.paymentIntents.create(paymentIntentConfig);
@@ -1070,6 +1073,260 @@ app.post('/api/stripe/confirm_payment', authenticateToken, async (req, res) => {
             success: false,
             error: error.message,
             message: 'Error confirmando el pago'
+        });
+    }
+});
+
+// Endpoint para simular tap NFC - Completar pago con tarjeta física
+app.post('/api/stripe/nfc_tap', authenticateToken, async (req, res) => {
+    const { paymentIntentId, cardBrand = 'visa', last4 = '4242' } = req.body;
+
+    logger.info('NFC tap simulation request', {
+        paymentIntentId,
+        cardBrand,
+        last4,
+        user_id: req.user.userId
+    });
+
+    if (!paymentIntentId) {
+        return res.status(400).json({ error: 'Payment Intent ID is required' });
+    }
+
+    if (!stripe) {
+        return res.status(500).json({ error: 'Stripe not configured' });
+    }
+
+    try {
+        // Primero, obtener el Payment Intent actual
+        const currentPaymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+        
+        if (currentPaymentIntent.status !== 'requires_payment_method') {
+            logger.warn('NFC tap on non-requires_payment_method intent', {
+                paymentIntentId,
+                current_status: currentPaymentIntent.status,
+                user_id: req.user.userId
+            });
+            
+            return res.json({
+                success: true,
+                status: currentPaymentIntent.status,
+                message: `Payment Intent ya está en estado: ${currentPaymentIntent.status}`,
+                alreadyProcessed: true
+            });
+        }
+
+        // Crear un método de pago simulado para NFC
+        const paymentMethod = await stripe.paymentMethods.create({
+            type: 'card',
+            card: {
+                number: '4242424242424242', // Tarjeta de prueba
+                exp_month: 12,
+                exp_year: 2030,
+                cvc: '123'
+            },
+            metadata: {
+                simulated_nfc: 'true',
+                brand: cardBrand,
+                last4: last4,
+                tap_timestamp: new Date().toISOString()
+            }
+        });
+
+        logger.info('Created simulated payment method for NFC', {
+            payment_method_id: paymentMethod.id,
+            paymentIntentId,
+            user_id: req.user.userId
+        });
+
+        // Confirmar el Payment Intent con el método de pago simulado
+        const confirmedPaymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, {
+            payment_method: paymentMethod.id
+        });
+
+        // Actualizar la transacción con información de NFC
+        await saveTransaction({
+            transaction_id: confirmedPaymentIntent.id,
+            amount: confirmedPaymentIntent.amount,
+            currency: confirmedPaymentIntent.currency,
+            status: confirmedPaymentIntent.status,
+            event_code: confirmedPaymentIntent.metadata?.event_code || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: confirmedPaymentIntent.id,
+            metadata: {
+                ...confirmedPaymentIntent.metadata,
+                nfc_simulation: 'true',
+                simulated_card_brand: cardBrand,
+                simulated_last4: last4,
+                payment_method_id: paymentMethod.id,
+                nfc_tap_timestamp: new Date().toISOString()
+            }
+        });
+
+        logger.transaction('nfc_tap_completed', {
+            payment_intent_id: confirmedPaymentIntent.id,
+            amount: confirmedPaymentIntent.amount,
+            status: confirmedPaymentIntent.status,
+            payment_method_id: paymentMethod.id,
+            simulated_card: `${cardBrand} ****${last4}`,
+            user_id: req.user.userId
+        });
+
+        const isCompleted = confirmedPaymentIntent.status === 'succeeded';
+        const requiresAction = confirmedPaymentIntent.status === 'requires_action';
+        
+        res.json({
+            success: true,
+            status: confirmedPaymentIntent.status,
+            paymentIntentId: confirmedPaymentIntent.id,
+            completed: isCompleted,
+            requiresAction: requiresAction,
+            paymentMethodId: paymentMethod.id,
+            simulatedCard: {
+                brand: cardBrand,
+                last4: last4,
+                type: 'nfc_tap'
+            },
+            message: isCompleted 
+                ? '¡Pago NFC completado exitosamente!'
+                : requiresAction 
+                    ? 'Pago NFC confirmado - Requiere autenticación adicional'
+                    : 'Pago NFC confirmado - Procesándose'
+        });
+
+    } catch (error) {
+        logger.error('NFC tap simulation error', {
+            error: error.message,
+            error_type: error.type,
+            error_code: error.code,
+            paymentIntentId,
+            user_id: req.user.userId
+        });
+        
+        // Actualizar transacción con error
+        await saveTransaction({
+            transaction_id: paymentIntentId,
+            amount: 0,
+            currency: 'usd',
+            status: 'nfc_simulation_failed',
+            event_code: 'nfc_error',
+            user_id: req.user.userId,
+            payment_intent_id: paymentIntentId,
+            metadata: {
+                error_message: error.message,
+                error_type: error.type || 'unknown',
+                error_code: error.code || 'unknown',
+                nfc_simulation_failed: 'true'
+            }
+        });
+        
+        res.status(500).json({ 
+            success: false,
+            error: error.message,
+            message: 'Error simulando tap NFC'
+        });
+    }
+});
+
+// Endpoint para procesar pago NFC real con tarjeta presente
+app.post('/api/stripe/process_nfc', authenticateToken, async (req, res) => {
+    const { paymentIntentId, paymentMethodId } = req.body;
+
+    logger.info('Real NFC payment processing request', {
+        paymentIntentId,
+        paymentMethodId,
+        user_id: req.user.userId
+    });
+
+    if (!paymentIntentId) {
+        return res.status(400).json({ error: 'Payment Intent ID is required' });
+    }
+
+    if (!paymentMethodId) {
+        return res.status(400).json({ error: 'Payment Method ID is required' });
+    }
+
+    if (!stripe) {
+        return res.status(500).json({ error: 'Stripe not configured' });
+    }
+
+    try {
+        // Confirmar el Payment Intent con el método de pago NFC real
+        const confirmedPaymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, {
+            payment_method: paymentMethodId
+        });
+
+        // Actualizar la transacción
+        await saveTransaction({
+            transaction_id: confirmedPaymentIntent.id,
+            amount: confirmedPaymentIntent.amount,
+            currency: confirmedPaymentIntent.currency,
+            status: confirmedPaymentIntent.status,
+            event_code: confirmedPaymentIntent.metadata?.event_code || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: confirmedPaymentIntent.id,
+            metadata: {
+                ...confirmedPaymentIntent.metadata,
+                real_nfc_payment: 'true',
+                payment_method_id: paymentMethodId,
+                nfc_processing_timestamp: new Date().toISOString()
+            }
+        });
+
+        logger.transaction('nfc_real_processed', {
+            payment_intent_id: confirmedPaymentIntent.id,
+            amount: confirmedPaymentIntent.amount,
+            status: confirmedPaymentIntent.status,
+            payment_method_id: paymentMethodId,
+            user_id: req.user.userId
+        });
+
+        const isCompleted = confirmedPaymentIntent.status === 'succeeded';
+        const requiresAction = confirmedPaymentIntent.status === 'requires_action';
+        
+        res.json({
+            success: true,
+            status: confirmedPaymentIntent.status,
+            paymentIntentId: confirmedPaymentIntent.id,
+            completed: isCompleted,
+            requiresAction: requiresAction,
+            paymentMethodId: paymentMethodId,
+            message: isCompleted 
+                ? '¡Pago NFC completado exitosamente!'
+                : requiresAction 
+                    ? 'Pago NFC requiere autenticación adicional'
+                    : 'Pago NFC procesándose'
+        });
+
+    } catch (error) {
+        logger.error('Real NFC payment processing error', {
+            error: error.message,
+            error_type: error.type,
+            error_code: error.code,
+            paymentIntentId,
+            paymentMethodId,
+            user_id: req.user.userId
+        });
+        
+        await saveTransaction({
+            transaction_id: paymentIntentId,
+            amount: 0,
+            currency: 'usd',
+            status: 'nfc_processing_failed',
+            event_code: 'nfc_error',
+            user_id: req.user.userId,
+            payment_intent_id: paymentIntentId,
+            metadata: {
+                error_message: error.message,
+                error_type: error.type || 'unknown',
+                error_code: error.code || 'unknown',
+                real_nfc_processing_failed: 'true'
+            }
+        });
+        
+        res.status(500).json({ 
+            success: false,
+            error: error.message,
+            message: 'Error procesando pago NFC real'
         });
     }
 });

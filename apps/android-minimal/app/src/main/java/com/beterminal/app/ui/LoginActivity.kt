@@ -16,11 +16,11 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var sharedPreferences: SharedPreferences
-    private val PREFS_NAME = "BeTerminalPrefs"
+    private val PREFS_NAME = "BeSeamlessPrefs"
     private val KEY_REMEMBER = "remember_me"
     private val KEY_USERNAME = "saved_username"
-    private val KEY_PASSWORD = "saved_password"
     private val KEY_EVENT_CODE = "saved_event_code"
+    // Nota: NO guardamos la contraseña por seguridad
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // Agregar información de versión
-        binding.tvVersion.text = "v1.2.14 - HTTPS + Remember Me"
+        binding.tvVersion.text = "Be Seamless v2.0 - Flujo Automático"
     }
 
     private fun performLogin() {
@@ -89,8 +89,8 @@ class LoginActivity : AppCompatActivity() {
         
         if (rememberMe) {
             binding.etUsername.setText(sharedPreferences.getString(KEY_USERNAME, ""))
-            binding.etPassword.setText(sharedPreferences.getString(KEY_PASSWORD, ""))
             binding.etEventCode.setText(sharedPreferences.getString(KEY_EVENT_CODE, ""))
+            // Por seguridad, NO cargamos la contraseña
         }
     }
     
@@ -101,12 +101,11 @@ class LoginActivity : AppCompatActivity() {
         editor.putBoolean(KEY_REMEMBER, rememberMe)
         
         if (rememberMe) {
+            // Solo guardamos usuario y evento, NO la contraseña por seguridad
             editor.putString(KEY_USERNAME, binding.etUsername.text.toString())
-            editor.putString(KEY_PASSWORD, binding.etPassword.text.toString())
             editor.putString(KEY_EVENT_CODE, binding.etEventCode.text.toString())
         } else {
             editor.remove(KEY_USERNAME)
-            editor.remove(KEY_PASSWORD)
             editor.remove(KEY_EVENT_CODE)
         }
         

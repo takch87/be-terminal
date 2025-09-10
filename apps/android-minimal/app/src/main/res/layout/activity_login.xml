@@ -11,24 +11,28 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_bt_logo"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp" />
+        <!-- Logo removido para Be Seamless -->
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BeTerminal"
+            android:text="Be Seamless"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:textStyle="bold"
             android:gravity="center"
-            android:paddingBottom="32dp" />
+            android:layout_marginTop="32dp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sistema de Pagos Automático"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:gravity="center"
+            android:paddingBottom="32dp"
+            android:textColor="?attr/colorOnSurfaceVariant" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUsername"
@@ -80,7 +84,7 @@
             android:id="@+id/cbRememberMe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recordar credenciales"
+            android:text="Recordar usuario y evento"
             android:layout_marginBottom="16dp"
             android:textColor="#666666" />
 
