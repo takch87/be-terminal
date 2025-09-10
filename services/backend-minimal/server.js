@@ -231,11 +231,28 @@ app.get('/api/dashboard/stats', async (req, res) => {
         });
 
         const failedTransactions = await new Promise((resolve, reject) => {
-            db.get('SELECT COUNT(*) as count FROM transactions WHERE status = "failed"', (err, row) => {
+            db.get('SELECT COUNT(*) as count FROM transactions WHERE status IN ("failed", "creation_failed")', (err, row) => {
                 if (err) reject(err);
                 else resolve(row.count);
             });
         });
+
+        const canceledTransactions = await new Promise((resolve, reject) => {
+            db.get('SELECT COUNT(*) as count FROM transactions WHERE status = "canceled"', (err, row) => {
+                if (err) reject(err);
+                else resolve(row.count);
+            });
+        });
+
+        const pendingTransactions = await new Promise((resolve, reject) => {
+            db.get('SELECT COUNT(*) as count FROM transactions WHERE status IN ("requires_payment_method", "requires_confirmation", "requires_action", "processing")', (err, row) => {
+                if (err) reject(err);
+                else resolve(row.count);
+            });
+        });
+
+        // Calculate success rate
+        const successRate = totalTransactions > 0 ? ((successfulTransactions / totalTransactions) * 100).toFixed(1) : 0;
 
         res.json({
             totalUsers,
@@ -243,7 +260,10 @@ app.get('/api/dashboard/stats', async (req, res) => {
             totalTransactions,
             totalRevenue: (totalAmount/100).toFixed(2), // Convert from cents to dollars
             successfulTransactions,
-            failedTransactions
+            failedTransactions,
+            canceledTransactions,
+            pendingTransactions,
+            successRate: `${successRate}%`
         });
     } catch (error) {
         logger.error('Dashboard stats error', { error: error.message });
@@ -254,9 +274,33 @@ app.get('/api/dashboard/stats', async (req, res) => {
 app.get('/api/dashboard/transactions', async (req, res) => {
     try {
         const transactions = await new Promise((resolve, reject) => {
-            db.all('SELECT * FROM transactions ORDER BY created_at DESC LIMIT 50', (err, rows) => {
+            db.all(`
+                SELECT 
+                    t.*,
+                    u.username,
+                    CASE 
+                        WHEN t.status = 'succeeded' THEN '✅ Exitosa'
+                        WHEN t.status = 'failed' THEN '❌ Fallida'
+                        WHEN t.status = 'canceled' THEN '🚫 Cancelada'
+                        WHEN t.status = 'requires_action' THEN '⚠️ Requiere Acción'
+                        WHEN t.status = 'creation_failed' THEN '💥 Error de Creación'
+                        ELSE t.status
+                    END as status_display
+                FROM transactions t 
+                LEFT JOIN users u ON t.user_id = u.id 
+                ORDER BY t.created_at DESC 
+                LIMIT 100
+            `, (err, rows) => {
                 if (err) reject(err);
-                else resolve(rows);
+                else {
+                    // Parse metadata for better display
+                    const processedRows = rows.map(row => ({
+                        ...row,
+                        metadata: row.metadata ? JSON.parse(row.metadata) : {},
+                        amount_display: (row.amount / 100).toFixed(2) // Convert cents to dollars
+                    }));
+                    resolve(processedRows);
+                }
             });
         });
 
@@ -681,7 +725,17 @@ app.post('/api/auth/login', async (req, res) => {
 
 // Payment endpoints
 app.post('/api/stripe/payment_intent', authenticateToken, async (req, res) => {
-    const { amount, eventCode, paymentMethodId } = req.body;
+    const { amount, eventCode, paymentMethodId, flowType = 'automatic' } = req.body;
+
+    // LOG TEMPORAL: Ver qué está enviando la app
+    logger.info('Payment intent request body', {
+        body: req.body,
+        amount,
+        eventCode,
+        paymentMethodId,
+        flowType,
+        hasPaymentMethodId: !!paymentMethodId
+    });
 
     if (!amount || amount <= 0) {
         return res.status(400).json({ error: 'Invalid amount' });
@@ -692,49 +746,343 @@ app.post('/api/stripe/payment_intent', authenticateToken, async (req, res) => {
     }
 
     try {
-        const paymentIntent = await stripe.paymentIntents.create({
+        let paymentIntentConfig = {
             amount: Math.round(amount),
             currency: 'usd',
             metadata: {
                 event_code: eventCode || 'general',
-                user_id: req.user.userId.toString()
-            },
-            payment_method: paymentMethodId,
-            confirmation_method: 'manual',
-            confirm: !!paymentMethodId
+                user_id: req.user.userId.toString(),
+                flow_type: flowType
+            }
+        };
+
+        // OPCIÓN 2: FLUJO AUTOMÁTICO
+        if (flowType === 'automatic') {
+            if (paymentMethodId) {
+                // Opción 2A: Flujo automático con paymentMethodId (confirmación inmediata)
+                paymentIntentConfig = {
+                    ...paymentIntentConfig,
+                    payment_method: paymentMethodId,
+                    confirmation_method: 'automatic',
+                    confirm: true
+                };
+                logger.info('Using automatic flow with immediate confirmation', { paymentMethodId });
+            } else {
+                // Opción 2B: Flujo automático sin paymentMethodId (confirmación automática cuando se agregue método)
+                paymentIntentConfig = {
+                    ...paymentIntentConfig,
+                    confirmation_method: 'automatic',
+                    payment_method_types: ['card']
+                };
+                logger.info('Using automatic flow with deferred confirmation');
+            }
+        } else {
+            // OPCIÓN 1: FLUJO MANUAL (comportamiento anterior)
+            paymentIntentConfig = {
+                ...paymentIntentConfig,
+                payment_method: paymentMethodId,
+                confirmation_method: 'manual',
+                confirm: !!paymentMethodId
+            };
+            logger.info('Using manual flow', { paymentMethodId, willConfirm: !!paymentMethodId });
+        }
+
+        const paymentIntent = await stripe.paymentIntents.create(paymentIntentConfig);
+
+        // Registrar la transacción inmediatamente al crearla
+        await saveTransaction({
+            transaction_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            currency: paymentIntent.currency,
+            status: paymentIntent.status, // 'requires_payment_method', 'requires_confirmation', etc.
+            event_code: eventCode || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: paymentIntent.id,
+            metadata: paymentIntent.metadata
         });
 
         logger.transaction('created', {
             payment_intent_id: paymentIntent.id,
             amount: paymentIntent.amount,
+            status: paymentIntent.status,
+            flow_type: flowType,
+            confirmation_method: paymentIntentConfig.confirmation_method,
             user_id: req.user.userId
         });
 
-        res.json({
+        // Respuesta mejorada con información del flujo
+        const response = {
             clientSecret: paymentIntent.client_secret,
-            status: paymentIntent.status
-        });
+            status: paymentIntent.status,
+            paymentIntentId: paymentIntent.id,
+            flowType: flowType,
+            confirmationMethod: paymentIntentConfig.confirmation_method
+        };
+
+        // Información adicional según el flujo
+        if (flowType === 'automatic') {
+            response.message = paymentMethodId 
+                ? 'Pago creado y confirmado automáticamente' 
+                : 'Pago creado - Se confirmará automáticamente al agregar método de pago';
+            
+            if (paymentIntent.status === 'succeeded') {
+                response.message = '¡Pago completado exitosamente!';
+                response.completed = true;
+            } else if (paymentIntent.status === 'requires_action') {
+                response.message = 'Pago requiere autenticación adicional';
+                response.requiresAction = true;
+            }
+        } else {
+            response.message = 'Pago creado - Requiere confirmación manual';
+        }
+
+        res.json(response);
 
     } catch (error) {
+        // Registrar transacciones fallidas por errores de creación
+        const failedTransactionId = `failed_${Date.now()}_${req.user.userId}`;
+        
+        await saveTransaction({
+            transaction_id: failedTransactionId,
+            amount: Math.round(amount),
+            currency: 'usd',
+            status: 'creation_failed',
+            event_code: eventCode || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: null,
+            metadata: {
+                error_message: error.message,
+                error_type: error.type || 'unknown',
+                error_code: error.code || 'unknown'
+            }
+        });
+
         logger.error('Payment intent creation error', {
             error: error.message,
+            error_type: error.type,
+            error_code: error.code,
             amount,
             user_id: req.user.userId
         });
+        
         res.status(500).json({ error: error.message });
     }
 });
 
+// Endpoint específico para Flujo Automático (Opción 2)
+app.post('/api/stripe/payment_intent_auto', authenticateToken, async (req, res) => {
+    const { amount, eventCode, paymentMethodId } = req.body;
+
+    logger.info('Automatic payment flow request', {
+        amount,
+        eventCode,
+        paymentMethodId,
+        hasPaymentMethodId: !!paymentMethodId,
+        user_id: req.user.userId
+    });
+
+    if (!amount || amount <= 0) {
+        return res.status(400).json({ error: 'Invalid amount' });
+    }
+
+    if (!stripe) {
+        return res.status(500).json({ error: 'Stripe not configured' });
+    }
+
+    try {
+        // CONFIGURACIÓN AUTOMÁTICA OPTIMIZADA
+        const paymentIntentConfig = {
+            amount: Math.round(amount),
+            currency: 'usd',
+            confirmation_method: 'automatic',
+            payment_method_types: ['card'],
+            metadata: {
+                event_code: eventCode || 'general',
+                user_id: req.user.userId.toString(),
+                flow_type: 'automatic_optimized'
+            }
+        };
+
+        // Si tenemos paymentMethodId, agregarlo y confirmar inmediatamente
+        if (paymentMethodId) {
+            paymentIntentConfig.payment_method = paymentMethodId;
+            paymentIntentConfig.confirm = true;
+        }
+
+        const paymentIntent = await stripe.paymentIntents.create(paymentIntentConfig);
+
+        // Registrar la transacción
+        await saveTransaction({
+            transaction_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            currency: paymentIntent.currency,
+            status: paymentIntent.status,
+            event_code: eventCode || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: paymentIntent.id,
+            metadata: {
+                ...paymentIntent.metadata,
+                flow_type: 'automatic_optimized'
+            }
+        });
+
+        logger.transaction('created_auto', {
+            payment_intent_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            status: paymentIntent.status,
+            flow_type: 'automatic_optimized',
+            user_id: req.user.userId
+        });
+
+        // Respuesta optimizada para flujo automático
+        const isCompleted = paymentIntent.status === 'succeeded';
+        const requiresAction = paymentIntent.status === 'requires_action';
+        
+        res.json({
+            success: true,
+            clientSecret: paymentIntent.client_secret,
+            status: paymentIntent.status,
+            paymentIntentId: paymentIntent.id,
+            completed: isCompleted,
+            requiresAction: requiresAction,
+            message: isCompleted 
+                ? '¡Pago completado exitosamente!'
+                : requiresAction 
+                    ? 'Pago requiere autenticación adicional'
+                    : 'Pago procesándose automáticamente'
+        });
+
+    } catch (error) {
+        // Registrar error
+        const failedTransactionId = `failed_auto_${Date.now()}_${req.user.userId}`;
+        
+        await saveTransaction({
+            transaction_id: failedTransactionId,
+            amount: Math.round(amount),
+            currency: 'usd',
+            status: 'creation_failed',
+            event_code: eventCode || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: null,
+            metadata: {
+                error_message: error.message,
+                error_type: error.type || 'unknown',
+                error_code: error.code || 'unknown',
+                flow_type: 'automatic_optimized'
+            }
+        });
+
+        logger.error('Automatic payment creation error', {
+            error: error.message,
+            error_type: error.type,
+            error_code: error.code,
+            amount,
+            user_id: req.user.userId
+        });
+        
+        res.status(500).json({ 
+            success: false,
+            error: error.message,
+            message: 'Error creando pago automático'
+        });
+    }
+});
+
+// Endpoint para confirmar pagos pendientes (Opción 2C)
+app.post('/api/stripe/confirm_payment', authenticateToken, async (req, res) => {
+    const { paymentIntentId, paymentMethodId } = req.body;
+
+    logger.info('Payment confirmation request', {
+        paymentIntentId,
+        paymentMethodId,
+        hasPaymentMethodId: !!paymentMethodId,
+        user_id: req.user.userId
+    });
+
+    if (!paymentIntentId) {
+        return res.status(400).json({ error: 'Payment Intent ID is required' });
+    }
+
+    if (!paymentMethodId) {
+        return res.status(400).json({ error: 'Payment Method ID is required' });
+    }
+
+    if (!stripe) {
+        return res.status(500).json({ error: 'Stripe not configured' });
+    }
+
+    try {
+        // Confirmar el pago con el método de pago
+        const paymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, {
+            payment_method: paymentMethodId
+        });
+
+        // Actualizar la transacción
+        await saveTransaction({
+            transaction_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            currency: paymentIntent.currency,
+            status: paymentIntent.status,
+            event_code: paymentIntent.metadata?.event_code || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: paymentIntent.id,
+            metadata: {
+                ...paymentIntent.metadata,
+                confirmed_with_method: paymentMethodId,
+                confirmation_timestamp: new Date().toISOString()
+            }
+        });
+
+        logger.transaction('confirmed', {
+            payment_intent_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            status: paymentIntent.status,
+            user_id: req.user.userId
+        });
+
+        const isCompleted = paymentIntent.status === 'succeeded';
+        const requiresAction = paymentIntent.status === 'requires_action';
+        
+        res.json({
+            success: true,
+            status: paymentIntent.status,
+            paymentIntentId: paymentIntent.id,
+            completed: isCompleted,
+            requiresAction: requiresAction,
+            clientSecret: paymentIntent.client_secret,
+            message: isCompleted 
+                ? '¡Pago confirmado y completado exitosamente!'
+                : requiresAction 
+                    ? 'Pago confirmado - Requiere autenticación adicional'
+                    : 'Pago confirmado - Procesándose'
+        });
+
+    } catch (error) {
+        logger.error('Payment confirmation error', {
+            error: error.message,
+            error_type: error.type,
+            error_code: error.code,
+            paymentIntentId,
+            user_id: req.user.userId
+        });
+        
+        res.status(500).json({ 
+            success: false,
+            error: error.message,
+            message: 'Error confirmando el pago'
+        });
+    }
+});
+
 // Stripe webhook
-app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
+app.post('/webhooks/stripe', express.json(), async (req, res) => {
     const payload = req.body;
     const sig = req.headers['stripe-signature'];
 
     let event;
     try {
-        // Try to verify webhook signature if we have the secret
-        // For now, we'll use simple JSON parsing, but signature verification is recommended
-        event = JSON.parse(payload);
+        // The event is already parsed by express.json()
+        event = payload;
         
         logger.info('Webhook received', { 
             event_type: event.type,
@@ -743,7 +1091,7 @@ app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (r
         });
         
     } catch (err) {
-        logger.error('Webhook payload parsing error', { error: err.message });
+        logger.error('Webhook payload parsing error', { error: err.message, payload_type: typeof payload });
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
@@ -761,6 +1109,7 @@ app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (r
                     event_code: succeededIntent.metadata?.event_code,
                     card_last4: succeededIntent.payment_method?.card?.last4,
                     card_brand: succeededIntent.payment_method?.card?.brand,
+                    user_id: succeededIntent.metadata?.user_id,
                     payment_intent_id: succeededIntent.id,
                     metadata: succeededIntent.metadata
                 });
@@ -768,7 +1117,12 @@ app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (r
 
             case 'payment_intent.payment_failed':
                 const failedIntent = event.data.object;
-                logger.warn('Payment failed', { payment_intent_id: failedIntent.id });
+                const lastPaymentError = failedIntent.last_payment_error;
+                logger.warn('Payment failed', { 
+                    payment_intent_id: failedIntent.id,
+                    failure_code: lastPaymentError?.code,
+                    failure_message: lastPaymentError?.message
+                });
                 
                 await saveTransaction({
                     transaction_id: failedIntent.id,
@@ -776,10 +1130,48 @@ app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (r
                     currency: failedIntent.currency,
                     status: 'failed',
                     event_code: failedIntent.metadata?.event_code,
-                    card_last4: failedIntent.payment_method?.card?.last4,
-                    card_brand: failedIntent.payment_method?.card?.brand,
+                    card_last4: lastPaymentError?.payment_method?.card?.last4,
+                    card_brand: lastPaymentError?.payment_method?.card?.brand,
+                    user_id: failedIntent.metadata?.user_id,
                     payment_intent_id: failedIntent.id,
-                    metadata: failedIntent.metadata
+                    metadata: {
+                        ...failedIntent.metadata,
+                        failure_code: lastPaymentError?.code,
+                        failure_message: lastPaymentError?.message,
+                        decline_code: lastPaymentError?.decline_code
+                    }
+                });
+                break;
+
+            case 'payment_intent.canceled':
+                const canceledIntent = event.data.object;
+                logger.info('Payment canceled', { payment_intent_id: canceledIntent.id });
+                
+                await saveTransaction({
+                    transaction_id: canceledIntent.id,
+                    amount: canceledIntent.amount,
+                    currency: canceledIntent.currency,
+                    status: 'canceled',
+                    event_code: canceledIntent.metadata?.event_code,
+                    user_id: canceledIntent.metadata?.user_id,
+                    payment_intent_id: canceledIntent.id,
+                    metadata: canceledIntent.metadata
+                });
+                break;
+
+            case 'payment_intent.requires_action':
+                const actionIntent = event.data.object;
+                logger.info('Payment requires action', { payment_intent_id: actionIntent.id });
+                
+                await saveTransaction({
+                    transaction_id: actionIntent.id,
+                    amount: actionIntent.amount,
+                    currency: actionIntent.currency,
+                    status: 'requires_action',
+                    event_code: actionIntent.metadata?.event_code,
+                    user_id: actionIntent.metadata?.user_id,
+                    payment_intent_id: actionIntent.id,
+                    metadata: actionIntent.metadata
                 });
                 break;
 

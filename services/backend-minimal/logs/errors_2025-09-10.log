@@ -10,3 +10,6 @@
 {"timestamp":"2025-09-10T02:46:25.477Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Invalid API Key provided: sk_test_***********************************************************************************************aR1Y","amount":100,"user_id":8},"pid":34236}
 {"timestamp":"2025-09-10T04:01:15.469Z","level":"ERROR","message":"Webhook payload parsing error","data":{"error":"\"[object Object]\" is not valid JSON"},"pid":43144}
 {"timestamp":"2025-09-10T04:12:02.245Z","level":"ERROR","message":"Webhook payload parsing error","data":{"error":"\"[object Object]\" is not valid JSON"},"pid":43144}
+{"timestamp":"2025-09-10T04:44:01.227Z","level":"ERROR","message":"Payment intent creation error","data":{"error":"Amount must be at least $0.50 usd","error_type":"StripeInvalidRequestError","error_code":"amount_too_small","amount":1,"user_id":6},"pid":48723}
+{"timestamp":"2025-09-10T04:45:03.933Z","level":"ERROR","message":"Webhook payload parsing error","data":{"error":"\"[object Object]\" is not valid JSON"},"pid":48723}
+{"timestamp":"2025-09-10T04:46:12.024Z","level":"ERROR","message":"Webhook payload parsing error","data":{"error":"\"[object Object]\" is not valid JSON","payload_type":"object"},"pid":49525}

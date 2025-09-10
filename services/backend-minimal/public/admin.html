@@ -141,6 +141,26 @@
             text-align: center;
         }
 
+        .stat-card.success {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .stat-card.error {
+            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+        }
+
+        .stat-card.warning {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+        }
+
+        .stat-card.pending {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+        }
+
+        .stat-card.info {
+            background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+        }
+
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
@@ -236,7 +256,7 @@
             color: #22543d;
         }
 
-        .badge-danger {
+        .badge-danger, .badge-error {
             background: #fed7d7;
             color: #c53030;
         }
@@ -249,6 +269,11 @@
         .badge-info {
             background: #bee3f8;
             color: #2a69ac;
+        }
+
+        .badge-pending {
+            background: #e2e8f0;
+            color: #4a5568;
         }
 
         /* Forms */
@@ -458,11 +483,37 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="total-transactions">-</div>
-                        <div class="stat-label">Transacciones</div>
+                        <div class="stat-label">Total Transacciones</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="total-revenue">-</div>
                         <div class="stat-label">Ingresos ($)</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card success">
+                        <div class="stat-number" id="successful-transactions">-</div>
+                        <div class="stat-label">✅ Exitosas</div>
+                    </div>
+                    <div class="stat-card error">
+                        <div class="stat-number" id="failed-transactions">-</div>
+                        <div class="stat-label">❌ Fallidas</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-number" id="canceled-transactions">-</div>
+                        <div class="stat-label">🚫 Canceladas</div>
+                    </div>
+                    <div class="stat-card pending">
+                        <div class="stat-number" id="pending-transactions">-</div>
+                        <div class="stat-label">⏳ Pendientes</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card info">
+                        <div class="stat-number" id="success-rate">-</div>
+                        <div class="stat-label">📊 Tasa de Éxito</div>
                     </div>
                 </div>
 
@@ -718,6 +769,36 @@
             return response.json();
         }
 
+        // Helper function to get status icon
+        function getStatusIcon(status) {
+            switch(status) {
+                case 'succeeded': return '✅';
+                case 'failed': return '❌';
+                case 'canceled': return '🚫';
+                case 'requires_action': return '⚠️';
+                case 'creation_failed': return '💥';
+                case 'requires_payment_method': return '💳';
+                case 'requires_confirmation': return '🔄';
+                case 'processing': return '⏳';
+                default: return '❓';
+            }
+        }
+
+        // Helper function to get badge class
+        function getBadgeClass(status) {
+            switch(status) {
+                case 'succeeded': return 'badge-success';
+                case 'failed':
+                case 'creation_failed': return 'badge-error';
+                case 'canceled': return 'badge-warning';
+                case 'requires_action':
+                case 'requires_payment_method':
+                case 'requires_confirmation':
+                case 'processing': return 'badge-pending';
+                default: return 'badge-info';
+            }
+        }
+
         // Dashboard functions
         async function loadDashboard() {
             try {
@@ -727,16 +808,32 @@
                     document.getElementById('total-events').textContent = stats.totalEvents || '0';
                     document.getElementById('total-transactions').textContent = stats.totalTransactions || '0';
                     document.getElementById('total-revenue').textContent = stats.totalRevenue || '0';
+                    
+                    // Nuevas estadísticas
+                    document.getElementById('successful-transactions').textContent = stats.successfulTransactions || '0';
+                    document.getElementById('failed-transactions').textContent = stats.failedTransactions || '0';
+                    document.getElementById('canceled-transactions').textContent = stats.canceledTransactions || '0';
+                    document.getElementById('pending-transactions').textContent = stats.pendingTransactions || '0';
+                    document.getElementById('success-rate').textContent = stats.successRate || '0%';
                 }
 
                 const transactions = await apiCall('/api/dashboard/transactions');
                 if (transactions) {
-                    const activityHtml = transactions.slice(0, 5).map(t => `
-                        <div style="padding: 1rem; border-bottom: 1px solid #eee;">
-                            <strong>$${(t.amount/100).toFixed(2)}</strong> - ${t.status}
-                            <br><small>${new Date(t.created_at).toLocaleString()}</small>
-                        </div>
-                    `).join('');
+                    const activityHtml = transactions.slice(0, 5).map(t => {
+                        const statusIcon = getStatusIcon(t.status);
+                        const errorInfo = t.metadata && (t.metadata.failure_message || t.metadata.error_message) 
+                            ? `<br><small style="color: #e53e3e;">🔍 ${t.metadata.failure_message || t.metadata.error_message}</small>` 
+                            : '';
+                        
+                        return `
+                            <div style="padding: 1rem; border-bottom: 1px solid #eee;">
+                                <strong>$${t.amount_display}</strong> ${statusIcon} ${t.status_display || t.status}
+                                ${t.username ? `<br><small>👤 ${t.username}</small>` : ''}
+                                ${errorInfo}
+                                <br><small>🕒 ${new Date(t.created_at).toLocaleString()}</small>
+                            </div>
+                        `;
+                    }).join('');
                     
                     document.getElementById('recent-activity').innerHTML = 
                         activityHtml || '<div class="alert alert-info">No hay actividad reciente</div>';
@@ -872,22 +969,47 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Usuario</th>
                                         <th>Monto</th>
                                         <th>Estado</th>
+                                        <th>Detalles</th>
                                         <th>Fecha</th>
                                         <th>Código Evento</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    ${transactions.map(t => `
-                                        <tr>
-                                            <td>${t.transaction_id}</td>
-                                            <td>$${(t.amount/100).toFixed(2)}</td>
-                                            <td><span class="badge badge-${t.status}">${t.status}</span></td>
-                                            <td>${new Date(t.created_at).toLocaleString()}</td>
-                                            <td>${t.event_code || '-'}</td>
-                                        </tr>
-                                    `).join('')}
+                                    ${transactions.map(t => {
+                                        const statusIcon = getStatusIcon(t.status);
+                                        const statusDisplay = t.status_display || t.status;
+                                        const badgeClass = getBadgeClass(t.status);
+                                        
+                                        let details = '';
+                                        if (t.card_last4) {
+                                            details += `💳 ****${t.card_last4}`;
+                                            if (t.card_brand) details += ` (${t.card_brand})`;
+                                        }
+                                        
+                                        if (t.metadata && (t.metadata.failure_message || t.metadata.error_message)) {
+                                            const errorMsg = t.metadata.failure_message || t.metadata.error_message;
+                                            details += `<br><small style="color: #e53e3e;">❌ ${errorMsg}</small>`;
+                                        }
+                                        
+                                        if (t.metadata && t.metadata.decline_code) {
+                                            details += `<br><small style="color: #ed8936;">🚫 ${t.metadata.decline_code}</small>`;
+                                        }
+                                        
+                                        return `
+                                            <tr>
+                                                <td><small>${t.transaction_id}</small></td>
+                                                <td>${t.username || 'N/A'}</td>
+                                                <td><strong>$${t.amount_display}</strong></td>
+                                                <td>${statusIcon} <span class="badge ${badgeClass}">${statusDisplay}</span></td>
+                                                <td>${details || '-'}</td>
+                                                <td><small>${new Date(t.created_at).toLocaleString()}</small></td>
+                                                <td>${t.event_code || '-'}</td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
                                 </tbody>
                             </table>
                         </div>
