@@ -152,7 +152,12 @@ class MainActivity : AppCompatActivity() {
                 if (!Terminal.isInitialized() || Terminal.getInstance().connectedReader == null) {
                     pendingPaymentAmount = amt
                     pendingEventId = eventId
-                    runOnUiThread { logView.append("\nConectando lector… el cobro continuará automáticamente al conectarse.") }
+                    runOnUiThread {
+                        logView.append("\nConectando lector… el cobro continuará automáticamente al conectarse.")
+                        txtStatus.text = "Buscando lector…"
+                        btnPay.isEnabled = false
+                        btnPay.text = "Conectando lector…"
+                    }
                     alwaysAutoConnect(logView, txtStatus)
                     return@ensureLoggedIn
                 }
@@ -279,7 +284,10 @@ class MainActivity : AppCompatActivity() {
         val buildCfgLoc = BuildConfig.TERMINAL_LOCATION_ID.takeIf { it.isNotEmpty() }
         val locationId = (buildCfgLoc ?: backendLocationId)
         if (locationId.isNullOrBlank()) {
-            runOnUiThread { logView?.append("\nFalta TERMINAL_LOCATION_ID en BuildConfig para Tap to Pay") }
+            runOnUiThread {
+                logView?.append("\nFalta TERMINAL_LOCATION_ID/Location backend para Tap to Pay")
+                txtStatus?.text = "Configurar ubicación del lector"
+            }
             return
         }
         var connected = false
@@ -289,6 +297,7 @@ class MainActivity : AppCompatActivity() {
         // Ensure no overlapping discovery
         cancelDiscovery()
         isDiscovering = true
+        runOnUiThread { txtStatus?.text = "Buscando lector…" }
         discoverCancelable = Terminal.getInstance().discoverReaders(
             discoveryConfig,
             object : DiscoveryListener {
@@ -323,6 +332,12 @@ class MainActivity : AppCompatActivity() {
                                     if (!e.message.orEmpty().contains("canceled because of a new discovery call", true)) {
                                         logView?.append("\nError conectando lector móvil: ${e.message}")
                                     }
+                                    txtStatus?.text = "Lector: Desconectado"
+                                    // Re-enable pay button so user can reintentar o revisar conexión
+                                    findViewById<Button>(R.id.btnPay)?.let { btn ->
+                                        btn.isEnabled = isPayAllowed()
+                                        btn.text = "CONTINUAR"
+                                    }
                                 }
                                 cancelDiscovery()
                                 isDiscovering = false
@@ -337,6 +352,12 @@ class MainActivity : AppCompatActivity() {
                     runOnUiThread {
                         if (!e.message.orEmpty().contains("canceled because of a new discovery call", true)) {
                             logView?.append("\nDiscovery error: ${e.message}")
+                        }
+                        txtStatus?.text = "Lector: Desconectado"
+                        // Re-enable button on discovery failure
+                        findViewById<Button>(R.id.btnPay)?.let { btn ->
+                            btn.isEnabled = isPayAllowed()
+                            btn.text = "CONTINUAR"
                         }
                     }
                     cancelDiscovery()
@@ -596,7 +617,7 @@ class MainActivity : AppCompatActivity() {
                 "flowType" to "automatic"
             )).toString()
             val createReq = Request.Builder()
-                .url("$baseUrl/api/stripe/payment_intent_auto")
+                .url("$baseUrl/api/stripe/payment_intent")
                 .addAuth()
                 .post(createBody.toRequestBody("application/json".toMediaType()))
                 .build()
