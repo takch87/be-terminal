@@ -4,8 +4,12 @@
         android:id="@+id/menu_connect"
         android:title="Conectar lector" />
     <item
+        android:id="@+id/menu_login"
+        android:title="Login" />
+    <item
         android:id="@+id/menu_choose_event"
         android:title="Seleccionar evento" />
+    
     <item
         android:id="@+id/menu_report"
         android:title="Reporte" />
