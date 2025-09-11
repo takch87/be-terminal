@@ -5,14 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     
-    <!-- Permisos para NFC y pagos -->
-    <uses-permission android:name="android.permission.NFC" />
+    <!-- Permisos mínimos; sin NFC para simplificar -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    
-    <!-- Características de hardware NFC -->
-    <uses-feature android:name="android.hardware.nfc" android:required="true" />
-    <uses-feature android:name="android.hardware.nfc.hce" android:required="false" />
 
     <application
         android:name=".App"
@@ -33,28 +28,11 @@
             android:name=".ui.PaymentResultActivity"
             android:exported="false" />
 
+        <!-- Actividad de pago con tarjeta (formulario simple) -->
         <activity
-            android:name=".ui.TapCardActivity"
+            android:name=".ui.CardPayActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop">
-            
-            <!-- Intent filters para NFC -->
-            <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            
-            <!-- Meta-data para tecnologías NFC -->
-            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/nfc_tech_filter" />
-            
-        </activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.LoginActivity"

@@ -25,7 +25,7 @@ class SaleActivity : AppCompatActivity() {
         const val EXTRA_EVENT_CODE = "event_code"
     }
 
-    private val tapCardLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    private val payLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             Toast.makeText(this, "¡Pago completado exitosamente!", Toast.LENGTH_LONG).show()
             resetAmount()
@@ -46,7 +46,10 @@ class SaleActivity : AppCompatActivity() {
             return
         }
 
-        setupButtons()
+    // Mostrar versión simple
+    try { binding.tvSubtitle.text = "Be Seamless" } catch (_: Throwable) {}
+
+    setupButtons()
         setupConnectionTest()
         updateDisplay()
     }
@@ -130,13 +133,13 @@ class SaleActivity : AppCompatActivity() {
 
         val amountCents = (amount * 100).toLong()
 
-        // Launch TapCardActivity
-        val intent = Intent(this, TapCardActivity::class.java).apply {
+    // Launch minimal CardPayActivity
+    val intent = Intent(this, CardPayActivity::class.java).apply {
             putExtra("amount", amountCents)
             putExtra("eventCode", eventCode)
             putExtra("authToken", authToken)
         }
-        tapCardLauncher.launch(intent)
+    payLauncher.launch(intent)
     }
 
     private fun resetAmount() {

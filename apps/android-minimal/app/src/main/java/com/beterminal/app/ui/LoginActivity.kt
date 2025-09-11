@@ -34,8 +34,8 @@ class LoginActivity : AppCompatActivity() {
             performLogin()
         }
 
-        // Agregar información de versión
-        binding.tvVersion.text = "Be Seamless v2.0 - Flujo Automático"
+    // Agregar información de versión (simple)
+    binding.tvVersion.text = "Be Seamless"
     }
 
     private fun performLogin() {
