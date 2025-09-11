@@ -349,12 +349,9 @@
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: all 0.3s;
-            display: grid;
-            grid-template-columns: 60px 1fr; /* icon | text */
-            grid-auto-rows: auto;
+            display: flex;
             align-items: center;
             gap: 1rem;
-            overflow: hidden;
         }
 
         .download-card:hover {
@@ -369,7 +366,7 @@
         }
 
         .download-info {
-            min-width: 0; /* allow text to shrink */
+            flex-grow: 1;
         }
 
         .download-info h3 {
@@ -390,12 +387,7 @@
         }
 
         .download-actions {
-            grid-column: 1 / -1; /* full width under text */
-            min-width: 0;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-top: .5rem;
+            min-width: 140px;
         }
 
         .downloads-info {
@@ -420,7 +412,7 @@
         }
 
         /* Responsive */
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
@@ -443,26 +435,7 @@
             .stats-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
-
-            /* Downloads: stack on mobile */
-            .downloads-grid { grid-template-columns: 1fr; }
-            .download-card { grid-template-columns: 60px 1fr; }
-            .download-actions { grid-column: 1 / -1; width: 100%; min-width: 0; margin-top: .75rem; justify-content: stretch; }
-            .download-actions .btn { width: 100%; display: inline-flex; justify-content: center; }
-            .download-icon { font-size: 2.2rem; }
-            .download-info h3 { font-size: 1rem; }
-            .download-info p { font-size: .95rem; }
         }
-
-        /* Medium screens: wrap actions below to avoid overlap */
-        @media (max-width: 1200px) {
-            .download-card { grid-template-columns: 60px 1fr; align-items: flex-start; }
-            .download-actions { grid-column: 1 / -1; width: 100%; justify-content: flex-start; margin-top: .75rem; }
-            .download-actions .btn { width: 100%; }
-        }
-
-        /* Ensure long button labels don’t overflow */
-        .download-actions .btn { white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
     </style>
 </head>
 <body>
@@ -485,7 +458,7 @@
             <div class="nav-item" onclick="showSection('events')">🎫 Eventos</div>
             <div class="nav-item" onclick="showSection('transactions')">💳 Transacciones</div>
             <div class="nav-item" onclick="showSection('downloads')">📱 Descargas</div>
-            <div class="nav-item" onclick="showSection('payments')">⚙️ Payment Config</div>
+            <div class="nav-item" onclick="showSection('stripe')">⚙️ Stripe Config</div>
             <div class="nav-item" onclick="showSection('system')">🔧 Sistema</div>
         </div>
     </div>
@@ -608,10 +581,71 @@
                         • Usuario: <code>demo</code> / Contraseña: <code>demo123</code><br>
                         • Usuario: <code>admin</code> / Contraseña: <code>admin123</code>
                     </div>
+                    <div class="alert alert-warning" style="margin-top: 0.75rem;">
+                        <strong>📝 Recordatorio:</strong> Cada vez que generes una nueva versión del APK, súbela a <code>public/downloads/</code> y actualiza esta sección con el enlace correspondiente.
+                    </div>
                 </div>
                 
-                <div style="margin-bottom:0.75rem;font-size:0.85rem;color:#555">Los APK deben llevar versión en el nombre: ejemplo <code>android-terminal-v0.2.0-release.apk</code>. El sistema detecta patrón <code>-vX.Y.Z-</code> o <code>_vX.Y.Z</code>.</div>
-                <div id="downloads-dynamic" class="downloads-grid"></div>
+                <div class="downloads-grid">
+                    <div class="download-card">
+                        <div class="download-icon">📦</div>
+                        <div class="download-info">
+                            <h3>Be Seamless Terminal – Última versión (Release)</h3>
+                            <p>Compilación: 2025-09-11</p>
+                            <small>Archivo: <code>android-terminal-release-20250911_042637.apk</code></small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/android-terminal-release-20250911_042637.apk" 
+                               class="btn btn-success" download>
+                                ⬇️ Descargar Release
+                            </a>
+                        </div>
+                    </div>
+                    <div class="download-card">
+                        <div class="download-icon">�</div>
+                        <div class="download-info">
+                            <h3>Be Seamless v2.0.2 (ENDPOINT FIXED - CRÍTICA)</h3>
+                            <p>Versión 2.0.2-endpoint-fix - ARREGLA REQUIRES_PAYMENT_METHOD</p>
+                            <small>🔧 Endpoint correcto, Flujo automático funcional, Elimina requires_payment_method</small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/be-seamless-v2.0.2-endpoint-fix-debug.apk" 
+                               class="btn btn-primary" download>
+                                ⬇️ Descargar v2.0.2 (CRÍTICA)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">📱</div>
+                        <div class="download-info">
+                            <h3>BeTerminal Android (Anterior)</h3>
+                            <p>Versión 1.2.15 - NFC Complete</p>
+                            <small>Versión anterior con todas las funcionalidades</small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/be-terminal-nfc-v1.2.15-NFC-COMPLETE-debug.apk" 
+                               class="btn btn-secondary" download>
+                                ⬇️ Descargar APK
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="download-icon">📱</div>
+                        <div class="download-info">
+                            <h3>BeTerminal Android (Simple)</h3>
+                            <p>BeTerminal Android</p>
+                            <small>Versión básica sin NFC</small>
+                        </div>
+                        <div class="download-actions">
+                            <a href="/downloads/BeTerminal-Android.apk" 
+                               class="btn btn-secondary" download>
+                                ⬇️ Descargar APK
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <div style="margin-top: 2rem;">
                     <div class="alert alert-warning">
@@ -625,43 +659,15 @@
             </div>
         </div>
 
-    <!-- Payment Config Section -->
-        <div id="payments-section" class="section hidden">
+        <!-- Stripe Config Section -->
+        <div id="stripe-section" class="section hidden">
             <div class="section-header">
-                <div class="section-title">⚙️ Configuración de Procesadores de Pago</div>
+                <div class="section-title">⚙️ Configuración de Stripe</div>
+                <button class="btn btn-success" onclick="saveStripeConfig()">💾 Guardar</button>
             </div>
             <div class="section-content">
-                <!-- Local styles for tabs -->
-                <style>
-                    .tabs { display: flex; border-bottom: 2px solid #e2e8f0; margin-bottom: 1rem; gap: .5rem; }
-                    .tab { padding: .5rem 1rem; cursor: pointer; border-bottom: 3px solid transparent; border-radius: .25rem .25rem 0 0; color: #4a5568; font-weight: 600; }
-                    .tab.active { color: #4f46e5; border-bottom-color: #4f46e5; background: #f8fafc; }
-                    .tab-content { display: none; }
-                    .tab-content.active { display: block; }
-                    .proc-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 12px; }
-                    .badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: .8rem; }
-                    .badge-success { background: #d1fae5; color: #065f46; }
-                    .badge-danger { background: #fee2e2; color: #991b1b; }
-                    .field-hint { display:block; color:#718096; margin-top:.35rem; font-size:.85rem; }
-                </style>
-
-                <!-- Tabs -->
-                <div class="tabs">
-                    <div class="tab active" onclick="showPaymentTab('processors')">🏦 Procesadores</div>
-                    <div class="tab" onclick="showPaymentTab('stripe')">💳 Stripe</div>
-                </div>
-
-                <!-- Processors overview -->
-                <div id="processors-tab" class="tab-content active">
-                    <div id="processors-list"><div class="loading">Cargando procesadores...</div></div>
-                    <div style="margin-top: .75rem;">
-                        <button class="btn" onclick="loadProcessors()">🔄 Actualizar</button>
-                    </div>
-                </div>
-
-                <!-- Stripe config tab content -->
-                <div id="stripe-tab" class="tab-content">
-                    <div id="stripe-content"></div>
+                <div id="stripe-content">
+                    <div class="loading">Cargando configuración...</div>
                 </div>
             </div>
         </div>
@@ -700,23 +706,6 @@
         // Global variables
         let authToken = localStorage.getItem('authToken');
         let currentUser = localStorage.getItem('username');
-        
-        // Simple API helper with auth header
-        async function apiCall(path, method = 'GET', data) {
-            const opts = { method, headers: { 'Content-Type': 'application/json' } };
-            if (authToken) opts.headers['Authorization'] = `Bearer ${authToken}`;
-            if (data) opts.body = JSON.stringify(data);
-            const res = await fetch(path, opts);
-            if (res.status === 401 || res.status === 403) {
-                try { localStorage.removeItem('authToken'); } catch (_) {}
-                // Redirect to login preserving target
-                const next = encodeURIComponent(window.location.pathname.replace(/^\/+/, '') + window.location.search);
-                window.location.href = `/login.html?next=${next}&reason=expired`;
-                throw new Error(`${method} ${path} -> HTTP ${res.status} (auth)`);
-            }
-            if (!res.ok) throw new Error(`${method} ${path} -> HTTP ${res.status}`);
-            return res.json();
-        }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
@@ -764,14 +753,8 @@
                 case 'downloads':
                     loadDownloads();
                     break;
-                case 'payments':
-                    // Default to processors tab
-                    // Reset tabs state
-                    document.querySelectorAll('#payments-section .tab').forEach(t => t.classList.remove('active'));
-                    document.querySelector('#payments-section .tab[onclick*="processors"]').classList.add('active');
-                    document.querySelectorAll('#payments-section .tab-content').forEach(c => c.classList.remove('active'));
-                    document.getElementById('processors-tab').classList.add('active');
-                    loadProcessors();
+                case 'stripe':
+                    loadStripeConfig();
                     break;
                 case 'system':
                     loadSystemInfo();
@@ -779,64 +762,31 @@
             }
         }
 
-        // Payment tabs controller
-        function showPaymentTab(tabId) {
-            // tabs
-            document.querySelectorAll('#payments-section .tab').forEach(t => t.classList.remove('active'));
-            // contents
-            document.querySelectorAll('#payments-section .tab-content').forEach(c => c.classList.remove('active'));
-            // activate
-            if (event && event.target) { event.target.classList.add('active'); }
-            const content = document.getElementById(`${tabId}-tab`);
-            if (content) content.classList.add('active');
-
-            // load specific content
-            if (tabId === 'processors') {
-                loadProcessors();
-            } else if (tabId === 'stripe') {
-                loadStripeConfig();
-            }
-        }
-
-        // Mask helper
-        function maskValue(val, start = 3, end = 4) {
-            if (!val) return '-';
-            try {
-                const s = String(val);
-                if (s.length <= start + end) return s[0] + '••••';
-                return s.slice(0, start) + '••••' + s.slice(-end);
-            } catch (_) { return '••••'; }
-        }
-
-        // Load processors overview
-    async function loadProcessors() {
-            try {
-                const resp = await apiCall('/api/payment/processors');
-        const processorsRaw = resp && Array.isArray(resp.processors) ? resp.processors : (Array.isArray(resp) ? resp : []);
-        const processors = processorsRaw.filter(p => (p.name || '').toLowerCase() === 'stripe');
-                const container = document.getElementById('processors-list');
-                if (!processors || !Array.isArray(processors) || processors.length === 0) {
-                    container.innerHTML = '<div class="alert alert-info">No hay procesadores configurados</div>';
-                    return;
+        // API Helper
+        async function apiCall(endpoint, method = 'GET', data = null) {
+            const options = {
+                method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`
                 }
-                container.innerHTML = processors.map(p => `
-                    <div class="proc-card">
-                        <div style="display:flex;justify-content:space-between;align-items:center;">
-                            <div style="font-weight:700;">${p.display_name || '💳 Stripe'}</div>
-                            <span class="badge ${p.active ? 'badge-success' : 'badge-danger'}">${p.active ? 'Activo' : 'Inactivo'}</span>
-                        </div>
-                        <div style="margin-top:.25rem;color:#4a5568;">
-                            Entorno: <strong>${p.environment || '-'}</strong> · Configurado: <strong>${p.is_configured ? 'Sí' : 'No'}</strong>
-                        </div>
-                    </div>
-                `).join('');
-            } catch (e) {
-                console.error('Error loading processors', e);
-                document.getElementById('processors-list').innerHTML = '<div class="alert alert-error">Error cargando procesadores</div>';
+            };
+            
+            if (data) {
+                options.body = JSON.stringify(data);
             }
+            
+            const response = await fetch(endpoint, options);
+            
+            if (response.status === 401) {
+                logout();
+                return null;
+            }
+            
+            return response.json();
         }
-        
-        // Status icon helper (restored)
+
+        // Helper function to get status icon
         function getStatusIcon(status) {
             switch(status) {
                 case 'succeeded': return '✅';
@@ -849,7 +799,7 @@
                 case 'processing': return '⏳';
                 default: return '❓';
             }
-    }
+        }
 
         // Helper function to get badge class
         function getBadgeClass(status) {
@@ -1120,13 +1070,6 @@
                                    placeholder="sk_test_... o sk_live_...">
                             ${config ? '<small style="color: #666;">Clave actual: ' + config.secret_key + '</small>' : ''}
                         </div>
-
-                        <div class="form-group">
-                            <label class="form-label">📍 Terminal Location ID</label>
-                            <input type="text" class="form-input" id="terminal_location_id" 
-                                   value="" placeholder="tml_... (opcional, Tap to Pay)">
-                            <small class="field-hint">Recomendado para Tap to Pay. También puedes configurarlo vía variable STRIPE_TERMINAL_LOCATION_ID.</small>
-                        </div>
                         
                         <div class="form-group">
                             <label class="form-label">
@@ -1161,7 +1104,6 @@
                             <button class="btn btn-warning" onclick="testStripeConnection()">
                                 🔬 Probar Conexión
                             </button>
-                            <button class="btn" onclick="saveTerminalLocation()">💾 Guardar Location ID</button>
                         </div>
                         
                         <div id="stripe-result" style="margin-top: 1rem;"></div>
@@ -1293,21 +1235,6 @@
             }
         }
 
-        async function saveTerminalLocation() {
-            try {
-                const loc = (document.getElementById('terminal_location_id').value || '').trim();
-                if (!loc) { alert('Ingresa un Location ID (tml_...)'); return; }
-                const resp = await apiCall('/api/admin/terminal-location', 'POST', { location_id: loc });
-                if (resp && resp.success) {
-                    alert('✅ Location ID guardado. Reinicia la app para aplicar.');
-                } else {
-                    alert('❌ No se pudo guardar el Location ID');
-                }
-            } catch (e) {
-                alert('❌ Error guardando Location ID');
-            }
-        }
-
         async function testStripeConnection() {
             document.getElementById('stripe-result').innerHTML = 
                 '<div class="alert alert-info">🔬 Probando conexión con Stripe...</div>';
@@ -1383,49 +1310,16 @@
             }
         }
 
-        async function loadDownloads() {
-            const container = document.getElementById('downloads-dynamic');
-            container.innerHTML = '<div class="loading">Cargando descargas...</div>';
-            try {
-                const data = await apiCall('/api/admin/downloads');
-                container.innerHTML = '';
-                if (!data || !data.success) { 
-                    container.innerHTML = '<div class="alert alert-error">No se pudo cargar la lista de descargas</div>'; 
-                    return; 
-                }
-                const files = data.files || [];
-                if (!files.length) { 
-                    container.innerHTML = '<div class="alert alert-warning">No hay APKs disponibles</div>'; 
-                    return; 
-                }
-                console.log('[downloads] archivos recibidos:', files.length);
-                for (const f of files) {
-                    const sizeMB = (f.size/1024/1024).toFixed(2);
-                    const date = new Date(f.mtime).toLocaleString();
-                    const isLatest = files[0] === f;
-                    const versionLabel = f.version ? `Versión ${f.version}` : 'Sin versión detectada';
-                    const card = document.createElement('div');
-                    card.className = 'download-card';
-                    card.innerHTML = `
-                        <div class="download-icon">${isLatest ? '🔐' : '📦'}</div>
-                        <div class="download-info">
-                            <h3>${isLatest ? 'Release (Latest)' : f.name}</h3>
-                            <p>${isLatest ? 'Último release Tap to Pay' : 'APK histórico'} · ${versionLabel}</p>
-                            <small>${date} · ${sizeMB} MB${f.sha256 ? ' · SHA256: <code>'+f.sha256.substring(0,12)+'...</code>' : ''}</small>
-                        </div>
-                        <div class="download-actions">
-                            <a href="/downloads/${f.name}" class="btn ${isLatest ? 'btn-success' : 'btn-primary'}" download>⬇️ Descargar</a>
-                        </div>`;
-                    container.appendChild(card);
-                }
-            } catch (e) {
-                console.error('Error loading downloads', e);
-                const msg = e && e.message ? e.message : 'Error desconocido';
-                container.innerHTML = `<div class="alert alert-error">Error cargando descargas (${msg}). ${msg.includes('401') || msg.includes('403') ? 'Reinicia sesión.' : 'Intenta de nuevo.'}</div>`;
-            }
+        function loadDownloads() {
+            // Downloads section is static, no need to load data
+            console.log('Downloads section loaded');
         }
 
-        function refreshDownloads() { loadDownloads(); }
+        function refreshDownloads() {
+            // Optionally could check for new APK files
+            console.log('Downloads refreshed');
+            alert('✅ Sección de descargas actualizada');
+        }
 
         async function createBackup() {
             try {
