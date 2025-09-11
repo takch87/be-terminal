@@ -24,9 +24,12 @@ import com.stripe.stripeterminal.external.models.ConnectionTokenException
 import com.stripe.stripeterminal.external.callable.ConnectionTokenProvider
 import com.stripe.stripeterminal.external.callable.ReaderCallback
 import com.stripe.stripeterminal.external.callable.TerminalListener
+import com.stripe.stripeterminal.external.callable.TapToPayReaderListener
 import com.stripe.stripeterminal.external.models.ConnectionConfiguration
 import com.stripe.stripeterminal.external.models.ConnectionStatus
 import com.stripe.stripeterminal.external.models.DiscoveryConfiguration
+import com.stripe.stripeterminal.external.models.DiscoveryConfiguration.TapToPayDiscoveryConfiguration
+import com.stripe.stripeterminal.external.models.ConnectionConfiguration.TapToPayConnectionConfiguration
 // PaymentIntent not directly used; using backend-confirm flow
 import com.stripe.stripeterminal.external.models.PaymentStatus
 import com.stripe.stripeterminal.external.models.PaymentIntent
@@ -60,6 +63,29 @@ class MainActivity : AppCompatActivity() {
     private var pendingEventId: String? = null
     // Stripe-only mode
     // Adyen removed: no waiting state needed
+
+    // Tap to Pay reader listener (progress/messages shown in UI)
+    private val tapToPayReaderListener = object : TapToPayReaderListener {
+        override fun onStartInstallingUpdate(update: ReaderSoftwareUpdate) {
+            runOnUiThread { findViewById<TextView>(R.id.txtStatus)?.text = "Actualizando lector…" }
+        }
+        override fun onReportReaderSoftwareUpdateProgress(progress: Float) {
+            runOnUiThread { findViewById<TextView>(R.id.txtStatus)?.text = "Actualizando lector… ${"%.0f".format(progress * 100)}%" }
+        }
+        override fun onFinishInstallingUpdate(update: ReaderSoftwareUpdate?, e: TerminalException?) {
+            runOnUiThread {
+                val s = if (e == null) "Lector actualizado" else "Falló actualización: ${e.errorMessage ?: e.message}"
+                findViewById<TextView>(R.id.txtStatus)?.text = s
+                findViewById<TextView>(R.id.txtLog)?.append("\n$s")
+            }
+        }
+        override fun onRequestReaderDisplayMessage(message: ReaderDisplayMessage) {
+            runOnUiThread { findViewById<TextView>(R.id.txtLog)?.append("\n${message.name.replace('_',' ')}") }
+        }
+        override fun onRequestReaderInput(options: ReaderInputOptions) {
+            // No-op for now; UI driven by SDK prompts
+        }
+    }
 
     private val requestPermissionsLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -149,7 +175,8 @@ class MainActivity : AppCompatActivity() {
                 val amt = amtParsed.toInt()
                 val eventId = selectedEventId
 
-                if (!Terminal.isInitialized() || Terminal.getInstance().connectedReader == null) {
+                val hasReader = try { Terminal.isInitialized() && Terminal.getInstance().connectedReader != null } catch (_: Exception) { false }
+                if (!hasReader) {
                     pendingPaymentAmount = amt
                     pendingEventId = eventId
                     runOnUiThread {
@@ -232,15 +259,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initTerminal() {
     if (Terminal.isInitialized()) return
-        val listener = object : TerminalListener {
+    val listener = object : TerminalListener {
             override fun onConnectionStatusChange(status: ConnectionStatus) {}
             override fun onPaymentStatusChange(status: PaymentStatus) {}
-            override fun onUnexpectedReaderDisconnect(reader: Reader) {
-                runOnUiThread {
-                    findViewById<TextView>(R.id.txtStatus)?.text = "Lector: Desconectado"
-                    findViewById<TextView>(R.id.txtLog)?.append("\nLector desconectado inesperadamente")
-                }
-            }
         }
         val tokenProvider = object : ConnectionTokenProvider {
             override fun fetchConnectionToken(callback: ConnectionTokenCallback) {
@@ -278,8 +299,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alwaysAutoConnect(logView: TextView?, txtStatus: TextView?) {
-        if (!Terminal.isInitialized()) return
-        if (Terminal.getInstance().connectedReader != null) return
+    val safeInitialized = try { Terminal.isInitialized() } catch (_: Exception) { false }
+    if (!safeInitialized) return
+    val safeHasReader = try { Terminal.getInstance().connectedReader != null } catch (_: Exception) { false }
+    if (safeHasReader) return
         if (isDiscovering) { runOnUiThread { logView?.append("\nAuto: ya estoy buscando lector...") }; return }
         val buildCfgLoc = BuildConfig.TERMINAL_LOCATION_ID.takeIf { it.isNotEmpty() }
         val locationId = (buildCfgLoc ?: backendLocationId)
@@ -291,9 +314,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         var connected = false
-        val discoveryConfig = DiscoveryConfiguration.LocalMobileDiscoveryConfiguration(
-            isSimulated = BuildConfig.SIMULATED
-        )
+    val discoveryConfig = TapToPayDiscoveryConfiguration(isSimulated = BuildConfig.SIMULATED)
         // Ensure no overlapping discovery
         cancelDiscovery()
         isDiscovering = true
@@ -304,7 +325,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onUpdateDiscoveredReaders(readers: List<Reader>) {
                     if (connected || readers.isEmpty()) return
                     val reader = readers.first()
-                    val connCfg = ConnectionConfiguration.LocalMobileConnectionConfiguration(locationId)
+                    val connCfg = TapToPayConnectionConfiguration(locationId, tapToPayReaderListener)
                     Terminal.getInstance().connectReader(
                         reader,
                         connCfg,
@@ -385,7 +406,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         var connected = false
-        val discoveryConfig = DiscoveryConfiguration.LocalMobileDiscoveryConfiguration(isSimulated = BuildConfig.SIMULATED)
+    val discoveryConfig = TapToPayDiscoveryConfiguration(isSimulated = BuildConfig.SIMULATED)
         cancelDiscovery()
         isDiscovering = true
         discoverCancelable = Terminal.getInstance().discoverReaders(
@@ -394,7 +415,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onUpdateDiscoveredReaders(readers: List<Reader>) {
                     if (connected || readers.isEmpty()) return
                     val reader = readers.first()
-                    val connCfg = ConnectionConfiguration.LocalMobileConnectionConfiguration(locationId)
+                    val connCfg = TapToPayConnectionConfiguration(locationId, tapToPayReaderListener)
                     Terminal.getInstance().connectReader(reader, connCfg, object : ReaderCallback {
                         override fun onSuccess(reader: Reader) {
                             connected = true
@@ -607,7 +628,8 @@ class MainActivity : AppCompatActivity() {
     // --- Processor flows
     private fun startStripeFlow(logView: TextView, txtAmount: TextView, btnPay: Button, eventId: String, amt: Int) {
         ensureLoggedIn {
-            if (Terminal.getInstance().connectedReader == null) {
+            val connected = try { Terminal.getInstance().connectedReader != null } catch (_: Exception) { false }
+            if (!connected) {
                 runOnUiThread { logView.append("\nConecta el lector (teléfono) antes de cobrar") }
                 return@ensureLoggedIn
             }
@@ -639,7 +661,7 @@ class MainActivity : AppCompatActivity() {
                             fun collectWithRetry(attempt: Int = 1) {
                                 Terminal.getInstance().collectPaymentMethod(pi, object : PaymentIntentCallback {
                                 override fun onSuccess(collected: PaymentIntent) {
-                                    Terminal.getInstance().processPayment(collected, object : PaymentIntentCallback {
+                    Terminal.getInstance().confirmPaymentIntent(collected, object : PaymentIntentCallback {
                                         override fun onSuccess(processed: PaymentIntent) {
                                             val approved = processed.status == com.stripe.stripeterminal.external.models.PaymentIntentStatus.SUCCEEDED
                                             runOnUiThread {
@@ -657,7 +679,7 @@ class MainActivity : AppCompatActivity() {
                                             }
                                         }
                                         override fun onFailure(e: TerminalException) {
-                                            runOnUiThread { logView.append("\nError processPayment: ${e.message}") }
+                        runOnUiThread { logView.append("\nError confirmPaymentIntent: ${e.message}") }
                                         }
                                     })
                                 }
