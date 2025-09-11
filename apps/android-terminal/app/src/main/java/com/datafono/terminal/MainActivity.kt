@@ -64,28 +64,8 @@ class MainActivity : AppCompatActivity() {
     // Stripe-only mode
     // Adyen removed: no waiting state needed
 
-    // Tap to Pay reader listener (progress/messages shown in UI)
-    private val tapToPayReaderListener = object : TapToPayReaderListener {
-        override fun onStartInstallingUpdate(update: ReaderSoftwareUpdate) {
-            runOnUiThread { findViewById<TextView>(R.id.txtStatus)?.text = "Actualizando lector…" }
-        }
-        override fun onReportReaderSoftwareUpdateProgress(progress: Float) {
-            runOnUiThread { findViewById<TextView>(R.id.txtStatus)?.text = "Actualizando lector… ${"%.0f".format(progress * 100)}%" }
-        }
-        override fun onFinishInstallingUpdate(update: ReaderSoftwareUpdate?, e: TerminalException?) {
-            runOnUiThread {
-                val s = if (e == null) "Lector actualizado" else "Falló actualización: ${e.errorMessage ?: e.message}"
-                findViewById<TextView>(R.id.txtStatus)?.text = s
-                findViewById<TextView>(R.id.txtLog)?.append("\n$s")
-            }
-        }
-        override fun onRequestReaderDisplayMessage(message: ReaderDisplayMessage) {
-            runOnUiThread { findViewById<TextView>(R.id.txtLog)?.append("\n${message.name.replace('_',' ')}") }
-        }
-        override fun onRequestReaderInput(options: ReaderInputOptions) {
-            // No-op for now; UI driven by SDK prompts
-        }
-    }
+    // Tap to Pay listener (using defaults; SDK shows prompts).
+    private val tapToPayReaderListener = object : TapToPayReaderListener {}
 
     private val requestPermissionsLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -325,7 +305,11 @@ class MainActivity : AppCompatActivity() {
                 override fun onUpdateDiscoveredReaders(readers: List<Reader>) {
                     if (connected || readers.isEmpty()) return
                     val reader = readers.first()
-                    val connCfg = TapToPayConnectionConfiguration(locationId, tapToPayReaderListener)
+                    val connCfg = TapToPayConnectionConfiguration(
+                        locationId,
+                        BuildConfig.SIMULATED,
+                        tapToPayReaderListener
+                    )
                     Terminal.getInstance().connectReader(
                         reader,
                         connCfg,
@@ -405,7 +389,7 @@ class MainActivity : AppCompatActivity() {
             runOnUiThread { logView?.append("\nConfigura TERMINAL_LOCATION_ID para conectar") }
             return
         }
-        var connected = false
+    var connected = false
     val discoveryConfig = TapToPayDiscoveryConfiguration(isSimulated = BuildConfig.SIMULATED)
         cancelDiscovery()
         isDiscovering = true
@@ -415,7 +399,11 @@ class MainActivity : AppCompatActivity() {
                 override fun onUpdateDiscoveredReaders(readers: List<Reader>) {
                     if (connected || readers.isEmpty()) return
                     val reader = readers.first()
-                    val connCfg = TapToPayConnectionConfiguration(locationId, tapToPayReaderListener)
+                    val connCfg = TapToPayConnectionConfiguration(
+                        locationId,
+                        BuildConfig.SIMULATED,
+                        tapToPayReaderListener
+                    )
                     Terminal.getInstance().connectReader(reader, connCfg, object : ReaderCallback {
                         override fun onSuccess(reader: Reader) {
                             connected = true
@@ -464,7 +452,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun cancelDiscovery() {
         try {
-            discoverCancelable?.cancel()
+            discoverCancelable?.cancel(object : Callback {
+                override fun onSuccess() { /* ignored */ }
+                override fun onFailure(e: TerminalException) { /* ignored */ }
+            })
         } catch (_: Exception) {}
     discoverCancelable = null
     isDiscovering = false
