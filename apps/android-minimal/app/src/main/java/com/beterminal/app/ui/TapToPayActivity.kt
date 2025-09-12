@@ -177,6 +177,18 @@ class TapToPayActivity : AppCompatActivity() {
     private fun startFlow() {
         // Discover and connect Tap to Pay reader (phone-as-reader)
         if (isDiscovering) return
+
+        // OPTIMIZACIÓN 1: si ya hay un lector conectado, saltamos discovery
+        try {
+            val current = Terminal.getInstance().connectedReader
+            if (current != null) {
+                runOnUiThread { binding.tvStatus.text = "Lector listo (re-uso). Acerca la tarjeta." }
+                createAndCharge()
+                return
+            }
+        } catch (_: Exception) {
+            // Ignorar si aún no hay instancia/lector
+        }
         isDiscovering = true
     val discoveryConfig = TapToPayDiscoveryConfiguration(isSimulated = BuildConfig.SIMULATED)
         discoverCancelable = Terminal.getInstance().discoverReaders(
@@ -192,6 +204,7 @@ class TapToPayActivity : AppCompatActivity() {
                             runOnUiThread { binding.tvStatus.text = "Lector listo. Acerca la tarjeta." }
                             isDiscovering = false
                             createAndCharge()
+                            // OPTIMIZACIÓN 2: cancelar discovery al conectar para no dejar escaneo en background
                             cancelDiscovery()
                         }
                         override fun onFailure(e: TerminalException) {
@@ -207,6 +220,17 @@ class TapToPayActivity : AppCompatActivity() {
                 override fun onFailure(e: TerminalException) { isDiscovering = false; showError("Error buscando lector: ${e.message}") }
             }
         )
+
+        // OPTIMIZACIÓN 3: seguridad por tiempo límite del discovery
+        binding.root.postDelayed({
+            if (isDiscovering) {
+                cancelDiscovery()
+                isDiscovering = false
+                runOnUiThread { binding.tvStatus.text = "No se encontró lector. Reintentando…" }
+                // Reintento único rápido
+                startFlow()
+            }
+        }, 10_000) // 10s
     }
 
     private val tapToPayReaderListener = object : TapToPayReaderListener {}
