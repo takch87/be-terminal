@@ -11,27 +11,35 @@ interface ApiService {
     @GET("api/auth/user")
     suspend fun getUserInfo(@Header("Authorization") token: String): Response<UserInfo>
     
+    // Stripe Terminal: obtiene un connection token desde backend (Location USA enforced)
     @GET("api/stripe/connection_token")
     suspend fun getConnectionToken(@Header("Authorization") token: String): Response<ConnectionTokenResponse>
     
-    // Corregido para usar el endpoint principal con flujo automático
+    // Endpoint general (puede crear PIs para online con payment_method_types=["card"]) 
     @POST("api/stripe/payment_intent")
     suspend fun createPaymentIntent(
         @Header("Authorization") token: String,
         @Body request: PaymentIntentRequest
     ): Response<PaymentIntentResponse>
-    
-    // Nuevo endpoint para simulación NFC
-    @POST("api/stripe/nfc_tap")
-    suspend fun simulateNfcTap(
+
+    // Tap to Pay: crea PIs con payment_method_types=["card_present"]. Usar para Terminal.
+    @POST("api/stripe/payment_intent_auto")
+    suspend fun createPaymentIntentAuto(
         @Header("Authorization") token: String,
-        @Body request: NfcTapRequest
-    ): Response<NfcTapResponse>
+        @Body request: PaymentIntentRequest
+    ): Response<PaymentIntentResponse>
     
-    // Endpoint para procesar pago NFC real
-    @POST("api/stripe/process_nfc")
-    suspend fun processNfcPayment(
+    @POST("api/stripe/confirm_payment")
+    suspend fun confirmPayment(
         @Header("Authorization") token: String,
-        @Body request: ProcessNfcRequest
-    ): Response<ProcessNfcResponse>
+        @Body request: Map<String, String>
+    ): Response<PaymentConfirmResponse>
+    
+    @GET("api/stripe/config")
+    suspend fun getStripeConfig(
+        @Header("Authorization") token: String
+    ): Response<StripeConfigResponse>
+    
+    @GET("api/stripe/publishable-key")
+    suspend fun getStripePublishableKey(): Response<StripeConfigResponse>
 }

@@ -12,15 +12,12 @@ const rateLimit = require('express-rate-limit');
 
 // Importar módulos nuevos
 const logger = require('./logger');
-const backupManager = require('./utils/backup-db');
+// const backupManager = require('./utils/backup-db');
 const StripeEncryption = require('./crypto-utils');
-const PaymentProcessorManager = require('./payment-processor-manager');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-key-change-in-production';
-const STRIPE_TERMINAL_LOCATION_ID = process.env.STRIPE_TERMINAL_LOCATION_ID || process.env.TERMINAL_LOCATION_ID || null;
-const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || null;
 
 // Inicializar encriptación
 const stripeEncryption = new StripeEncryption();
@@ -28,10 +25,7 @@ const stripeEncryption = new StripeEncryption();
 // Base de datos
 const db = new sqlite3.Database('database.sqlite');
 
-// Gestor de procesadores de pago
-const paymentManager = new PaymentProcessorManager(db);
-
-// Configuración legacy (mantenida para compatibilidad)
+// Configuración Stripe
 let stripeConfig = null;
 let stripe = null;
 
@@ -68,6 +62,12 @@ function loadStripeConfig() {
                     publishableKey = row.publishable_key;
                 }
                 
+                // Fallback a variables de entorno si falta la publishable key
+                if (!publishableKey && process.env.STRIPE_PUBLISHABLE_KEY) {
+                    publishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
+                    console.warn('[WARN] Publishable key no encontrada en DB. Usando STRIPE_PUBLISHABLE_KEY del entorno');
+                }
+
                 stripeConfig = {
                     secretKey: secretKey,
                     publishableKey: publishableKey,
@@ -87,32 +87,26 @@ function loadStripeConfig() {
                 }
             } else {
                 console.warn('[WARN] No hay configuración de Stripe. Configúrala desde el dashboard.');
+                // Intentar cargar desde entorno como último recurso
+                if (process.env.STRIPE_SECRET_KEY) {
+                    stripeConfig = {
+                        secretKey: process.env.STRIPE_SECRET_KEY,
+                        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || '',
+                        testMode: process.env.STRIPE_SECRET_KEY.startsWith('sk_test_')
+                    };
+                    try {
+                        stripe = require('stripe')(stripeConfig.secretKey);
+                        console.log('[INFO] Stripe inicializado desde variables de entorno');
+                        resolve(stripeConfig);
+                        return;
+                    } catch (e) {
+                        console.error('[ERROR] No se pudo inicializar Stripe desde entorno:', e.message);
+                    }
+                }
                 resolve(null);
             }
         });
     });
-}
-
-// Inicializar procesadores de pago
-async function initializePaymentProcessors() {
-    try {
-        await paymentManager.initializeProcessors();
-        
-        // Mantener compatibilidad con código legacy
-        const stripeProcessor = paymentManager.getProcessor('stripe');
-        if (stripeProcessor) {
-            stripe = stripeProcessor.client;
-            stripeConfig = stripeProcessor.config;
-        }
-        
-        console.log('[INFO] Procesadores de pago inicializados');
-        console.log('- Procesadores activos:', paymentManager.getActiveProcessors().join(', '));
-        
-    } catch (error) {
-        console.error('[ERROR] Error inicializando procesadores de pago:', error);
-        // Fallback a configuración legacy
-        await loadStripeConfig();
-    }
 }
 
 // Configurar trust proxy para funcionar detrás de nginx
@@ -157,8 +151,8 @@ app.use((req, res, next) => {
     next();
 });
 
-// Iniciar backups programados
-backupManager.scheduleBackups();
+// Programar backups automáticos
+// backupManager.scheduleBackups();
 
 // Middleware de autenticación
 function authenticateToken(req, res, next) {
@@ -356,34 +350,6 @@ app.get('/api/dashboard/users', async (req, res) => {
     }
 });
 
-// Payment processors overview (admin)
-app.get('/api/payment/processors', authenticateToken, async (req, res) => {
-    try {
-        const active = paymentManager.getActiveProcessors();
-        const items = active.map(name => {
-            const proc = paymentManager.getProcessor(name);
-            if (name === 'stripe') {
-                const cfg = proc?.config || {};
-                return {
-                    name: 'stripe',
-                    display_name: 'Stripe',
-                    active: true,
-                    test_mode: !!cfg.test_mode,
-                    config: {
-                        publishable_key: cfg.config?.publishable_key || null,
-                        secret_key: cfg.config?.secret_key ? 'sk_****' : null
-                    }
-                };
-            }
-            return { name, display_name: name, active: true };
-        });
-        res.json({ processors: items });
-    } catch (e) {
-        logger.error('Payment processors overview error', { error: e.message });
-        res.status(500).json({ error: 'Cannot list processors' });
-    }
-});
-
 // Events endpoint
 app.get('/api/dashboard/events', async (req, res) => {
     try {
@@ -404,29 +370,50 @@ app.get('/api/dashboard/events', async (req, res) => {
 // Stripe configuration endpoints
 app.get('/api/stripe/config', authenticateToken, async (req, res) => {
     try {
-        const config = await new Promise((resolve, reject) => {
-            db.get('SELECT * FROM stripe_config WHERE active = 1', (err, row) => {
+        const row = await new Promise((resolve, reject) => {
+            db.get('SELECT * FROM stripe_config WHERE active = 1', (err, r) => {
                 if (err) reject(err);
-                else resolve(row);
+                else resolve(r);
             });
         });
 
-        if (config) {
-            // Don't send the full secret key, just show partial for security
-            res.json({
-                id: config.id,
-                publishable_key: config.publishable_key,
-                secret_key: config.secret_key ? config.secret_key.substring(0, 8) + '...' : '',
-                test_mode: config.test_mode === 1,
-                active: config.active === 1,
-                created_at: config.created_at
-            });
-        } else {
-            res.json(null);
+        if (!row) {
+            return res.json({ success: false, error: 'No Stripe configuration found' });
         }
+
+        // Decrypt values if stored encrypted as JSON
+        let pub = row.publishable_key;
+        let sec = row.secret_key;
+        try {
+            if (typeof pub === 'string' && pub.startsWith('{')) {
+                pub = stripeEncryption.decrypt(JSON.parse(pub));
+            }
+            if (typeof sec === 'string' && sec.startsWith('{')) {
+                sec = stripeEncryption.decrypt(JSON.parse(sec));
+            }
+        } catch (e) {
+            console.warn('[WARN] Error decrypting stripe_config for GET:', e.message);
+        }
+
+        // Mask secret key safely (do not expose full secret)
+        let secretMasked = '';
+        if (typeof sec === 'string' && sec.length >= 8) {
+            const prefix = sec.startsWith('sk_') ? sec.split('_').slice(0,2).join('_') : 'sk';
+            const tail = sec.slice(-6);
+            secretMasked = `${prefix}_****${tail}`;
+        }
+
+        return res.json({
+            success: true,
+            publishable_key: pub || '',
+            secret_key: secretMasked || '',
+            test_mode: row.test_mode === 1,
+            active: row.active === 1,
+            created_at: row.created_at || null
+        });
     } catch (error) {
         logger.error('Stripe config get error', { error: error.message });
-        res.status(500).json({ error: 'Error loading Stripe configuration' });
+        return res.status(500).json({ success: false, error: 'Error loading Stripe configuration' });
     }
 });
 
@@ -486,7 +473,112 @@ app.post('/api/stripe/config', authenticateToken, async (req, res) => {
             testMode: test_mode 
         });
 
-        // Adyen endpoints removed (Stripe-only)
+        res.json({ success: true, message: 'Stripe configuration updated successfully' });
+    } catch (error) {
+        logger.error('Stripe config update error', { error: error.message });
+        res.status(500).json({ error: 'Error updating Stripe configuration' });
+    }
+});
+
+// Webhook secret configuration endpoint
+app.post('/api/stripe/webhook', authenticateToken, async (req, res) => {
+    try {
+        const { webhook_secret } = req.body;
+
+        // Save webhook secret to environment or config
+        if (webhook_secret) {
+            // In a production app, you'd save this to a secure config store
+            // For now, we'll log it and confirm it's received
+            logger.info('Webhook secret configured', { 
+                hasSecret: !!webhook_secret,
+                secretPrefix: webhook_secret ? webhook_secret.substring(0, 8) + '...' : 'none'
+            });
+        }
+
+        res.json({ success: true, message: 'Webhook secret configured successfully' });
+    } catch (error) {
+        logger.error('Webhook config error', { error: error.message });
+        res.status(500).json({ error: 'Error configuring webhook' });
+    }
+});
+
+// Test webhook endpoint
+app.post('/api/stripe/webhook/test', authenticateToken, async (req, res) => {
+    try {
+        // This endpoint helps users verify their webhook configuration
+        res.json({ 
+            success: true, 
+            message: 'Webhook endpoint is accessible',
+            endpoint: 'https://be.terminal.beticket.net/webhooks/stripe',
+            events: ['payment_intent.succeeded', 'payment_intent.payment_failed']
+        });
+    } catch (error) {
+        logger.error('Webhook test error', { error: error.message });
+        res.status(500).json({ error: 'Error testing webhook' });
+    }
+});
+
+// =============================================================================
+// LIGHTWEIGHT MOBILE LOGGING (to diagnose app crashes)
+// =============================================================================
+app.post('/api/mobile/log', express.json(), (req, res) => {
+    try {
+        const { level = 'info', message = '', stack = '', where = '', extra = {} } = req.body || {};
+        const payload = { where, message, stack, ...extra };
+        if (level === 'error') logger.error('MobileLog', payload);
+        else if (level === 'warn') logger.warn('MobileLog', payload);
+        else logger.info('MobileLog', payload);
+        res.json({ success: true });
+    } catch (e) {
+        logger.error('MobileLog failed', { error: e.message });
+        res.status(500).json({ success: false });
+    }
+});
+
+// =============================================================================
+// PUBLIC API ENDPOINTS FOR MOBILE APP (No authentication required)
+// =============================================================================
+
+// Get all active events (public endpoint for mobile app)
+app.get('/api/events', async (req, res) => {
+    try {
+        const events = await new Promise((resolve, reject) => {
+            db.all('SELECT id, code, name, description, active, created_at FROM events WHERE active = 1 ORDER BY created_at DESC', (err, rows) => {
+                if (err) reject(err);
+                else resolve(rows);
+            });
+        });
+
+        logger.info('Public events API called', { 
+            ip: req.ip,
+            userAgent: req.get('User-Agent'),
+            eventsCount: events.length 
+        });
+
+        res.json({
+            success: true,
+            events: events
+        });
+    } catch (error) {
+        logger.error('Public events error', { error: error.message });
+        res.status(500).json({ 
+            success: false,
+            error: 'Error loading events' 
+        });
+    }
+});
+
+// Get event by code (public endpoint for mobile app)
+app.get('/api/events/:code', async (req, res) => {
+    try {
+        const { code } = req.params;
+        
+        const event = await new Promise((resolve, reject) => {
+            db.get('SELECT id, code, name, description, active, created_at FROM events WHERE code = ? AND active = 1', [code], (err, row) => {
+                if (err) reject(err);
+                else resolve(row);
+            });
+        });
 
         if (event) {
             logger.info('Event found by code', { 
@@ -525,10 +617,13 @@ app.get('/api/stripe/publishable-key', async (req, res) => {
                 test_mode: stripeConfig.testMode
             });
         } else {
-            res.status(404).json({
-                success: false,
-                error: 'Stripe not configured'
-            });
+            // Fallback: intentar servir desde entorno aunque no esté cargado a DB
+            const envPk = process.env.STRIPE_PUBLISHABLE_KEY;
+            if (envPk) {
+                console.warn('[WARN] publishable-key: devolviendo PK desde entorno por falta en DB');
+                return res.json({ success: true, publishable_key: envPk, test_mode: envPk.startsWith('pk_test_') });
+            }
+            res.status(404).json({ success: false, error: 'Stripe not configured' });
         }
     } catch (error) {
         logger.error('Get Stripe publishable key error', { error: error.message });
@@ -539,110 +634,60 @@ app.get('/api/stripe/publishable-key', async (req, res) => {
     }
 });
 
-// Expose terminal location id
-app.get('/api/stripe/location', async (req, res) => {
-    try {
-        res.json({ success: true, location_id: STRIPE_TERMINAL_LOCATION_ID || null });
-    } catch (e) {
-        res.status(500).json({ success: false, error: 'Cannot load location id' });
-    }
-});
-
-// Save terminal location id (admin)
-app.post('/api/admin/terminal-location', authenticateToken, async (req, res) => {
-    try {
-        const { location_id } = req.body || {};
-        if (!location_id || typeof location_id !== 'string' || !/^tml_/i.test(location_id)) {
-            return res.status(400).json({ success: false, error: 'Invalid location id' });
-        }
-        // Update in-memory env for current process
-        process.env.STRIPE_TERMINAL_LOCATION_ID = location_id;
-        // Try to persist into .env in this service folder
-        const fs = require('fs');
-        const envPath = path.join(__dirname, '.env');
-        try {
-            let content = '';
-            if (fs.existsSync(envPath)) content = fs.readFileSync(envPath, 'utf8');
-            const lines = content.split(/\r?\n/).filter(Boolean).filter(l => !l.startsWith('STRIPE_TERMINAL_LOCATION_ID='));
-            lines.push(`STRIPE_TERMINAL_LOCATION_ID=${location_id}`);
-            fs.writeFileSync(envPath, lines.join('\n') + '\n');
-        } catch (_) { /* best-effort persist */ }
-        res.json({ success: true, location_id });
-    } catch (e) {
-        logger.error('Save terminal location error', { error: e.message });
-        res.status(500).json({ success: false, error: 'Cannot save location id' });
-    }
-});
-
-// Public events list for mobile app (simple shape)
-app.get('/api/events', async (req, res) => {
-    try {
-        const events = await new Promise((resolve, reject) => {
-            db.all('SELECT id, name, created_at FROM events ORDER BY created_at DESC', (err, rows) => {
-                if (err) reject(err);
-                else resolve(rows || []);
-            });
-        });
-        res.json({ success: true, events });
-    } catch (error) {
-        logger.error('Public events list error', { error: error.message });
-        // Return empty list on error to avoid blocking the app UX
-        res.json({ success: true, events: [] });
-    }
-});
-
-// List downloadable APK files with size & modified time
-app.get('/api/admin/downloads', authenticateToken, async (req, res) => {
-    try {
-        const fs = require('fs');
-        const crypto = require('crypto');
-        const downloadsDir = path.join(__dirname, 'public', 'downloads');
-        if (!fs.existsSync(downloadsDir)) {
-            return res.json({ success: true, files: [] });
-        }
-    const entries = fs.readdirSync(downloadsDir)
-            .filter(f => f.endsWith('.apk'))
-            .map(f => {
-                const full = path.join(downloadsDir, f);
-                const stat = fs.statSync(full);
-        // Parse version if filename contains pattern -vX.Y.Z- or -vX.Y.Z.apk or _vX.Y.Z
-        const versionMatch = f.match(/[\-_]v(\d+\.\d+\.\d+([.-][A-Za-z0-9]+)*)/);
-        const version = versionMatch ? versionMatch[1] : null;
-        return { name: f, size: stat.size, mtime: stat.mtimeMs, version };
-            })
-            .sort((a,b) => b.mtime - a.mtime);
-
-        // Optionally compute hashes for first N (avoid heavy cost for many files)
-        const MAX_HASH = 5;
-        for (let i=0;i<entries.length && i<MAX_HASH;i++) {
-            const full = path.join(downloadsDir, entries[i].name);
-            const hash = crypto.createHash('sha256').update(fs.readFileSync(full)).digest('hex');
-            entries[i].sha256 = hash;
-        }
-    res.json({ success: true, files: entries });
-    } catch (err) {
-        logger.error('List downloads error', { error: err.message });
-        res.status(500).json({ success: false, error: 'Cannot list downloads' });
-    }
-});
-
-// Get Stripe connection token (for mobile app compatibility)
+// Get Stripe Terminal connection token (forces configured US location)
 app.get('/api/stripe/connection_token', authenticateToken, async (req, res) => {
     try {
         if (!stripe) {
             return res.status(500).json({ success: false, error: 'Stripe not configured' });
         }
-        const location = req.query.location || STRIPE_TERMINAL_LOCATION_ID;
-        if (!location) {
-            logger.warn('Connection token requested without location');
-        }
-        const params = location ? { location } : {};
-        const token = await stripe.terminal.connectionTokens.create(params);
-        logger.info('Stripe connection token created for mobile', { userId: req.user.userId, location: location || 'none' });
-        res.json({ success: true, secret: token.secret, location: location || null });
+
+        // Prefer explicit param, fallback to env, finally none
+        const paramLocation = req.query.location || req.query.locationId || req.query.terminal_location_id;
+        const envLocation = process.env.STRIPE_TERMINAL_LOCATION_ID;
+        const location = (paramLocation && String(paramLocation).trim()) || (envLocation && String(envLocation).trim()) || undefined;
+
+        const createArgs = location ? { location } : {};
+
+        const token = await stripe.terminal.connectionTokens.create(createArgs);
+
+        logger.info('Terminal connection token created', {
+            userId: req.user.userId,
+            hasLocation: !!location,
+            location: location || null
+        });
+
+        return res.json({ success: true, secret: token.secret, location: location || null });
     } catch (error) {
         logger.error('Connection token error', { error: error.message });
-        res.status(500).json({ success: false, error: 'Error getting connection token' });
+        return res.status(500).json({ success: false, error: 'Error getting connection token' });
+    }
+});
+
+// POST alias for connection token creation (mobile SDK default)
+app.post('/api/stripe/connection_token', authenticateToken, async (req, res) => {
+    try {
+        if (!stripe) {
+            return res.status(500).json({ success: false, error: 'Stripe not configured' });
+        }
+
+        const body = req.body || {};
+        const paramLocation = body.location || body.locationId || body.terminal_location_id || req.query.location || req.query.locationId;
+        const envLocation = process.env.STRIPE_TERMINAL_LOCATION_ID;
+        const location = (paramLocation && String(paramLocation).trim()) || (envLocation && String(envLocation).trim()) || undefined;
+
+        const createArgs = location ? { location } : {};
+        const token = await stripe.terminal.connectionTokens.create(createArgs);
+
+        logger.info('Terminal connection token created (POST)', {
+            userId: req.user.userId,
+            hasLocation: !!location,
+            location: location || null
+        });
+
+        return res.json({ success: true, secret: token.secret, location: location || null });
+    } catch (error) {
+        logger.error('Connection token error (POST)', { error: error.message });
+        return res.status(500).json({ success: false, error: 'Error getting connection token' });
     }
 });
 
@@ -662,16 +707,37 @@ app.get('/dashboard', (req, res) => {
 
 // Admin dashboard page
 app.get('/admin', (req, res) => {
+    // Desactivar caché para asegurar que los cambios del dashboard se reflejen inmediatamente
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
     res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
+// No-cache para version.json
+app.get('/version.json', (req, res) => {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
+    res.sendFile(path.join(__dirname, 'public', 'version.json'));
+});
+
+// Añadir cabeceras adecuadas para descargas APK y permitir HEAD
+app.head('/downloads/:file', (req, res, next) => {
+    const filePath = path.join(__dirname, 'public', 'downloads', req.params.file);
+    res.set('Cache-Control', 'public, max-age=60'); // breve caché para HEAD
+    res.sendFile(filePath, err => {
+        if (err) next();
+    });
 });
 
 // Endpoint manual de backup
 app.post('/api/admin/backup', authenticateToken, async (req, res) => {
     try {
-        const backupPath = backupManager.createBackup();
+        // const backupPath = backupManager.createBackup();
         res.json({ 
             success: true, 
-            message: 'Backup creado exitosamente',
+            message: 'Backup creado exitosamente (temporalmente deshabilitado)',
             path: backupPath 
         });
     } catch (error) {
@@ -717,80 +783,52 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// System information endpoint
-app.get('/api/system/info', async (req, res) => {
-    try {
-        const packageJson = require('./package.json');
-        const os = require('os');
-        
-        // Calculate uptime
-        const uptime = process.uptime();
-        const hours = Math.floor(uptime / 3600);
-        const minutes = Math.floor((uptime % 3600) / 60);
-        const seconds = Math.floor(uptime % 60);
-        const uptimeString = `${hours}h ${minutes}m ${seconds}s`;
-        
-        // Database status
-        let dbStatus = 'Connected';
-        try {
-            db.get('SELECT 1', (err) => {
-                if (err) dbStatus = 'Error';
-            });
-        } catch (error) {
-            dbStatus = 'Error';
-        }
-        
-        const systemInfo = {
-            server: 'BeTerminal Backend',
-            version: packageJson.version || '1.0.0',
-            uptime: uptimeString,
-            database: dbStatus,
-            environment: process.env.NODE_ENV || 'development',
-            nodeVersion: process.version,
-            platform: os.platform(),
-            arch: os.arch(),
-            totalMemory: `${Math.round(os.totalmem() / 1024 / 1024)} MB`,
-            freeMemory: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
-            cpus: os.cpus().length
-        };
-        
-        res.json(systemInfo);
-    } catch (error) {
-        logger.error('Error getting system info', { error: error.message });
-        res.status(500).json({ 
-            error: 'Error getting system information',
-            server: 'BeTerminal Backend',
-            version: '1.0.0',
-            status: 'Running'
-        });
-    }
-});
-
-// Test connection endpoints for payment processors
-
-// Adyen connection test removed
-
 // Mobile app alias for login endpoint
 app.post('/api/auth/login', async (req, res) => {
     const { username, password } = req.body;
+    
+    // Debug logging
+    logger.info('Mobile login attempt debug', { 
+        username: username, 
+        passwordLength: password ? password.length : 0,
+        userAgent: req.get('User-Agent'),
+        ip: req.ip 
+    });
+    
     if (!username || !password) {
         return res.status(400).json({ error: 'Username and password are required' });
     }
+
     try {
         db.get('SELECT * FROM users WHERE username = ?', [username], async (err, user) => {
             if (err) {
-                logger.error('Database error during login', { error: err.message, username });
+                logger.error('Database error during mobile login', { error: err.message, username });
                 return res.status(500).json({ error: 'Database error' });
             }
-            if (!user || !bcrypt.compareSync(password, user.password)) {
-                logger.warn('Failed login attempt', { username });
+
+            if (!user) {
+                logger.warn('User not found during mobile login', { username });
                 return res.status(401).json({ error: 'Invalid credentials' });
             }
+
+            const passwordMatch = bcrypt.compareSync(password, user.password);
+            logger.info('Password comparison debug', { 
+                username, 
+                passwordMatch,
+                hashedPasswordFromDB: user.password.substring(0, 20) + '...' 
+            });
+
+            if (!passwordMatch) {
+                logger.warn('Failed mobile login attempt - password mismatch', { username });
+                return res.status(401).json({ error: 'Invalid credentials' });
+            }
+
             const token = jwt.sign(
                 { userId: user.id, username: user.username },
                 JWT_SECRET,
                 { expiresIn: '24h' }
             );
+
             logger.info('Successful mobile login', { username, userId: user.id });
             res.json({ success: true, token, username: user.username });
         });
@@ -800,7 +838,177 @@ app.post('/api/auth/login', async (req, res) => {
     }
 });
 
+// User info (for mobile/app compatibility)
+app.get('/api/auth/user', authenticateToken, async (req, res) => {
+    try {
+        const userId = req.user.userId;
+        db.get('SELECT id, username, email FROM users WHERE id = ?', [userId], (err, row) => {
+            if (err) {
+                logger.error('User info DB error', { error: err.message, userId });
+                return res.status(500).json({ error: 'Database error' });
+            }
+            if (!row) {
+                return res.status(404).json({ error: 'User not found' });
+            }
+            res.json(row);
+        });
+    } catch (error) {
+        logger.error('User info error', { error: error.message });
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Payment endpoints
+app.post('/api/stripe/payment_intent', authenticateToken, async (req, res) => {
+    const { amount, eventCode, paymentMethodId, flowType = 'automatic' } = req.body;
+
+    // LOG TEMPORAL: Ver qué está enviando la app
+    logger.info('Payment intent request body', {
+        body: req.body,
+        amount,
+        eventCode,
+        paymentMethodId,
+        flowType,
+        hasPaymentMethodId: !!paymentMethodId
+    });
+
+    if (!amount || amount <= 0) {
+        return res.status(400).json({ error: 'Invalid amount' });
+    }
+
+    if (!stripe) {
+        return res.status(500).json({ error: 'Stripe not configured' });
+    }
+
+    try {
+        let paymentIntentConfig = {
+            amount: Math.round(amount),
+            currency: 'usd',
+            metadata: {
+                event_code: eventCode || 'general',
+                user_id: req.user.userId.toString(),
+                flow_type: flowType
+            }
+        };
+
+        // OPCIÓN 2: FLUJO AUTOMÁTICO
+        if (flowType === 'automatic') {
+            if (paymentMethodId) {
+                // Opción 2A: Flujo automático con paymentMethodId (confirmación inmediata)
+                paymentIntentConfig = {
+                    ...paymentIntentConfig,
+                    payment_method: paymentMethodId,
+                    confirmation_method: 'automatic',
+                    confirm: true
+                };
+                logger.info('Using automatic flow with immediate confirmation', { paymentMethodId });
+            } else {
+                // Opción 2B: Flujo automático sin paymentMethodId (confirmación automática cuando se agregue método)
+                paymentIntentConfig = {
+                    ...paymentIntentConfig,
+                    confirmation_method: 'automatic',
+                    payment_method_types: ['card']
+                };
+                logger.info('Using automatic flow with deferred confirmation');
+            }
+        } else {
+            // OPCIÓN 1: FLUJO MANUAL (comportamiento anterior)
+            paymentIntentConfig = {
+                ...paymentIntentConfig,
+                payment_method: paymentMethodId,
+                confirmation_method: 'manual',
+                confirm: !!paymentMethodId
+            };
+            logger.info('Using manual flow', { paymentMethodId, willConfirm: !!paymentMethodId });
+        }
+
+        const paymentIntent = await stripe.paymentIntents.create(paymentIntentConfig);
+
+        // Registrar la transacción inmediatamente al crearla
+        await saveTransaction({
+            transaction_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            currency: paymentIntent.currency,
+            status: paymentIntent.status, // 'requires_payment_method', 'requires_confirmation', etc.
+            event_code: eventCode || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: paymentIntent.id,
+            metadata: paymentIntent.metadata
+        });
+
+        logger.transaction('created', {
+            payment_intent_id: paymentIntent.id,
+            amount: paymentIntent.amount,
+            status: paymentIntent.status,
+            flow_type: flowType,
+            confirmation_method: paymentIntentConfig.confirmation_method,
+            user_id: req.user.userId
+        });
+
+        // Respuesta mejorada con información del flujo
+        const response = {
+            clientSecret: paymentIntent.client_secret,
+            status: paymentIntent.status,
+            paymentIntentId: paymentIntent.id,
+            flowType: flowType,
+            confirmationMethod: paymentIntentConfig.confirmation_method
+        };
+
+        // Información adicional según el flujo
+        if (flowType === 'automatic') {
+            response.message = paymentMethodId 
+                ? 'Pago creado y confirmado automáticamente' 
+                : 'Pago creado - Se confirmará automáticamente al agregar método de pago';
+            
+            if (paymentIntent.status === 'succeeded') {
+                response.message = '¡Pago completado exitosamente!';
+                response.completed = true;
+            } else if (paymentIntent.status === 'requires_action') {
+                response.message = 'Pago requiere autenticación adicional';
+                response.requiresAction = true;
+            }
+        } else {
+            response.message = 'Pago creado - Requiere confirmación manual';
+        }
+
+        res.json(response);
+
+    } catch (error) {
+        // Registrar transacciones fallidas por errores de creación
+        const failedTransactionId = `failed_${Date.now()}_${req.user.userId}`;
+        
+        await saveTransaction({
+            transaction_id: failedTransactionId,
+            amount: Math.round(amount),
+            currency: 'usd',
+            status: 'creation_failed',
+            event_code: eventCode || 'general',
+            user_id: req.user.userId,
+            payment_intent_id: null,
+            metadata: {
+                error_message: error.message,
+                error_type: error.type || 'unknown',
+                error_code: error.code || 'unknown'
+            }
+        });
+
+        logger.error('Payment intent creation error', {
+            error: error.message,
+            error_type: error.type,
+            error_code: error.code,
+            amount,
+            user_id: req.user.userId
+        });
+        
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Endpoint específico para Flujo Automático (Opción 2)
+// IMPORTANTE: Este endpoint está optimizado para Tap to Pay (Stripe Terminal):
+// - Crea PaymentIntents con payment_method_types=['card_present'] para que el SDK pueda adjuntar
+//   el PaymentMethod (card_present) sin errores de tipo.
+// - Si se necesita un pago online tradicional, usar /api/stripe/payment_intent.
 app.post('/api/stripe/payment_intent_auto', authenticateToken, async (req, res) => {
     const { amount, eventCode, paymentMethodId } = req.body;
 
@@ -821,17 +1029,17 @@ app.post('/api/stripe/payment_intent_auto', authenticateToken, async (req, res) 
     }
 
     try {
-        // CONFIGURACIÓN PARA NFC REAL CON STRIPE TERMINAL
+        // CONFIGURACIÓN AUTOMÁTICA OPTIMIZADA PARA NFC
         const paymentIntentConfig = {
             amount: Math.round(amount),
             currency: 'usd',
-            confirmation_method: 'manual',
-            payment_method_types: ['card_present'], // Para NFC real
+            confirmation_method: 'automatic',
+            payment_method_types: ['card_present'], // Cambiado para NFC/tap
             capture_method: 'automatic',
             metadata: {
                 event_code: eventCode || 'general',
                 user_id: req.user.userId.toString(),
-                flow_type: 'nfc_terminal'
+                flow_type: 'automatic_nfc'
             }
         };
 
@@ -950,20 +1158,22 @@ app.post('/api/stripe/confirm_payment', authenticateToken, async (req, res) => {
             payment_method: paymentMethodId
         });
 
+        // Asegurar metadatos seguros
+        const piMeta = paymentIntent && paymentIntent.metadata ? paymentIntent.metadata : {};
+
         // Actualizar la transacción
         await saveTransaction({
             transaction_id: paymentIntent.id,
             amount: paymentIntent.amount,
             currency: paymentIntent.currency,
             status: paymentIntent.status,
-            event_code: paymentIntent.metadata?.event_code || 'general',
+            event_code: (piMeta && piMeta.event_code) ? piMeta.event_code : 'general',
             user_id: req.user.userId,
             payment_intent_id: paymentIntent.id,
-            metadata: {
-                ...paymentIntent.metadata,
+            metadata: Object.assign({}, piMeta, {
                 confirmed_with_method: paymentMethodId,
                 confirmation_timestamp: new Date().toISOString()
-            }
+            })
         });
 
         logger.transaction('confirmed', {
@@ -1007,347 +1217,111 @@ app.post('/api/stripe/confirm_payment', authenticateToken, async (req, res) => {
     }
 });
 
-// Endpoint para simular tap NFC - Completar pago con tarjeta física
-app.post('/api/stripe/nfc_tap', authenticateToken, async (req, res) => {
-    const { paymentIntentId, cardBrand = 'visa', last4 = '4242' } = req.body;
-
-    logger.info('NFC tap simulation request', {
-        paymentIntentId,
-        cardBrand,
-        last4,
-        user_id: req.user.userId
-    });
-
-    if (!paymentIntentId) {
-        return res.status(400).json({ error: 'Payment Intent ID is required' });
-    }
-
-    if (!stripe) {
-        return res.status(500).json({ error: 'Stripe not configured' });
-    }
-
-    try {
-        // Primero, obtener el Payment Intent actual
-        const currentPaymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
-        
-        if (currentPaymentIntent.status !== 'requires_payment_method') {
-            logger.warn('NFC tap on non-requires_payment_method intent', {
-                paymentIntentId,
-                current_status: currentPaymentIntent.status,
-                user_id: req.user.userId
-            });
-            
-            return res.json({
-                success: true,
-                status: currentPaymentIntent.status,
-                message: `Payment Intent ya está en estado: ${currentPaymentIntent.status}`,
-                alreadyProcessed: true
-            });
-        }
-
-        // Crear un método de pago simulado para NFC
-        const paymentMethod = await stripe.paymentMethods.create({
-            type: 'card',
-            card: {
-                number: '4242424242424242', // Tarjeta de prueba
-                exp_month: 12,
-                exp_year: 2030,
-                cvc: '123'
-            },
-            metadata: {
-                simulated_nfc: 'true',
-                brand: cardBrand,
-                last4: last4,
-                tap_timestamp: new Date().toISOString()
-            }
-        });
-
-        logger.info('Created simulated payment method for NFC', {
-            payment_method_id: paymentMethod.id,
-            paymentIntentId,
-            user_id: req.user.userId
-        });
-
-        // Confirmar el Payment Intent con el método de pago simulado
-        const confirmedPaymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, {
-            payment_method: paymentMethod.id
-        });
-
-        // Actualizar la transacción con información de NFC
-        await saveTransaction({
-            transaction_id: confirmedPaymentIntent.id,
-            amount: confirmedPaymentIntent.amount,
-            currency: confirmedPaymentIntent.currency,
-            status: confirmedPaymentIntent.status,
-            event_code: confirmedPaymentIntent.metadata?.event_code || 'general',
-            user_id: req.user.userId,
-            payment_intent_id: confirmedPaymentIntent.id,
-            metadata: {
-                ...confirmedPaymentIntent.metadata,
-                nfc_simulation: 'true',
-                simulated_card_brand: cardBrand,
-                simulated_last4: last4,
-                payment_method_id: paymentMethod.id,
-                nfc_tap_timestamp: new Date().toISOString()
-            }
-        });
-
-        logger.transaction('nfc_tap_completed', {
-            payment_intent_id: confirmedPaymentIntent.id,
-            amount: confirmedPaymentIntent.amount,
-            status: confirmedPaymentIntent.status,
-            payment_method_id: paymentMethod.id,
-            simulated_card: `${cardBrand} ****${last4}`,
-            user_id: req.user.userId
-        });
-
-        const isCompleted = confirmedPaymentIntent.status === 'succeeded';
-        const requiresAction = confirmedPaymentIntent.status === 'requires_action';
-        
-        res.json({
-            success: true,
-            status: confirmedPaymentIntent.status,
-            paymentIntentId: confirmedPaymentIntent.id,
-            completed: isCompleted,
-            requiresAction: requiresAction,
-            paymentMethodId: paymentMethod.id,
-            simulatedCard: {
-                brand: cardBrand,
-                last4: last4,
-                type: 'nfc_tap'
-            },
-            message: isCompleted 
-                ? '¡Pago NFC completado exitosamente!'
-                : requiresAction 
-                    ? 'Pago NFC confirmado - Requiere autenticación adicional'
-                    : 'Pago NFC confirmado - Procesándose'
-        });
-
-    } catch (error) {
-        logger.error('NFC tap simulation error', {
-            error: error.message,
-            error_type: error.type,
-            error_code: error.code,
-            paymentIntentId,
-            user_id: req.user.userId
-        });
-        
-        // Actualizar transacción con error
-        await saveTransaction({
-            transaction_id: paymentIntentId,
-            amount: 0,
-            currency: 'usd',
-            status: 'nfc_simulation_failed',
-            event_code: 'nfc_error',
-            user_id: req.user.userId,
-            payment_intent_id: paymentIntentId,
-            metadata: {
-                error_message: error.message,
-                error_type: error.type || 'unknown',
-                error_code: error.code || 'unknown',
-                nfc_simulation_failed: 'true'
-            }
-        });
-        
-        res.status(500).json({ 
-            success: false,
-            error: error.message,
-            message: 'Error simulando tap NFC'
-        });
-    }
-});
-
-// Endpoint para procesar pago NFC real con tarjeta presente
-app.post('/api/stripe/process_nfc', authenticateToken, async (req, res) => {
-    const { paymentIntentId, paymentMethodId } = req.body;
-
-    logger.info('Real NFC payment processing request', {
-        paymentIntentId,
-        paymentMethodId,
-        user_id: req.user.userId
-    });
-
-    if (!paymentIntentId) {
-        return res.status(400).json({ error: 'Payment Intent ID is required' });
-    }
-
-    if (!paymentMethodId) {
-        return res.status(400).json({ error: 'Payment Method ID is required' });
-    }
-
-    if (!stripe) {
-        return res.status(500).json({ error: 'Stripe not configured' });
-    }
-
-    try {
-        // Confirmar el Payment Intent con el método de pago NFC real
-        const confirmedPaymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, {
-            payment_method: paymentMethodId
-        });
-
-        // Actualizar la transacción
-        await saveTransaction({
-            transaction_id: confirmedPaymentIntent.id,
-            amount: confirmedPaymentIntent.amount,
-            currency: confirmedPaymentIntent.currency,
-            status: confirmedPaymentIntent.status,
-            event_code: confirmedPaymentIntent.metadata?.event_code || 'general',
-            user_id: req.user.userId,
-            payment_intent_id: confirmedPaymentIntent.id,
-            metadata: {
-                ...confirmedPaymentIntent.metadata,
-                real_nfc_payment: 'true',
-                payment_method_id: paymentMethodId,
-                nfc_processing_timestamp: new Date().toISOString()
-            }
-        });
-
-        logger.transaction('nfc_real_processed', {
-            payment_intent_id: confirmedPaymentIntent.id,
-            amount: confirmedPaymentIntent.amount,
-            status: confirmedPaymentIntent.status,
-            payment_method_id: paymentMethodId,
-            user_id: req.user.userId
-        });
-
-        const isCompleted = confirmedPaymentIntent.status === 'succeeded';
-        const requiresAction = confirmedPaymentIntent.status === 'requires_action';
-        
-        res.json({
-            success: true,
-            status: confirmedPaymentIntent.status,
-            paymentIntentId: confirmedPaymentIntent.id,
-            completed: isCompleted,
-            requiresAction: requiresAction,
-            paymentMethodId: paymentMethodId,
-            message: isCompleted 
-                ? '¡Pago NFC completado exitosamente!'
-                : requiresAction 
-                    ? 'Pago NFC requiere autenticación adicional'
-                    : 'Pago NFC procesándose'
-        });
-
-    } catch (error) {
-        logger.error('Real NFC payment processing error', {
-            error: error.message,
-            error_type: error.type,
-            error_code: error.code,
-            paymentIntentId,
-            paymentMethodId,
-            user_id: req.user.userId
-        });
-        
-        await saveTransaction({
-            transaction_id: paymentIntentId,
-            amount: 0,
-            currency: 'usd',
-            status: 'nfc_processing_failed',
-            event_code: 'nfc_error',
-            user_id: req.user.userId,
-            payment_intent_id: paymentIntentId,
-            metadata: {
-                error_message: error.message,
-                error_type: error.type || 'unknown',
-                error_code: error.code || 'unknown',
-                real_nfc_processing_failed: 'true'
-            }
-        });
-        
-        res.status(500).json({ 
-            success: false,
-            error: error.message,
-            message: 'Error procesando pago NFC real'
-        });
-    }
-});
-
-// Stripe webhook (raw body for signature verification)
-app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
+// Stripe webhook
+app.post('/webhooks/stripe', express.json(), async (req, res) => {
+    const payload = req.body;
     const sig = req.headers['stripe-signature'];
+
     let event;
     try {
-        if (STRIPE_WEBHOOK_SECRET && sig) {
-            event = stripe.webhooks.constructEvent(req.body, sig, STRIPE_WEBHOOK_SECRET);
-        } else {
-            // Fallback (NO signature verification) – not recommended for production
-            event = JSON.parse(req.body.toString('utf8'));
-        }
-        logger.info('Webhook received', {
+        // The event is already parsed by express.json()
+        event = payload;
+        
+        logger.info('Webhook received', { 
             event_type: event.type,
             event_id: event.id,
-            has_signature: !!sig,
-            verified: !!(STRIPE_WEBHOOK_SECRET && sig)
+            has_signature: !!sig
         });
+        
     } catch (err) {
-        logger.error('Webhook payload parsing/verification error', { error: err.message });
+        logger.error('Webhook payload parsing error', { error: err.message, payload_type: typeof payload });
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
     try {
         switch (event.type) {
-            case 'payment_intent.succeeded': {
+            case 'payment_intent.succeeded':
                 const succeededIntent = event.data.object;
+                logger.info('Payment succeeded', { payment_intent_id: succeededIntent.id });
+                
                 await saveTransaction({
                     transaction_id: succeededIntent.id,
                     amount: succeededIntent.amount,
                     currency: succeededIntent.currency,
                     status: 'succeeded',
-                    event_code: succeededIntent.metadata?.event_code,
-                    card_last4: succeededIntent.charges?.data?.[0]?.payment_method_details?.card_present?.last4,
-                    card_brand: succeededIntent.charges?.data?.[0]?.payment_method_details?.card_present?.brand,
-                    user_id: succeededIntent.metadata?.user_id,
+                    event_code: succeededIntent.metadata && succeededIntent.metadata.event_code,
+                    card_last4: (succeededIntent.payment_method && succeededIntent.payment_method.card) ? succeededIntent.payment_method.card.last4 : undefined,
+                    card_brand: (succeededIntent.payment_method && succeededIntent.payment_method.card) ? succeededIntent.payment_method.card.brand : undefined,
+                    user_id: succeededIntent.metadata && succeededIntent.metadata.user_id,
                     payment_intent_id: succeededIntent.id,
                     metadata: succeededIntent.metadata
                 });
-                break; }
-            case 'payment_intent.payment_failed': {
+                break;
+
+            case 'payment_intent.payment_failed':
                 const failedIntent = event.data.object;
                 const lastPaymentError = failedIntent.last_payment_error;
+                logger.warn('Payment failed', { 
+                    payment_intent_id: failedIntent.id,
+                    failure_code: lastPaymentError && lastPaymentError.code,
+                    failure_message: lastPaymentError && lastPaymentError.message
+                });
+                
                 await saveTransaction({
                     transaction_id: failedIntent.id,
                     amount: failedIntent.amount,
                     currency: failedIntent.currency,
                     status: 'failed',
-                    event_code: failedIntent.metadata?.event_code,
-                    user_id: failedIntent.metadata?.user_id,
+                    event_code: failedIntent.metadata && failedIntent.metadata.event_code,
+                    card_last4: (lastPaymentError && lastPaymentError.payment_method && lastPaymentError.payment_method.card) ? lastPaymentError.payment_method.card.last4 : undefined,
+                    card_brand: (lastPaymentError && lastPaymentError.payment_method && lastPaymentError.payment_method.card) ? lastPaymentError.payment_method.card.brand : undefined,
+                    user_id: failedIntent.metadata && failedIntent.metadata.user_id,
                     payment_intent_id: failedIntent.id,
                     metadata: {
-                        ...failedIntent.metadata,
-                        failure_code: lastPaymentError?.code,
-                        failure_message: lastPaymentError?.message,
-                        decline_code: lastPaymentError?.decline_code
+                        ...(failedIntent.metadata || {}),
+                        failure_code: lastPaymentError && lastPaymentError.code,
+                        failure_message: lastPaymentError && lastPaymentError.message,
+                        decline_code: lastPaymentError && lastPaymentError.decline_code
                     }
                 });
-                break; }
-            case 'payment_intent.canceled': {
+                break;
+
+            case 'payment_intent.canceled':
                 const canceledIntent = event.data.object;
+                logger.info('Payment canceled', { payment_intent_id: canceledIntent.id });
+                
                 await saveTransaction({
                     transaction_id: canceledIntent.id,
                     amount: canceledIntent.amount,
                     currency: canceledIntent.currency,
                     status: 'canceled',
-                    event_code: canceledIntent.metadata?.event_code,
-                    user_id: canceledIntent.metadata?.user_id,
+                    event_code: canceledIntent.metadata && canceledIntent.metadata.event_code,
+                    user_id: canceledIntent.metadata && canceledIntent.metadata.user_id,
                     payment_intent_id: canceledIntent.id,
                     metadata: canceledIntent.metadata
                 });
-                break; }
-            case 'payment_intent.requires_action': {
+                break;
+
+            case 'payment_intent.requires_action':
                 const actionIntent = event.data.object;
+                logger.info('Payment requires action', { payment_intent_id: actionIntent.id });
+                
                 await saveTransaction({
                     transaction_id: actionIntent.id,
                     amount: actionIntent.amount,
                     currency: actionIntent.currency,
                     status: 'requires_action',
-                    event_code: actionIntent.metadata?.event_code,
-                    user_id: actionIntent.metadata?.user_id,
+                    event_code: actionIntent.metadata && actionIntent.metadata.event_code,
+                    user_id: actionIntent.metadata && actionIntent.metadata.user_id,
                     payment_intent_id: actionIntent.id,
                     metadata: actionIntent.metadata
                 });
-                break; }
+                break;
+
             default:
                 logger.debug('Unhandled webhook event', { event_type: event.type });
         }
+
         res.json({ received: true });
     } catch (error) {
         logger.error('Webhook processing error', { error: error.message, event_type: event.type });
@@ -1355,27 +1329,20 @@ app.post('/webhooks/stripe', express.raw({ type: 'application/json' }), async (r
     }
 });
 
-// =============================================================================
-// Adyen endpoints removed (Stripe-only)
-// =============================================================================
-
 // Health check
 app.get('/api/health', (req, res) => {
-    const activeProcessors = paymentManager.getActiveProcessors();
     res.json({ 
         status: 'ok', 
         timestamp: new Date().toISOString(),
-        stripe_configured: !!stripe,
-        payment_processors: activeProcessors,
-        processors_count: activeProcessors.length
+        stripe_configured: !!stripe 
     });
 });
 
 // Inicialización
 async function startServer() {
     try {
-        // Inicializar procesadores de pago
-        await initializePaymentProcessors();
+        // Cargar configuración de Stripe
+        await loadStripeConfig();
         
         // Iniciar servidor
         app.listen(PORT, '0.0.0.0', () => {

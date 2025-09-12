@@ -46,8 +46,16 @@ class SaleActivity : AppCompatActivity() {
             return
         }
 
-    // Mostrar versión simple
-    try { binding.tvSubtitle.text = "Be Seamless" } catch (_: Throwable) {}
+        // Get event code from Intent if available
+        eventCode = intent.getStringExtra("eventCode") ?: "EVT001"
+
+        // Mostrar versión
+        try {
+            val versionName = packageManager.getPackageInfo(packageName, 0).versionName ?: "?"
+            binding.tvSubtitle.text = "Be Seamless v$versionName"
+        } catch (_: Throwable) {
+            binding.tvSubtitle.text = "Be Seamless"
+        }
 
     setupButtons()
         setupConnectionTest()
@@ -70,15 +78,29 @@ class SaleActivity : AppCompatActivity() {
         binding.key7.setOnClickListener { addToAmount("7") }
         binding.key8.setOnClickListener { addToAmount("8") }
         binding.key9.setOnClickListener { addToAmount("9") }
-        binding.key00.setOnClickListener { addToAmount("00") }
+        binding.keyDecimal.setOnClickListener { addToAmount(".") }
         binding.keyBackspace.setOnClickListener { backspaceAmount() }
     }
 
     private fun addToAmount(digit: String) {
+        // Prevent multiple decimal points
         if (digit == "." && currentAmount.contains(".")) return
+        
+        // Limit length to reasonable amount (e.g., 999999.99)
         if (currentAmount.length >= 10) return
         
-        currentAmount += digit
+        // Don't allow decimal point as first character
+        if (digit == "." && currentAmount.isEmpty()) {
+            currentAmount = "0."
+        } else if (currentAmount.contains(".")) {
+            // If there's already a decimal point, only allow 2 digits after it
+            val parts = currentAmount.split(".")
+            if (parts.size > 1 && parts[1].length >= 2) return
+            currentAmount += digit
+        } else {
+            currentAmount += digit
+        }
+        
         updateDisplay()
     }
 
@@ -95,18 +117,16 @@ class SaleActivity : AppCompatActivity() {
     }
 
     private fun updateDisplay() {
-        val displayAmount = if (currentAmount.isEmpty()) "0.00" else {
-            try {
-                val amount = currentAmount.toDoubleOrNull() ?: 0.0
-                String.format("%.2f", amount)
-            } catch (e: Exception) {
-                currentAmount
-            }
+        // Sanitizar entrada (remover símbolos como $ y espacios)
+        val sanitized = currentAmount.replace("$", "").trim()
+        val displayAmount = if (sanitized.isEmpty()) "0.00" else {
+            val num = sanitized.toDoubleOrNull()
+            if (num == null) "0.00" else String.format("%.2f", num)
         }
-        
         binding.tvAmount.text = "$$displayAmount"
         binding.tvEventInfo.text = "Evento: $eventCode"
-        binding.btnContinuar.isEnabled = currentAmount.isNotEmpty() && currentAmount.toDoubleOrNull() != null && currentAmount.toDouble() > 0
+        val value = sanitized.toDoubleOrNull() ?: 0.0
+        binding.btnContinuar.isEnabled = value > 0
     }
 
     private fun setupConnectionTest() {
@@ -125,21 +145,28 @@ class SaleActivity : AppCompatActivity() {
     }
 
     private fun processPayment() {
-        val amount = currentAmount.toDoubleOrNull()
-        if (amount == null || amount <= 0) {
-            Toast.makeText(this, "Monto inválido", Toast.LENGTH_SHORT).show()
-            return
-        }
+        try {
+            val amount = currentAmount.replace("$", "").trim().toDoubleOrNull()
+            if (amount == null || amount <= 0) {
+                Toast.makeText(this, "Monto inválido", Toast.LENGTH_SHORT).show()
+                return
+            }
 
-        val amountCents = (amount * 100).toLong()
+            val amountCents = (amount * 100).toLong()
 
-    // Launch minimal CardPayActivity
-    val intent = Intent(this, CardPayActivity::class.java).apply {
-            putExtra("amount", amountCents)
-            putExtra("eventCode", eventCode)
-            putExtra("authToken", authToken)
+                        // Initialize Terminal SDK when activity starts
+            // (application as App).initializeTerminal() - Removed Terminal SDK for now
+
+            // Lanzar flujo 100% Tap to Pay (NFC / SoftPOS), sin formulario
+            val intent = Intent(this, TapToPayActivity::class.java).apply {
+                putExtra("amount", amountCents)
+                putExtra("eventCode", eventCode)
+                putExtra("authToken", authToken)
+            }
+            payLauncher.launch(intent)
+        } catch (e: Exception) {
+            Toast.makeText(this, "Error procesando pago: ${e.message}", Toast.LENGTH_LONG).show()
         }
-    payLauncher.launch(intent)
     }
 
     private fun resetAmount() {

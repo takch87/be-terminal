@@ -115,10 +115,10 @@
                 android:text="9" />
 
             <Button
-                android:id="@+id/key00"
+                android:id="@+id/keyDecimal"
                 style="@style/KeypadButton"
-                android:tag="00"
-                android:text="00" />
+                android:tag="."
+                android:text="." />
             <Button
                 android:id="@+id/key0"
                 style="@style/KeypadButton"

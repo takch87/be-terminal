@@ -6,8 +6,8 @@ import com.stripe.android.PaymentConfiguration
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-    // Inicialización básica; PaymentConfiguration se podrá establecer luego
-    android.util.Log.i("App", "Be Seamless App initialized")
+        // Inicialización básica; PaymentConfiguration se podrá establecer luego
+        android.util.Log.i("App", "Be Seamless App initialized")
     }
     
     fun initializeStripe(publishableKey: String) {

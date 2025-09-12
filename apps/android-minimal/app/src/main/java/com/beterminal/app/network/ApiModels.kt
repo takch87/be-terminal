@@ -2,6 +2,7 @@ package com.beterminal.app.network
 
 import com.google.gson.annotations.SerializedName
 
+// --- Auth ---
 data class LoginRequest(
     val username: String,
     val password: String,
@@ -20,10 +21,16 @@ data class UserInfo(
     val email: String?
 )
 
+// Respuesta del backend para Stripe Terminal connection tokens
 data class ConnectionTokenResponse(
-    val secret: String
+    val secret: String,
+    val success: Boolean? = null,
+    val location: String? = null
 )
 
+// --- Payments ---
+// amount: centavos (ej. $0.78 -> 78)
+// eventCode: código libre para auditar/etiquetar el pago en metadata
 data class PaymentIntentRequest(
     val amount: Long,
     val eventCode: String,
@@ -31,6 +38,7 @@ data class PaymentIntentRequest(
 )
 
 // Actualizado para el nuevo flujo automático v2.0
+// Respuesta genérica de creación de PI (viene de /payment_intent o /payment_intent_auto)
 data class PaymentIntentResponse(
     val success: Boolean,
     val clientSecret: String?,
@@ -49,42 +57,23 @@ data class PaymentIntentData(
     val status: String
 )
 
-data class NfcTapRequest(
-    val paymentIntentId: String,
-    val cardBrand: String = "visa",
-    val last4: String = "4242"
-)
-
-data class NfcTapResponse(
+// Respuesta al confirmar un PI (no se usa en Tap to Pay, pero está para flujos online)
+data class PaymentConfirmResponse(
     val success: Boolean,
     val status: String?,
     val paymentIntentId: String?,
     val completed: Boolean?,
     val requiresAction: Boolean?,
-    val paymentMethodId: String?,
-    val simulatedCard: SimulatedCard?,
-    val message: String?
+    val message: String?,
+    val clientSecret: String?
 )
 
-data class SimulatedCard(
-    val brand: String,
-    val last4: String,
-    val type: String
-)
-
-data class ProcessNfcRequest(
-    val paymentIntentId: String,
-    val paymentMethodId: String
-)
-
-data class ProcessNfcResponse(
+// Configuración pública de Stripe (publishable key, etc.)
+data class StripeConfigResponse(
     val success: Boolean,
-    val status: String?,
-    val paymentIntentId: String?,
-    val completed: Boolean?,
-    val requiresAction: Boolean?,
-    val paymentMethodId: String?,
-    val message: String?
+    val publishable_key: String?,
+    val test_mode: Boolean?,
+    val error: String?
 )
 
 data class ApiError(

@@ -1,0 +1,33 @@
+{
+  "android": {
+    "versionName": "2.1.5",
+    "versionCode": 30,
+    "apkDebug": "/downloads/be-terminal-v2.1.5-production-endpoints-fix-debug.apk",
+    "uploadedAt": "2025-09-12T01:10:00Z",
+    "changelog": [
+      "🔧 ENDPOINTS: Usa /api/stripe/publishable-key que SÍ existe en producción",
+      "🔄 FALLBACK: Si /api/stripe/config falla, usa endpoint público",
+      "✅ PRODUCCIÓN: Compatible con servidor actual de be.terminal.beticket.net",
+      "🔑 CLAVES: Obtiene claves reales de Stripe desde producción",
+      "🔍 DEBUG: Logging detallado para diagnosticar problemas",
+      "💳 PAGOS REALES: Use 'Pagar con Tarjeta' en Live Mode",
+      "🔢 CENTAVOS: Botón decimal (.) funcional para $1.50, etc",
+      "📊 STATUS CORRECTO: Transacciones procesadas correctamente"
+    ]
+  }
+}   "versionName": "2.1.4",
+    "versionCode": 29,
+    "apkDebug": "/downloads/be-terminal-v2.1.4-production-fix-debug.apk",
+    "uploadedAt": "2025-09-12T01:00:00Z",
+    "changelog": [
+      "� PRODUCCIÓN: Compatible con servidor actual de producción",
+      "🔄 FALLBACK: Funciona sin importar formato de respuesta del servidor",
+      "� CLAVES: Usa claves reales de Stripe para Live Mode",
+      "🔍 DEBUG: Agregado logging detallado para diagnosticar errores",
+      "✅ Test Mode: El botón Contactless funciona con tarjetas de prueba",
+      "💳 PAGOS REALES: Use 'Pagar con Tarjeta' en Live Mode",
+      "🔢 CENTAVOS: Botón decimal (.) funcional para $1.50, etc",
+      "📊 STATUS CORRECTO: Transacciones procesadas correctamente"
+    ]
+  }
+}

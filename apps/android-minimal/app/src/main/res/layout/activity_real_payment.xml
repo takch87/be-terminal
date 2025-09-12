@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#f8f9fa"
+    tools:context=".ui.RealPaymentActivity">
+
+    <!-- Header con monto -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/rounded_card"
+        android:padding="24dp"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total a pagar"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="#6c757d"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+            android:textStyle="bold"
+            android:textColor="#2c3e50"
+            tools:text="$1.50" />
+
+    </LinearLayout>
+
+    <!-- Status area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="#495057"
+            android:gravity="center"
+            android:minHeight="48dp"
+            tools:text="Preparando pago..." />
+
+    </LinearLayout>
+
+    <!-- Payment options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Tarjeta física/digital -->
+        <Button
+            android:id="@+id/btnPayWithCard"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="💳 Pagar con Tarjeta"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:enabled="false"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.Button.UnelevatedButton" />
+
+        <!-- Contactless NFC simulation -->
+        <Button
+            android:id="@+id/btnSimulateNfc"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="📱 Pago Contactless (Prueba)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:enabled="false"
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.Material3.Button.TonalButton" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Tarjeta: formulario para datos de tarjeta real\n• Contactless: solo funciona en Test Mode"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="#6c757d"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+
+    <!-- Cancel button -->
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="CANCELAR"
+        android:textStyle="bold"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+</LinearLayout>

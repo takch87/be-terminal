@@ -5,15 +5,16 @@ plugins {
 
 android {
     namespace 'com.beterminal.app'
-    compileSdk 36
+    compileSdk 34
 
     defaultConfig {
         applicationId 'com.beterminal.app'
         minSdk 26
-        targetSdk 35
-    // Be Seamless version - Fixed endpoint and payment flow
-    versionCode 24
-    versionName '2.0.2-endpoint-fix'
+        // Stripe Terminal (Tap to Pay) has best compatibility with targetSdk 30
+        targetSdk 30
+    // Be Seamless version - TapToPay (SoftPOS) focus
+    versionCode 31
+    versionName '2.2.1-softpos-tap'
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
@@ -23,15 +24,24 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // BuildConfig flags: production reader (no simulation)
+            buildConfigField 'boolean', 'SIMULATED', 'false'
+            buildConfigField 'String', 'TERMINAL_LOCATION_ID', '""'
+            // Sign release with debug keystore for quick sideload (non-debuggable)
+            signingConfig signingConfigs.debug
         }
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix '-debug'
+            // BuildConfig flags: enable simulated reader in debug
+            buildConfigField 'boolean', 'SIMULATED', 'true'
+            buildConfigField 'String', 'TERMINAL_LOCATION_ID', '""'
         }
     }
 
     buildFeatures {
         viewBinding true
+    buildConfig true
     }
 
     compileOptions {
@@ -40,6 +50,24 @@ android {
     }
     kotlinOptions {
         jvmTarget = '17'
+    }
+
+    packagingOptions {
+        resources {
+            excludes += [
+                'org/bouncycastle/x509/CertPathReviewerMessages_de.properties',
+                'org/bouncycastle/x509/CertPathReviewerMessages.properties',
+                'org/bouncycastle/x509/CertPathReviewerMessages_es.properties',
+                'org/bouncycastle/x509/CertPathReviewerMessages_fr.properties',
+                'org/bouncycastle/x509/CertPathReviewerMessages_ja.properties'
+            ]
+        }
+    }
+
+    lint {
+        // We distribute via sideload; allow release build even if Play-target warnings apply
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -51,6 +79,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // Networking
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
@@ -59,8 +88,11 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
 
-    // Stripe SDK para PaymentIntents (sin Terminal físico)
+    // Stripe SDK dependencies
     implementation 'com.stripe:stripe-android:20.40.1'
+    // Stripe Terminal SDK (Tap to Pay on Android)
+    implementation 'com.stripe:stripeterminal:4.6.0'
+    implementation 'com.stripe:stripeterminal-taptopay:4.6.0'
     
     // NFC básico sin dependencias externas por ahora
     // implementation 'com.github.devnied.emvnfccard:library:3.0.1'

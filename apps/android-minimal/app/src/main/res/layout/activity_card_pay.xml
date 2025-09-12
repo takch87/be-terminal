@@ -22,12 +22,12 @@
         android:textSize="18sp"
         android:layout_marginTop="8dp" />
 
-    <com.stripe.android.view.CardInputWidget
-        android:id="@+id/cardInputWidget"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:shouldShowPostalCode="true" />
+        android:text="Usa PaymentSheet integrado de Stripe para procesar el pago"
+        android:textStyle="italic"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/tvStatus"

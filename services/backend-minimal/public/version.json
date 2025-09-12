@@ -1,18 +1,1 @@
-{
-  "android": {
-    "versionName": "1.2.15",
-    "versionCode": 22,
-    "apkDebug": "/downloads/be-terminal-nfc-v1.2.15-NFC-COMPLETE-debug.apk",
-    "uploadedAt": "2025-09-09T06:15:00Z",
-    "changelog": [
-      "✅ NFC completo y funcional para pagos",
-      "✅ Permisos NFC correctamente configurados",
-      "✅ Detección automática de tarjetas NFC",
-      "✅ Fallback a modo simulación si no hay NFC",
-      "✅ Vibración de confirmación en lecturas",
-      "✅ Number keyboard funcionando",
-      "✅ Remember Me en login",
-      "✅ Botón continuar más accesible"
-    ]
-  }
-}
+{"android": {"versionName": "2.2.3-softpos-tap", "versionCode": 31, "apkDebug": "/downloads/be-terminal-nfc-v2.2.1-softpos-tap-debug.apk", "apkRelease": "/downloads/be-terminal-nfc-v2.2.3-softpos-tap-release.apk", "uploadedAt": "2025-09-12T03:27:02Z"}}

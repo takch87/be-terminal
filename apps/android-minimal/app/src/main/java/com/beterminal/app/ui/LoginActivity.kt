@@ -34,8 +34,11 @@ class LoginActivity : AppCompatActivity() {
             performLogin()
         }
 
-    // Agregar información de versión (simple)
-    binding.tvVersion.text = "Be Seamless"
+        // Agregar información de versión
+        val versionName = try {
+            packageManager.getPackageInfo(packageName, 0).versionName ?: "?"
+        } catch (e: Exception) { "?" }
+        binding.tvVersion.text = "Be Seamless v$versionName"
     }
 
     private fun performLogin() {

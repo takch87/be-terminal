@@ -7,7 +7,7 @@ if [ -f .env ]; then
     export $(grep -v '^#' .env | xargs)
 fi
 
-PORT=${PORT:-3001}
+PORT=${PORT:-3002}
 
 echo "Reiniciando BeTerminal server en puerto $PORT..."
 
@@ -17,14 +17,14 @@ PIDS=$(lsof -ti:$PORT 2>/dev/null)
 
 if [ ! -z "$PIDS" ]; then
     echo "Terminando procesos en puerto $PORT: $PIDS"
-    echo $PIDS | xargs kill -TERM 2>/dev/null
+    echo $PIDS | xargs -r kill -TERM 2>/dev/null
     sleep 3
     
     # Si aún hay procesos, forzar terminación
     REMAINING_PIDS=$(lsof -ti:$PORT 2>/dev/null)
     if [ ! -z "$REMAINING_PIDS" ]; then
         echo "Forzando terminación de procesos restantes: $REMAINING_PIDS"
-        echo $REMAINING_PIDS | xargs kill -9 2>/dev/null
+    echo $REMAINING_PIDS | xargs -r kill -9 2>/dev/null
         sleep 2
     fi
 fi

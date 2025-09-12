@@ -44,11 +44,20 @@ object ApiClient {
         return apiService.createPaymentIntent("Bearer $token", request)
     }
 
-    suspend fun simulateNfcTap(token: String, request: NfcTapRequest): Response<NfcTapResponse> {
-        return apiService.simulateNfcTap("Bearer $token", request)
+    // Nuevo wrapper para el endpoint automático con card_present
+    suspend fun createPaymentIntentAuto(token: String, request: PaymentIntentRequest): Response<PaymentIntentResponse> {
+        return apiService.createPaymentIntentAuto("Bearer $token", request)
     }
 
-    suspend fun processNfcPayment(token: String, request: ProcessNfcRequest): Response<ProcessNfcResponse> {
-        return apiService.processNfcPayment("Bearer $token", request)
+    suspend fun confirmPayment(token: String, request: Map<String, String>): Response<PaymentConfirmResponse> {
+        return apiService.confirmPayment("Bearer $token", request)
+    }
+
+    suspend fun getStripeConfig(token: String): Response<StripeConfigResponse> {
+        return apiService.getStripeConfig("Bearer $token")
+    }
+    
+    suspend fun getStripePublishableKey(): Response<StripeConfigResponse> {
+        return apiService.getStripePublishableKey()
     }
 }
