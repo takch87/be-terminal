@@ -80,3 +80,31 @@ data class ApiError(
     val error: String,
     val message: String?
 )
+
+// --- Transactions ---
+data class TransactionDto(
+    val id: Int?,
+    val transaction_id: String?,
+    val amount: Long?,
+    val currency: String?,
+    val status: String?,
+    val event_code: String?,
+    val user_id: Int?,
+    val payment_intent_id: String?,
+    val created_at: String?
+)
+
+data class TransactionsResponse(
+    val success: Boolean,
+    val items: List<TransactionDto>
+)
+
+data class RefundRequest(
+    val payment_intent_id: String,
+    val amount: Long? = null
+)
+
+data class RefundResponse(
+    val success: Boolean,
+    val refund: Any?
+)

@@ -60,4 +60,12 @@ object ApiClient {
     suspend fun getStripePublishableKey(): Response<StripeConfigResponse> {
         return apiService.getStripePublishableKey()
     }
+
+    suspend fun getRecentTransactions(token: String, limit: Int = 20): Response<TransactionsResponse> {
+        return apiService.getRecentTransactions("Bearer $token", limit)
+    }
+
+    suspend fun refundPayment(token: String, request: RefundRequest): Response<RefundResponse> {
+        return apiService.refundPayment("Bearer $token", request)
+    }
 }

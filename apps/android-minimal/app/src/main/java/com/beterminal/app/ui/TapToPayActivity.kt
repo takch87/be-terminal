@@ -230,7 +230,7 @@ class TapToPayActivity : AppCompatActivity() {
                 // Reintento único rápido
                 startFlow()
             }
-        }, 10_000) // 10s
+    }, 5_000) // 5s para un inicio más rápido
     }
 
     private val tapToPayReaderListener = object : TapToPayReaderListener {}

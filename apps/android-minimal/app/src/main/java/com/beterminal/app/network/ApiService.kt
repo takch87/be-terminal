@@ -42,4 +42,18 @@ interface ApiService {
     
     @GET("api/stripe/publishable-key")
     suspend fun getStripePublishableKey(): Response<StripeConfigResponse>
+
+    // Transactions list for mobile
+    @GET("api/transactions/recent")
+    suspend fun getRecentTransactions(
+        @Header("Authorization") token: String,
+        @Query("limit") limit: Int = 20
+    ): Response<TransactionsResponse>
+
+    // Refund a payment intent
+    @POST("api/stripe/refund")
+    suspend fun refundPayment(
+        @Header("Authorization") token: String,
+        @Body request: RefundRequest
+    ): Response<RefundResponse>
 }

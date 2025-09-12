@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.BeSeamless" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.BeSeamless" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Status bar y navegación -->
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Colores base según paleta de marca -->
+        <item name="colorPrimary">@color/be_cta</item>
+        <item name="colorOnPrimary">@color/be_text_primary</item>
+        <item name="android:colorBackground">@color/be_bg_primary</item>
     </style>
 </resources>

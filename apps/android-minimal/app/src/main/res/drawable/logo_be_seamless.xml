@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder vector referencing raster would go here. For now, we'll use a text-styled shape to avoid missing asset. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="60dp"
+    android:viewportWidth="200"
+    android:viewportHeight="60">
+    <path android:fillColor="#FF9F1C" android:pathData="M15,30 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M55,20 h120 v20 h-120 z"/>
+</vector>

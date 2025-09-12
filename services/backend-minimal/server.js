@@ -1129,6 +1129,57 @@ app.post('/api/stripe/payment_intent_auto', authenticateToken, async (req, res) 
     }
 });
 
+// Listar últimas transacciones (para UI móvil)
+app.get('/api/transactions/recent', authenticateToken, async (req, res) => {
+    try {
+        const limit = Math.min(parseInt(req.query.limit || '20', 10), 100)
+        db.all(
+            `SELECT id, transaction_id, amount, currency, status, event_code, user_id, payment_intent_id, created_at
+             FROM transactions
+             ORDER BY created_at DESC
+             LIMIT ?`,
+            [limit],
+            (err, rows) => {
+                if (err) {
+                    logger.error('Recent transactions DB error', { error: err.message })
+                    return res.status(500).json({ error: 'Database error' })
+                }
+                res.json({ success: true, items: rows })
+            }
+        )
+    } catch (e) {
+        res.status(500).json({ error: 'Internal error' })
+    }
+})
+
+// Anular/Refund: crea un reembolso en Stripe por PaymentIntent (monto opcional)
+app.post('/api/stripe/refund', authenticateToken, async (req, res) => {
+    const { payment_intent_id, amount } = req.body || {}
+    if (!payment_intent_id) return res.status(400).json({ error: 'payment_intent_id required' })
+    try {
+        const params = { payment_intent: payment_intent_id }
+        if (amount && amount > 0) params.amount = Math.round(amount)
+        const refund = await stripe.refunds.create(params)
+
+        // Guardar registro de estado en DB
+        await saveTransaction({
+            transaction_id: refund.id,
+            amount: refund.amount,
+            currency: refund.currency,
+            status: refund.status || 'refunded',
+            event_code: 'refund',
+            user_id: req.user.userId,
+            payment_intent_id: payment_intent_id,
+            metadata: { reason: 'mobile_refund' }
+        })
+
+        res.json({ success: true, refund })
+    } catch (error) {
+        logger.error('Refund error', { error: error.message, payment_intent_id })
+        res.status(500).json({ error: error.message })
+    }
+})
+
 // Endpoint para confirmar pagos pendientes (Opción 2C)
 app.post('/api/stripe/confirm_payment', authenticateToken, async (req, res) => {
     const { paymentIntentId, paymentMethodId } = req.body;

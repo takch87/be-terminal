@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/be_bg_primary"
     tools:context=".ui.SaleActivity">
 
     <!-- Area del monto - 30% de la pantalla -->
@@ -13,7 +14,7 @@
         android:layout_weight="0.25"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="#f8f9fa"
+    android:background="@color/be_bg_primary"
         android:padding="16dp">
 
         <TextView
@@ -23,7 +24,7 @@
             android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
             android:textStyle="bold"
             android:gravity="center"
-            android:textColor="#2c3e50"
+            android:textColor="@color/be_text_primary"
             tools:text="$25.00" />
 
         <TextView
@@ -33,7 +34,7 @@
             android:text="Describe tu venta"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            android:textColor="#6c757d"
+            android:textColor="@color/be_text_secondary"
             android:layout_marginTop="8dp" />
 
         <TextView
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:textColor="#6c757d"
+            android:textColor="@color/be_text_secondary"
             android:layout_marginTop="4dp"
             tools:text="Evento: EVT001" />
 
@@ -54,7 +55,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.6"
         android:orientation="vertical"
-        android:padding="12dp">
+    android:padding="12dp">
 
         <GridLayout
             android:id="@+id/keysGrid"
@@ -139,17 +140,19 @@
         android:layout_height="0dp"
         android:layout_weight="0.15"
         android:orientation="vertical"
-        android:padding="16dp"
+    android:padding="16dp"
         android:gravity="center">
 
         <Button
             android:id="@+id/btnContinuar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="CONTINUAR"
+            android:text="COBRAR"
             android:enabled="false"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:backgroundTint="@color/be_cta"
+            android:textColor="@color/be_text_primary" />
 
     </LinearLayout>
 

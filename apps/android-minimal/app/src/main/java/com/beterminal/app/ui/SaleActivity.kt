@@ -58,6 +58,13 @@ class SaleActivity : AppCompatActivity() {
         }
 
     setupButtons()
+        // Abrir historial/últimas transacciones con un long-press en el monto (rápido y sin romper UI)
+        binding.tvAmount.setOnLongClickListener {
+            val sheet = TransactionsBottomSheet()
+            sheet.arguments = Bundle().apply { putString("authToken", authToken) }
+            sheet.show(supportFragmentManager, "tx_sheet")
+            true
+        }
         setupConnectionTest()
         updateDisplay()
     }

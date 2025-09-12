@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta de marca Be.seamless -->
+    <!-- Fondo principal: Negro carbón (#2C2C2C) -->
+    <color name="be_bg_primary">#2C2C2C</color>
+    <!-- Texto principal: Blanco (#FFFFFF) -->
+    <color name="be_text_primary">#FFFFFF</color>
+    <!-- Texto secundario / íconos apagados: Gris humo (#6E6E6E) -->
+    <color name="be_text_secondary">#6E6E6E</color>
+    <!-- Acciones / call-to-action: Naranja (#FF9F1C) -->
+    <color name="be_cta">#FF9F1C</color>
+    <!-- Premium / VIP: Dorado (#C9A227) -->
+    <color name="be_premium">#C9A227</color>
+    <!-- Detalles serios / profesionales: Azul petróleo (#1C3A4D) -->
+    <color name="be_professional">#1C3A4D</color>
+    <!-- Éxitos / validaciones: Verde jade (#2FBF71) -->
+    <color name="be_success">#2FBF71</color>
+</resources>

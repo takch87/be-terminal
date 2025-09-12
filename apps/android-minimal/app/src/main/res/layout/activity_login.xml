@@ -9,9 +9,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:background="@color/be_bg_primary">
 
-        <!-- Logo removido para Be Seamless -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_be_seamless"
+            android:layout_gravity="center"
+            android:contentDescription="Logo"
+            android:layout_marginTop="24dp"/>
 
         <TextView
             android:id="@+id/tvTitle"
@@ -22,7 +30,8 @@
             android:textStyle="bold"
             android:gravity="center"
             android:layout_marginTop="32dp"
-            android:paddingBottom="8dp" />
+            android:paddingBottom="8dp"
+            android:textColor="@color/be_text_primary" />
 
         <TextView
             android:id="@+id/tvSubtitle"
@@ -32,7 +41,7 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:gravity="center"
             android:paddingBottom="32dp"
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="@color/be_text_secondary" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUsername"
@@ -100,7 +109,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ingresar"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/be_cta"
+            android:textColor="@color/be_text_primary" />
 
         <TextView
             android:id="@+id/tvVersion"
@@ -108,7 +119,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="12sp"
-            android:textColor="#666666"
+            android:textColor="@color/be_text_secondary"
             android:gravity="center"
             android:layout_marginTop="16dp" />
 
